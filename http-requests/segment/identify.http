@@ -1,0 +1,8 @@
+### get user traits
+
+GET {{host}}/v1/spaces/{{space_id}}/collections/users/profiles/{{search_id}}/traits
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic {{basic_token}}
+
+

@@ -1,0 +1,6 @@
+POST {{api-digital-url}}/admin/v1/user/abandoned
+Authorization: Basic {{admin-user}} {{admin-password}}
+Content-Type: application/json
+
+###
+

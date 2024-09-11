@@ -1,0 +1,25 @@
+
+### Accept Offer
+
+POST {{api}}offers/accepts
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+urlKey: {{urlKey}}
+
+{
+"user_id": {{user_id}},
+"credit_id": {{credit_id}},
+"price_id": {{price_id}},
+"identification_information": {
+"authority": "Dark Side",
+"issue_date": "2020-01-14",
+"number": "T12356779",
+"type": 1
+},
+"bank_data": {
+"iban": "DE41600400617256315930",
+"bic": "COBADEFFXXX"
+}
+}
+
+###

@@ -1,0 +1,13 @@
+GET {{api-digital-url}}/loan/distribution-channel/{{tenant-id}}/status?start-date=2022-04-01&end-date=2022-06-01
+Authorization: Basic {{reporting-user}} {{reporting-password}}
+Content-Type: application/json
+
+###
+GET {{api-digital-url}}/loan/distribution-channel/{{tenant-id}}/status?start-date=2022-04-01&end-date=2022-06-01&response-format=json
+Authorization: Basic {{reporting-user}} {{reporting-password}}
+Content-Type: application/json
+
+###
+GET {{api-digital-url}}/loan/distribution-channel/{{tenant-id}}/status?start-date=2022-04-01&end-date=2022-06-01&response-format=csv
+Authorization: Basic {{reporting-user}} {{reporting-password}}
+Content-Type: application/json

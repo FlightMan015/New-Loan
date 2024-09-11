@@ -1,0 +1,16 @@
+### 4. accept an offer
+
+PUT {{host}}/{{brandId}}/credits-channel-app/api/1/processes/{{processId}}
+X-Customer-Id: {{customerId}}
+X-Token: {{token}}
+Content-Type: application/json
+
+[
+  {
+    "name": "SELECTED_OFFER",
+    "value": {
+      "selectedOfferId": "{{$uuid}}",
+      "timestamp": "2021-12-10T00:00:0000Z"
+    }
+  }
+]

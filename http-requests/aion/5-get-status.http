@@ -1,0 +1,6 @@
+### 5. get status
+
+GET {{host}}/{{brandId}}/credits-channel-app/api/1/processes/{{processId}}
+X-Customer-Id: {{customerId}}
+X-Token: {{token}}
+Content-Type: application/json

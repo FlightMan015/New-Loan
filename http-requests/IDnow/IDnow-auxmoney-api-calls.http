@@ -1,0 +1,94 @@
+### Get Token
+
+POST  {{host}}api/v1/joonkoswkauxmoneyesign/login
+Content-Type: application/json
+
+{
+  "apiKey": ""
+}
+
+> {%
+    client.global.set("X-API-LOGIN-TOKEN", response.body.authToken);
+%}
+
+###
+POST  {{host}}/api/v1/joonkoswkauxmoneyesign/identifications/id-1/start
+Content-Type: application/json
+X-API-LOGIN-TOKEN:  {{X-API-LOGIN-TOKEN}}
+
+{
+  "birthday": "1987-05-23",
+  "birthplace": "London",
+  "city": "London",
+  "country": "GB",
+  "custom1": "X-MANUALTEST-HAPPYPATH",
+  "custom2": "Custom fields",
+  "custom3": "can set testbot scenarios",
+  "custom4": "or store any data strings",
+  "custom5": "you like.",
+  "email": "hello@fdgdgdg.org",
+  "firstname": "Olivia",
+  "gender": "FEMALE",
+  "lastname": "Jones",
+  "mobilephone": "01789012345",
+  "nationality": "GB",
+  "street": "Baker Street",
+  "zipcode": "W1U"
+}
+
+
+### Start Web based identification-- need web browser , using transaction number
+GET https://go.test.idnow.de/joonkoswkauxmoneyesign/identifications/niraj-sonawane-1
+Content-Type: application/json
+
+### Start Web based identification-- need web browser , using IDnet Id
+https://go.test.idnow.de/TST-ZYQEE
+GET https://go.test.idnow.de/joonko/identifications/niraj-sonawane1
+Content-Type: application/json
+
+
+### Get IDent
+GET  {{host}}/api/v1/joonkoswkauxmoneyesign/identifications
+Content-Type: application/json
+X-API-LOGIN-TOKEN:  {{X-API-LOGIN-TOKEN}}
+
+###
+### Get IDent with status
+GET  {{host}}/api/v1/joonkoswkauxmoneyesign/identifications?aborted=true
+Content-Type: application/json
+X-API-LOGIN-TOKEN:  {{X-API-LOGIN-TOKEN}}
+
+###
+
+
+###
+### Get singed contractResponse
+GET  {{host}}/api/v1/joonkoswkauxmoneyesign/identifications/7b15049a-983a-4241-b204-33c459d9651c/documents/contractResponse/signed
+Content-Type: application/json
+X-API-LOGIN-TOKEN:  {{X-API-LOGIN-TOKEN}}
+
+### Get document definations
+
+GET  {{host}}/api/v1/joonkoswkauxmoneyesign/documentdefinitions/contract1
+Content-Type: application/json
+X-API-LOGIN-TOKEN:  {{X-API-LOGIN-TOKEN}}
+
+### Get All document definations
+
+GET  {{host}}/api/v1/joonkoswkauxmoneyesign/documentdefinitions
+Content-Type: application/json
+X-API-LOGIN-TOKEN:  {{X-API-LOGIN-TOKEN}}
+
+###
+### Delete document definations
+
+DELETE  {{host}}/api/v1/joonkoswkauxmoneyesign/documentdefinitions/contract1
+Content-Type: application/json
+X-API-LOGIN-TOKEN:  {{X-API-LOGIN-TOKEN}}
+
+###
+
+
+
+
+

@@ -1,0 +1,723 @@
+<wsdl:definitions
+        xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+        xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:tns="http://service.efincomparer.creditplus.de/"
+        xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="EfinComparerService"
+        targetNamespace="http://service.efincomparer.creditplus.de/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd ">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                   xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.efincomparer.creditplus.de/"
+                   xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" attributeFormDefault="unqualified"
+                   elementFormDefault="unqualified" targetNamespace="http://service.efincomparer.creditplus.de/">
+            <xs:element name="activateCommunication" type="tns:activateCommunication"/>
+            <xs:element name="activateCommunicationResponse" type="tns:activateCommunicationResponse"/>
+            <xs:element name="cancelCreditOffer" type="tns:cancelCreditOffer"/>
+            <xs:element name="cancelCreditOfferResponse" type="tns:cancelCreditOfferResponse"/>
+            <xs:element name="createCreditOffer" type="tns:createCreditOffer"/>
+            <xs:element name="createCreditOfferDac" type="tns:createCreditOfferDac"/>
+            <xs:element name="createCreditOfferDacResponse" type="tns:createCreditOfferDacResponse"/>
+            <xs:element name="createCreditOfferResponse" type="tns:createCreditOfferResponse"/>
+            <xs:element name="getContracts" type="tns:getContracts"/>
+            <xs:element name="getContractsResponse" type="tns:getContractsResponse"/>
+            <xs:element name="getDocument" type="tns:getDocument"/>
+            <xs:element name="getDocumentResponse" type="tns:getDocumentResponse"/>
+            <xs:element name="getDocumentVideoIdent" type="tns:getDocumentVideoIdent"/>
+            <xs:element name="getDocumentVideoIdentResponse" type="tns:getDocumentVideoIdentResponse"/>
+            <xs:element name="setVideoIdentExternData" type="tns:setVideoIdentExternData"/>
+            <xs:element name="setVideoIdentExternDataResponse" type="tns:setVideoIdentExternDataResponse"/>
+            <xs:element name="startDispatch" type="tns:startDispatch"/>
+            <xs:element name="startDispatchResponse" type="tns:startDispatchResponse"/>
+            <xs:complexType name="getContracts">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="filter" type="tns:Filter"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Filter">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="cancelDateFromTo" type="tns:DateFromTo"/>
+                    <xs:element minOccurs="0" name="contractState" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="dealerOrderNumber" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" name="decisionDateFromTo" type="tns:DateFromTo"/>
+                    <xs:element minOccurs="0" name="orderDateFromTo" type="tns:DateFromTo"/>
+                    <xs:element minOccurs="0" name="paidDateFromTo" type="tns:DateFromTo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DateFromTo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="from" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="to" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getContractsResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:Contract"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Contract">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="branch" type="xs:string"/>
+                    <xs:element minOccurs="0" name="branchAppointment" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="contractState" type="xs:int"/>
+                    <xs:element minOccurs="0" name="contractStateText" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contractSubState" type="xs:int"/>
+                    <xs:element minOccurs="0" name="contractSubStateText" type="xs:string"/>
+                    <xs:element minOccurs="0" name="counterArgument" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cpReferenceNumber" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="decisionManual" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="duration" type="xs:int"/>
+                    <xs:element minOccurs="0" name="finalRateDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="firstRateDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="fullAmount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="interest" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="interestAmount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="isTransfered" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="maxAmount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="nominalInterest" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="paidDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="pdfDocumentExist" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="rate" type="xs:decimal"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="requirements" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" name="rsvAmount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="rsvTypeKn1" type="xs:int"/>
+                    <xs:element minOccurs="0" name="rsvTypeKn2" type="xs:int"/>
+                    <xs:element minOccurs="0" name="rsvTypeReferenceKn1" type="xs:int"/>
+                    <xs:element minOccurs="0" name="rsvTypeReferenceKn2" type="xs:int"/>
+                    <xs:element minOccurs="0" name="systemDecision" type="xs:int"/>
+                    <xs:element minOccurs="0" name="webIdContractEc" type="tns:WebIdContract"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="WebIdContract">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="actionIdKn1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="actionIdKn2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="actionIdUrlKn1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="actionIdUrlKn2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="esignatureAllowed" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="videolegitimationAllowed" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="startDispatch">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="startDispatchResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="confirmation" type="tns:Confirmation"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Confirmation">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="errorItems" nillable="true"
+                                type="tns:ErrorItem"/>
+                    <xs:element minOccurs="0" name="referenceNumber" type="xs:int"/>
+                    <xs:element name="isSucceed" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ErrorItem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" type="xs:int"/>
+                    <xs:element minOccurs="0" name="field" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getDocument">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getDocumentResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createCreditOffer">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="efinComparerCreditOffer" type="tns:CreditOffer"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CreditOffer">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="additionalData" type="tns:AddionalData"/>
+                    <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="communicationActive" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="debtor1" type="tns:Debtor"/>
+                    <xs:element minOccurs="0" name="debtor2" type="tns:Debtor"/>
+                    <xs:element minOccurs="0" name="device" type="tns:Device"/>
+                    <xs:element minOccurs="0" name="duration" type="xs:int"/>
+                    <xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productType" type="xs:int"/>
+                    <xs:element minOccurs="0" name="subId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subId2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trackingId" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AddionalData">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="account" type="tns:Account"/>
+                    <xs:element minOccurs="0" name="dispatchType" type="xs:int"/>
+                    <xs:element minOccurs="0" name="information" type="xs:string"/>
+                    <xs:element minOccurs="0" name="transferDay" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Account">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountOwner" type="xs:int"/>
+                    <xs:element minOccurs="0" name="iban" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Debtor">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dacDebtor" type="tns:DacDebtor"/>
+                    <xs:element minOccurs="0" name="financialData" type="tns:FinancialData"/>
+                    <xs:element minOccurs="0" name="personalData" type="tns:PersonalData"/>
+                    <xs:element minOccurs="0" name="replacementType" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="replacements" nillable="true"
+                                type="tns:Replacement"/>
+                    <xs:element minOccurs="0" name="rsvType" type="xs:int"/>
+                    <xs:element minOccurs="0" name="webIdDebtor" type="tns:WebIdDebtor"/>
+                    <xs:element minOccurs="0" name="workdata" type="tns:WorkData"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DacDebtor">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="decision" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="decisionRule" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="requestId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="score" type="xs:decimal"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FinancialData">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="aliment" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="childBenefit" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="houseCosts" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="income" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="motorbike" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="otherCreditRates" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="otherIncome" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="otherIncomeType" type="xs:int"/>
+                    <xs:element minOccurs="0" name="pension" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="privateHealthInsurance" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="rent" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="rentalIncome" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="residenceType" type="xs:int"/>
+                    <xs:element minOccurs="0" name="vehicle" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PersonalData">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="city" type="xs:string"/>
+                    <xs:element minOccurs="0" name="countryOfBirth" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="email" type="xs:string"/>
+                    <xs:element minOccurs="0" name="foreName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="identificationType" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastRemoval" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="maritalState" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nameOfBirth" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nationality" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numberOfChildren" type="xs:int"/>
+                    <xs:element minOccurs="0" name="phoneHome" type="tns:PhoneData"/>
+                    <xs:element minOccurs="0" name="phoneMobile" type="tns:PhoneData"/>
+                    <xs:element minOccurs="0" name="placeOfBirth" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preCity" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preCountry" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prePostalCode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preStreet" type="xs:string"/>
+                    <xs:element minOccurs="0" name="residencePermission" type="xs:int"/>
+                    <xs:element minOccurs="0" name="residencePermissionDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="salutation" type="xs:int"/>
+                    <xs:element minOccurs="0" name="street" type="xs:string"/>
+                    <xs:element minOccurs="0" name="titel" type="xs:int"/>
+                    <xs:element minOccurs="0" name="workPermission" type="xs:int"/>
+                    <xs:element minOccurs="0" name="workPermissionDate" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PhoneData">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="areaCode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="availableFrom" type="xs:string"/>
+                    <xs:element minOccurs="0" name="availableTo" type="xs:string"/>
+                    <xs:element minOccurs="0" name="localNumber" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Replacement">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="duration" type="xs:int"/>
+                    <xs:element minOccurs="0" name="initialAmount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="rate" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="replace" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="WebIdDebtor">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="agbConfirm" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="telephonePromotionAllowed" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="WorkData">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="category" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dateOfEmployeeLimitation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="durationOfPreEmployment" type="xs:int"/>
+                    <xs:element minOccurs="0" name="employedDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="employeeLimitation" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="employerCity" type="xs:string"/>
+                    <xs:element minOccurs="0" name="employerName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="employerPhone" type="tns:PhoneData"/>
+                    <xs:element minOccurs="0" name="employerPostalCode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="employerStreet" type="xs:string"/>
+                    <xs:element minOccurs="0" name="industry" type="xs:int"/>
+                    <xs:element minOccurs="0" name="job" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preEmployerCity" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preEmployerName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preEmployerPostalCode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preEmployerStreet" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Device">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="brand" type="xs:string"/>
+                    <xs:element minOccurs="0" name="browser" type="xs:string"/>
+                    <xs:element minOccurs="0" name="category" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cookiesEnabled" type="xs:string"/>
+                    <xs:element minOccurs="0" name="javaVersion" type="xs:string"/>
+                    <xs:element minOccurs="0" name="language" type="xs:string"/>
+                    <xs:element minOccurs="0" name="operatingSystem" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createCreditOfferResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="confirmation" type="tns:Confirmation"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="cancelCreditOffer">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="cancelCreditOfferResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getDocumentVideoIdent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getDocumentVideoIdentResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createCreditOfferDac">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="efinComparerCreditOffer"
+                                type="tns:CreditOfferDac"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CreditOfferDac">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="additionalData" type="tns:AddionalData"/>
+                    <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="communicationActive" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="debtor1" type="tns:DebtorDac"/>
+                    <xs:element minOccurs="0" name="debtor2" type="tns:DebtorDac"/>
+                    <xs:element minOccurs="0" name="duration" type="xs:int"/>
+                    <xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productType" type="xs:int"/>
+                    <xs:element minOccurs="0" name="subId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subId2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trackingId" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DebtorDac">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dacData" type="tns:DacData"/>
+                    <xs:element minOccurs="0" name="financialData" type="tns:FinancialData"/>
+                    <xs:element minOccurs="0" name="personalData" type="tns:PersonalData"/>
+                    <xs:element minOccurs="0" name="replacementType" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="replacements" nillable="true"
+                                type="tns:Replacement"/>
+                    <xs:element minOccurs="0" name="rsvType" type="xs:int"/>
+                    <xs:element minOccurs="0" name="webIdDebtor" type="tns:WebIdDebtor"/>
+                    <xs:element minOccurs="0" name="workdata" type="tns:WorkData"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DacData">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountOwner" type="xs:string"/>
+                    <xs:element minOccurs="0" name="iban" type="xs:string"/>
+                    <xs:element minOccurs="0" name="minimalData" type="tns:Minimal"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="revenues" nillable="true" type="tns:Revenue"/>
+                    <xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="totalPeriodSummary" nillable="true"
+                                type="tns:ReportCategoryValue"/>
+                    <xs:element minOccurs="0" name="type" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Minimal">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountOwner" type="xs:string"/>
+                    <xs:element minOccurs="0" name="childBenefit" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="employerName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="iban" type="xs:string"/>
+                    <xs:element minOccurs="0" name="income" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="numberOfChildren" type="xs:int"/>
+                    <xs:element minOccurs="0" name="pension" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="rent" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="requestId" type="xs:int"/>
+                    <xs:element minOccurs="0" name="score" type="xs:int"/>
+                    <xs:element minOccurs="0" name="validation" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="vehicleExists" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Revenue">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="balance" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bankReference" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bic" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bicOfContraAccount" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bookingDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="category" type="xs:string"/>
+                    <xs:element minOccurs="0" name="compensationAmount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="consecutiveNumberOfTheTransaction" type="xs:int"/>
+                    <xs:element minOccurs="0" name="creditorIdentifier" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerReference" type="xs:string"/>
+                    <xs:element minOccurs="0" name="debtorIdentifier" type="xs:string"/>
+                    <xs:element minOccurs="0" name="deviatingDonor" type="xs:string"/>
+                    <xs:element minOccurs="0" name="deviatingRecipient" type="xs:string"/>
+                    <xs:element minOccurs="0" name="endToEndReference" type="xs:string"/>
+                    <xs:element minOccurs="0" name="iban" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ibanOfContraAccount" type="xs:string"/>
+                    <xs:element minOccurs="0" name="instructionId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mandateDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="mandateReference" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nameOfContraAccount" type="xs:string"/>
+                    <xs:element minOccurs="0" name="oldCreditorId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="oldMandateReference" type="xs:string"/>
+                    <xs:element minOccurs="0" name="originalAmount" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="postingKey" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postingText" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primaNotaNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="purposeCode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="reasonForTheSepaTransfer" type="xs:string"/>
+                    <xs:element minOccurs="0" name="reference" type="xs:string"/>
+                    <xs:element minOccurs="0" name="returnReference" type="xs:string"/>
+                    <xs:element minOccurs="0" name="textSupplementKey" type="xs:string"/>
+                    <xs:element minOccurs="0" name="transactionCode" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueDate" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ReportCategoryValue">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="category" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" type="xs:decimal"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createCreditOfferDacResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="confirmation" type="tns:Confirmation"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="setVideoIdentExternData">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="filter" type="tns:VideoIdentExtern"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="VideoIdentExtern">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="actionIdKn1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="actionIdKn2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="actionIdUrlKn1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="actionIdUrlKn2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="videoIdentProvider" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="setVideoIdentExternDataResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="activateCommunication">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="activateCommunicationResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="EfinComparerFaultException" type="tns:EfinComparerFaultException"/>
+            <xs:complexType name="EfinComparerFaultException">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+                    <xs:element minOccurs="0" name="message" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getContracts">
+        <wsdl:part element="tns:getContracts" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="startDispatch">
+        <wsdl:part element="tns:startDispatch" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getContractsResponse">
+        <wsdl:part element="tns:getContractsResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocumentVideoIdentResponse">
+        <wsdl:part element="tns:getDocumentVideoIdentResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="cancelCreditOfferResponse">
+        <wsdl:part element="tns:cancelCreditOfferResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="cancelCreditOffer">
+        <wsdl:part element="tns:cancelCreditOffer" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="EfinComparerFaultException">
+        <wsdl:part element="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createCreditOfferDac">
+        <wsdl:part element="tns:createCreditOfferDac" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="activateCommunication">
+        <wsdl:part element="tns:activateCommunication" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createCreditOfferResponse">
+        <wsdl:part element="tns:createCreditOfferResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="setVideoIdentExternDataResponse">
+        <wsdl:part element="tns:setVideoIdentExternDataResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="activateCommunicationResponse">
+        <wsdl:part element="tns:activateCommunicationResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocument">
+        <wsdl:part element="tns:getDocument" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createCreditOffer">
+        <wsdl:part element="tns:createCreditOffer" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocumentVideoIdent">
+        <wsdl:part element="tns:getDocumentVideoIdent" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createCreditOfferDacResponse">
+        <wsdl:part element="tns:createCreditOfferDacResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="setVideoIdentExternData">
+        <wsdl:part element="tns:setVideoIdentExternData" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocumentResponse">
+        <wsdl:part element="tns:getDocumentResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="startDispatchResponse">
+        <wsdl:part element="tns:startDispatchResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="EfinComparer">
+        <wsdl:operation name="getContracts">
+            <wsdl:input message="tns:getContracts" name="getContracts"></wsdl:input>
+            <wsdl:output message="tns:getContractsResponse" name="getContractsResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="startDispatch">
+            <wsdl:input message="tns:startDispatch" name="startDispatch"></wsdl:input>
+            <wsdl:output message="tns:startDispatchResponse" name="startDispatchResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDocument">
+            <wsdl:input message="tns:getDocument" name="getDocument"></wsdl:input>
+            <wsdl:output message="tns:getDocumentResponse" name="getDocumentResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createCreditOffer">
+            <wsdl:input message="tns:createCreditOffer" name="createCreditOffer"></wsdl:input>
+            <wsdl:output message="tns:createCreditOfferResponse" name="createCreditOfferResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="cancelCreditOffer">
+            <wsdl:input message="tns:cancelCreditOffer" name="cancelCreditOffer"></wsdl:input>
+            <wsdl:output message="tns:cancelCreditOfferResponse" name="cancelCreditOfferResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDocumentVideoIdent">
+            <wsdl:input message="tns:getDocumentVideoIdent" name="getDocumentVideoIdent"></wsdl:input>
+            <wsdl:output message="tns:getDocumentVideoIdentResponse" name="getDocumentVideoIdentResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createCreditOfferDac">
+            <wsdl:input message="tns:createCreditOfferDac" name="createCreditOfferDac"></wsdl:input>
+            <wsdl:output message="tns:createCreditOfferDacResponse" name="createCreditOfferDacResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="setVideoIdentExternData">
+            <wsdl:input message="tns:setVideoIdentExternData" name="setVideoIdentExternData"></wsdl:input>
+            <wsdl:output message="tns:setVideoIdentExternDataResponse"
+                         name="setVideoIdentExternDataResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="activateCommunication">
+            <wsdl:input message="tns:activateCommunication" name="activateCommunication"></wsdl:input>
+            <wsdl:output message="tns:activateCommunicationResponse" name="activateCommunicationResponse"></wsdl:output>
+            <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="EfinComparerServiceSoapBinding" type="tns:EfinComparer">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getContracts">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getContracts">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getContractsResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="startDispatch">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="startDispatch">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="startDispatchResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDocument">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getDocument">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDocumentResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createCreditOffer">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="createCreditOffer">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createCreditOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="cancelCreditOffer">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="cancelCreditOffer">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="cancelCreditOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDocumentVideoIdent">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getDocumentVideoIdent">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDocumentVideoIdentResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createCreditOfferDac">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="createCreditOfferDac">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createCreditOfferDacResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="setVideoIdentExternData">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="setVideoIdentExternData">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="setVideoIdentExternDataResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="activateCommunication">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="activateCommunication">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="activateCommunicationResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EfinComparerFaultException">
+                <soap:fault name="EfinComparerFaultException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="EfinComparerService">
+        <wsdl:port binding="tns:EfinComparerServiceSoapBinding" name="EfinComparerPort">
+            <soap:address location="https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/"/>
+            <wsp:PolicyReference URI="#UsernameToken"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" wsu:Id="UsernameToken">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:SupportingTokens>
+                    <wsp:Policy>
+                        <sp:UsernameToken
+                                sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:HashPassword/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SupportingTokens>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

@@ -1,0 +1,200 @@
+POST {{host}}distributionline/api/rest/partnerendpoints
+Content-Type: application/x-www-form-urlencoded
+urlkey: {{urlkey}}
+Accept: application/json
+
+{
+  "income":{
+      "total":5085679,
+      "other":85679,
+      "child_benefits":0,
+      "net_income":5000000
+   },
+   "external_id":"beada239-0405-4c68-bfb0-871090aafe10",
+   "contact_data":{
+      "telephone":"0049123456789",
+      "living_since":"2010-01-01",
+      "city":"Berlin",
+      "street_number":"32",
+      "mobile_telephone":"0049123456789",
+      "street_name":"Hardenbergstraße",
+      "zip_code":"10623",
+      "email":"b1-nonqs@auxmoney.com"
+   },
+   "employer_data":{
+      "zip":"10587",
+      "city":"Berlin",
+      "street":"Hardenberstr.",
+      "company":"Joonko AG",
+      "since":"2012-05-01"
+   },
+   "bank_data": {
+    "iban": "DE12500105170648489890",
+    "bic": "BYLADEM1001"
+  },
+   "digital_account_statements": [
+    {
+      "name": "Personal Loan Account",
+      "owner": "Nicolai Nussbeck",
+      "dac_source": "Arvato",
+      "category": "private",
+      "iban": "DE12347588880012345678",
+      "bic": "MALADE23III",
+      "type": "Loan account",
+      "balance": 200.03,
+      "dispo_limit": -1000,
+      "balance_date": "2018-06-03",
+      "currency": "EUR",
+      "transactions": [
+        {
+          "name": "Alexandra Harter",
+          "amount": -74.86,
+          "iban": "DE62888888880012345678",
+          "bic": "TESTDE88XXX",
+          "bank_name": "Testbank",
+          "currency": "EUR",
+          "booking_date": "2018-06-03",
+          "purpose": "CASH CashMgmtTransakt Kredit",
+          "type": "",
+          "booked": 1,
+          "visited": 1,
+          "classification_bank": "classification by bank",
+          "classification_own": "classification by ourself",
+          "classification_provider": "classification by provider",
+          "booking_text": "this is the booking text",
+          "saldo": 500
+        },
+        {
+          "name": "Giuliano Gross",
+          "amount": -74.86,
+          "iban": "DE62888888880012345678",
+          "bic": "TESTDE88XXX",
+          "bank_name": "Testbank",
+          "currency": "EUR",
+          "booking_date": "2018-06-03",
+          "purpose": "CASH CashMgmtTransakt Kredit",
+          "type": "",
+          "booked": 1,
+          "visited": 1,
+          "classification_bank": "classification by bank",
+          "classification_own": "classification by ourself",
+          "classification_provider": "classification by provider",
+          "booking_text": "this is the booking text",
+          "saldo": 500
+        }
+      ]
+    },
+    {
+      "name": "Business-Konto",
+      "owner": "Maxim Kramer",
+      "category": "business",
+      "iban": "DE12347588880012345678",
+      "bic": "MALADE23III",
+      "type": "Loan account",
+      "balance": 200.03,
+      "dispo_limit": -1000,
+      "balance_date": "2018-06-03",
+      "currency": "EUR",
+      "transactions": [
+        {
+          "name": "Marla Mrugalla",
+          "amount": -74.86,
+          "iban": "DE62888888880012345678",
+          "bic": "TESTDE88XXX",
+          "bank_name": "Testbank",
+          "currency": "EUR",
+          "booking_date": "2018-06-03",
+          "purpose": "CASH CashMgmtTransakt Kredit",
+          "type": "",
+          "booked": 1,
+          "visited": 1,
+          "classification_bank": "classification by bank",
+          "classification_own": "classification by ourself",
+          "classification_provider": "classification by provider",
+          "booking_text": "this is the booking text",
+          "saldo": 500
+        },
+        {
+          "name": "Hr. Jacqueline Eifert",
+          "amount": -74.86,
+          "iban": "DE62888888880012345678",
+          "bic": "TESTDE88XXX",
+          "bank_name": "Testbank",
+          "currency": "EUR",
+          "booking_date": "2018-06-03",
+          "purpose": "CASH CashMgmtTransakt Kredit",
+          "type": "",
+          "booked": 1,
+          "visited": 1,
+          "classification_bank": "classification by bank",
+          "classification_own": "classification by ourself",
+          "classification_provider": "classification by provider",
+          "booking_text": "this is the booking text",
+          "saldo": 500
+        }
+      ]
+    }
+  ],
+  "loan_asked": 5000,
+  "duration": 24,
+  "category": 1,
+  "rsv": 0,
+  "collection_day": 15,
+  "is_accepted_terms_of_service": true,
+  "is_accepted_solvency_retrieval": true,
+  "personal_data": {
+    "address": 1,
+    "forename": "Max",
+    "surname": "Mustermann",
+    "family_status": 2,
+    "birth_date": "1969-01-01",
+    "nationality": "DE",
+    "occupation": 2,
+    "has_credit_card": 1,
+    "has_ec_card": 1,
+    "has_real_estate": 1,
+    "main_earner": 1,
+    "housing_type": 1,
+    "car_owner": 1,
+    "tax_identification_number": 59614208938
+  },
+  "expenses": {
+    "rent_and_mortgage": 10050,
+    "support_expenses": 5000,
+    "insurance_and_savings": 14860,
+    "memberships": 50000,
+    "debt_expenses": 30000,
+    "living_expenses": 5090,
+    "other": 20000,
+    "total_expenses": 135000
+  }
+}
+> {%
+    var status = response.body.is_success;
+    client.assert(status === true, 'status should be true');
+    var offers = response.body.offers;
+    client.assert(offers && offers.length >= 1, 'Offers should present');
+    var prices = response.body.offers[0].prices;
+    client.assert(prices && prices.length >= 1, 'prices should present');
+    client.global.set("credit_id", response.body.credit_id);
+    client.global.set("user_id", response.body.user_id);
+    client.global.set("price_id", response.body.offers[0].prices[0].price_id);
+%}
+
+### Accept the offer
+POST {{host}}distributionline/api/rest/partnerendpoints/offers/accepts
+Content-Type: application/x-www-form-urlencoded
+urlkey: {{urlkey}}
+Accept: application/json
+
+{
+  "user_id": {{user_id}},
+  "credit_id": {{credit_id}},
+  "price_id": {{price_id}},
+  "bank_data": {
+    "iban": "DE41600400617256315930",
+    "bic": "COBADEFFXXX"
+  }
+}
+
+###

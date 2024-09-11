@@ -1,0 +1,44 @@
+### Create user action
+
+POST  {{host}}api/v2/user-actions
+Authorization: Basic {{username}} {{password}}
+Content-Type: application/json
+
+{
+  "transactionId": "5f64c44bf5c0e4595dea3009",
+  "actionType": "sig",
+  "identMode": "video_ident",
+  "preferredLanguage": "EN",
+  "user": {
+    "sex": "MALE",
+    "firstname": "Hartmut",
+    "lastname": "Mustermanno",
+    "dateOfBirth": "1987-05-23",
+    "address": {
+      "street": "Baker Street",
+      "streetNo": "5",
+      "zip": "W1U",
+      "city": "London",
+      "country": "GB"
+    },
+    "contact": {
+      "email": "rashmin.javiya@joonko.io",
+      "cell": "01789012345",
+      "phone": "01789012345"
+    }
+  },
+  "processParameters": {
+    "redirectUrl": "https://stg-loan-client.joonkostaging.de/closure?transaction-number={transaction_id}",
+    "redirectDeclineUrl": "https://stg-loan-client.joonkostaging.de/kyc-retry?transaction-number={transaction_id}&r=false",
+    "redirectSkipQesUrl": "https://stg-loan-client.joonkostaging.de/kyc-retry?transaction-number={transaction_id}&r=true",
+    "redirectCancelIdentUrl": "https://stg-loan-client.joonkostaging.de/kyc-retry?transaction-number={transaction_id}&r=true",
+    "productType": "Loan Application"
+  },
+  "customParameters": {
+    "md": "413",
+    "md_ti": "5f64c44bf5c0e4595dea3009"
+  },
+  "termsAndConditionsConfirmed": true
+}
+
+###

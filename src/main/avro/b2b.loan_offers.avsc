@@ -1,0 +1,184 @@
+{
+  "type": "record",
+  "name": "LoanOffersMessage",
+  "namespace": "de.joonko.loan.avro.dto.loan_offers",
+  "fields": [
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "userId",
+      "type": "long"
+    },
+    {
+      "name": "userUUID",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "applicationId",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "updatedOfferId",
+      "default": null,
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ]
+    },
+    {
+      "name": "updateType",
+      "default": null,
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "requestedLoanAmount",
+      "type": [
+        "null",
+        "float"
+      ]
+    },
+    {
+      "default": null,
+      "name": "askedForBonifyLoans",
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    {
+      "default": null,
+      "name": "bonifyLoansCount",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "default": null,
+      "name": "otherLoansCount",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "offers_record",
+          "fields": [
+            {
+              "name": "amount",
+              "type": "float"
+            },
+            {
+              "name": "durationInMonth",
+              "type": "int"
+            },
+            {
+              "name": "effectiveInterestRate",
+              "type": "float"
+            },
+            {
+              "name": "nominalInterestRate",
+              "type": "float"
+            },
+            {
+              "name": "monthlyRate",
+              "type": "float"
+            },
+            {
+              "name": "totalPayment",
+              "type": "float"
+            },
+            {
+              "name": "loanProvider",
+              "type": {
+                "type": "string",
+                "avro.java.string": "String"
+              }
+            },
+            {
+              "name": "kycUrl",
+              "default": null,
+              "type": [
+                "null",
+                {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              ]
+            },
+            {
+              "name": "kycStatus",
+              "default": null,
+              "type": [
+                "null",
+                {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              ]
+            },
+            {
+              "name": "offerStatus",
+              "default": null,
+              "type": [
+                "null",
+                {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              ]
+            },
+            {
+              "name": "offerId",
+              "default": null,
+              "type": [
+                "null",
+                {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              ]
+            },
+            {
+              "name": "loanProviderReferenceNumber",
+              "default": null,
+              "type": [
+                "null",
+                {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

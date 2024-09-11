@@ -1,0 +1,11 @@
+{
+            "Comment": "Please don't change this file at all",
+            "Changes": [{
+            "Action": "DELETE",
+                        "ResourceRecordSet": {
+                                    "Name": "default.joonkostaging.de",
+                                    "Type": "CNAME",
+                                    "TTL": 300,
+                                 "ResourceRecords": [{ "Value": "ambassador.joonkostaging.de"}]
+}}]
+}

@@ -1,0 +1,19 @@
+{{- $root := . }}
+{{- $defaults := .Values.ambassador.defaults }}
+{{- range $_, $mapping := .Values.ambassador.mappings }}
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: {{ printf "%s-%s" (include "loan.fullname" $root) $mapping.name | trimSuffix "-" }}
+  namespace: {{ $mapping.namespace | default $defaults.namespace }}
+spec:
+  host: {{ $mapping.host | default $defaults.host }}
+  prefix: {{ $mapping.prefix }}
+  {{- if $mapping.rewrite }}
+  rewrite: {{ $mapping.rewrite }}
+  {{- end }}
+  service: {{ tpl ($mapping.service | default $defaults.service) $root }}
+  timeout_ms: {{ $mapping.timeout_ms | default $defaults.timeout_ms }}
+  ambassador_id: {{ $mapping.ambassador_id | default $defaults.ambassador_id }}
+{{- end }}

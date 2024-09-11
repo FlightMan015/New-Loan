@@ -1,0 +1,117 @@
+# Default values for loan.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 3
+revisionHistoryLimit: 1
+
+image:
+  repository: 881590245028.dkr.ecr.eu-central-1.amazonaws.com/loan/master
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  # Historical usage:
+  # cpu: max 80m, avg 5m
+  # mem: max 700Mi, avg 600Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 85
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+volumeMounts:
+  - mountPath: "/keys"
+    name: docdbjks
+    readOnly: true
+
+volumes:
+  - name: docdbjks
+    secret:
+      secretName: docdbjks
+
+livenessProbe:
+  enabled: false
+  path: /health
+  initialDelaySeconds: 60
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+
+readinessProbe:
+  enabled: true
+  path: /actuator/health
+  initialDelaySeconds: 1
+  periodSeconds: 1
+  timeoutSeconds: 3
+  failureThreshold: 3
+  successThreshold: 1
+
+# Specify the port where your application will be running
+applicationPort: 8080
+
+ambassador:
+  # Ambassador mappings defaults: will use them if not overridden in mappings entry
+  defaults:
+    namespace: default
+    host: api-digital.bonify.de
+    timeout_ms: 300000
+    ambassador_id: public
+    service: 'http://{{ (include "loan.serviceURL" .) }}'
+  # List of ambassador mappings
+  mappings:
+    - name: loan
+      prefix: /loan/
+      rewrite: /loan/
+    - name: api
+      prefix: /api/
+      rewrite: /api/
+
+cronJobOfferStatus:
+  enabled: true

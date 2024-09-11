@@ -1,0 +1,6 @@
+DELETE {{api-digital-url}}/admin/v1/user/fts
+Authorization: Basic {{admin-user}} {{admin-password}}
+Content-Type: application/json
+
+###
+

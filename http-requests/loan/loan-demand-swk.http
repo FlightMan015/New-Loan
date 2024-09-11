@@ -1,0 +1,3776 @@
+POST {{consumer-loans}}/loan/demand/?internal-use=true
+Content-Type: application/json
+
+{
+  "dacId": "daca03f5-edb8-4706-b145-d8600f1ff427",
+  "loanAsked": 5000,
+  "personalDetails": {
+    "gender": "MALE",
+    "familyStatus": "MARRIED",
+    "firstName": "Hartmut",
+    "lastName": "Mustermann",
+    "nationality": "DE",
+    "birthDate": "1980-01-01",
+    "numberOfChildren": 0,
+    "housingType": "RENT",
+    "numberOfCreditCard": "1",
+    "placeOfBirth": "Berlin",
+    "carInformation": true
+  },
+  "employmentDetails": {
+    "employerName": "FinTecSystems GmbH",
+    "employmentType": "REGULAR_EMPLOYED",
+    "streetName": "Hardenbergstraße",
+    "postCode": "10623",
+    "city": "Berlin",
+    "employmentSince": {
+      "month": 1,
+      "year": 2010
+    },
+    "professionEndDate": {}
+  },
+  "expenses": {
+    "alimony": 0,
+    "insuranceAndSavings": 86.37,
+    "loanInstalments": 257.38,
+    "mortgages": 0,
+    "privateHealthInsurance": 935.5899999999999,
+    "rent": 962,
+    "loanInstallmentsSwk": 128.69,
+    "vehicleInsurance": 0,
+    "acknowledgedRent": 962,
+    "acknowledgedMortgages": 0
+  },
+  "income": {
+    "alimonyPayments": 0,
+    "childBenefits": 0,
+    "netIncome": 10000,
+    "otherRevenue": 181.88,
+    "pensionBenefits": 0,
+    "rentalIncome": 100,
+    "acknowledgedNetIncome": 10000
+  },
+  "accountDetails": {
+    "balance": 2123,
+    "balanceDate": "2020-08-25",
+    "bic": "TESTDE88XXX",
+    "currency": "EUR",
+    "iban": "DE36500105177243855757",
+    "limit": 1000,
+    "nameOnAccount": "MUSTERMANN, HARTMUT",
+    "transactions": [
+      {
+        "amount": -9.55,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-25",
+        "purpose": "ABSCHLUSS KEINE BELEG INFORMATIONEN, SIEHE GGF. KONTOAUSZUG !",
+        "isPreBooked": false
+      },
+      {
+        "amount": -962,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-25",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2.66,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-23",
+        "purpose": "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -128.69,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-22",
+        "purpose": "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566",
+        "isPreBooked": false
+      },
+      {
+        "amount": 100,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-22",
+        "purpose": "SEPA-GUTSCHRIFT FELIX nebenkosten rueckerstattung 2015",
+        "isPreBooked": false
+      },
+      {
+        "amount": -87.3,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-22",
+        "purpose": "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-22",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -40.36,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-22",
+        "purpose": "SEPA BASISLASTSCHRIFT IM AUFTR.V. HUK24 AG HUK24, HAUSRAT-VERSICHERUNG 1234567 KUNDENREFERENZ 123456 29. 12.16 760/593847-V-14F MANDATSREFERENZ MB027129219 GLAEUBIGER-ID DE17ZZZ0000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": 3009,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-21",
+        "purpose": "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 12/16 KUNDENREFERENZ 7235703105-0 001008LG0000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -15.55,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-21",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100042965042 7 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-21",
+        "purpose": "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-20",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -39.5,
+        "iban": "",
+        "bic": "BYLADEMMXXX",
+        "bookingDate": "2020-08-19",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER LMU MUENCHEN ZAHLSTELLE IBAN DE234234234234 BIC BYLADEMMXXX Order-Nr. 24234234 VERWENDUNGSZWECK 23424234 20 171 LMU Rueckmeldung SoSe 2017",
+        "isPreBooked": false
+      },
+      {
+        "amount": -19.96,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-18",
+        "purpose": "SEPA BASISLASTSCHRIFT Penny Hohenzollern 040118540826013191256012784 PENNY SAGT DANKE. 66300183 KUNDENREFERENZ 040118540826 013191256012784 MANDATSREFERENZ 56012784030 01701041854 GLAEUBIGER-ID DE53ZZZ00000257229",
+        "isPreBooked": false
+      },
+      {
+        "amount": -195,
+        "iban": "",
+        "bic": "OBKLDEMXXXX",
+        "bookingDate": "2020-08-18",
+        "purpose": "SEPA-ONLINE UEBERWEISUNG JOHANNES Mustermann BIC OBKLDEMXXXX/IBAN DE24234234234234 Silvester Pauschale INTERNET 23.12.2016/16:38 TAN 122093 REFERENZNR VPE1612231602000 000065539",
+        "isPreBooked": false
+      },
+      {
+        "amount": -50,
+        "iban": "",
+        "bic": "NTSBDEB1XXX",
+        "bookingDate": "2020-08-15",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung",
+        "isPreBooked": false
+      },
+      {
+        "amount": -89.86,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-11",
+        "purpose": "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 01/17",
+        "isPreBooked": false
+      },
+      {
+        "amount": -3,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-11",
+        "purpose": "SEPA BASISLASTSCHRIFT IM AUFTR.V. Call a Bike 72272641701041 Ihre Rechnung vom 04.01.17 KUNDENREFERENZ 234234234234 41 MANDATSREFERENZ 234234234 GLAEUBIGER-ID DE89DBR234234234324",
+        "isPreBooked": false
+      },
+      {
+        "amount": -48.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-10",
+        "purpose": "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2.7,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-10",
+        "purpose": "SEPA BASISLASTSCHRIFT LOGPAY FINANCIAL SERVICES G MBH LogPay OnlineTicket i.A.v. Berliner Verkehrsb. BVG Aoe R. Ihre Kundennr. 123456 KUNDENREFERENZ ZAA002291571 5 MANDATSREFERENZ 1010480340 GLAEUBIGER-ID DE90LPY00000046849",
+        "isPreBooked": false
+      },
+      {
+        "amount": -1013.43,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-10",
+        "purpose": "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -224.15,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-09",
+        "purpose": "EC-GAA/POS PENNY SAGT DANKE Muenchen S chwabi 13.12.2016 17:36 Uhr C KF03 EC-TERMINAL 56012784 E2E-ID 56012784081427131216 173608",
+        "isPreBooked": false
+      },
+      {
+        "amount": -28.8,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-09",
+        "purpose": "EC-GAA/POS KREISVERWALTUNGS Muenchen 13.12.2016 16:08 Uhr C KF03 EC-TERMINAL 55623752 E2E-ID 55623752017858131216 160859",
+        "isPreBooked": false
+      },
+      {
+        "amount": -905.38,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-09",
+        "purpose": "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 12/16",
+        "isPreBooked": false
+      },
+      {
+        "amount": -496.96,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-08",
+        "purpose": "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -48.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-08",
+        "purpose": "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111",
+        "isPreBooked": false
+      },
+      {
+        "amount": -137.88,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-08",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . LIDL SHOP, Ihr Einkauf bei LIDL SHOP KUNDENREFERENZ 100048079554 5 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -500,
+        "iban": "DE23100110012626167797",
+        "bic": "NTSBDEB1XXX",
+        "bookingDate": "2020-08-07",
+        "purpose": "SEPA-ONLINE UEBERWEISUNG HARTMUT MUSTERMANN BIC NTSBDEB1XXX/IBAN DE23100110012626167797 N26 Kartenaufladung INTERNET 16.01.2017/18:57 TAN 646622 REFERENZNR VPE1701171601000 000064990",
+        "isPreBooked": false
+      },
+      {
+        "amount": -162,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-07",
+        "purpose": "EC-GAA/POS MOLINARI KO BERLIN 09.12.2016 22:29 Uhr C KF03 EC-TERMINAL 68023880 E2E-ID 68023880059269091216 222914",
+        "isPreBooked": false
+      },
+      {
+        "amount": 100,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-07",
+        "purpose": "SEPA-GUTSCHRIFT Geschenk KUNDENREFERENZ 1111201679337 00965547786",
+        "isPreBooked": false
+      },
+      {
+        "amount": 79.95,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-07",
+        "purpose": "SEPA-GUTSCHRIFT SPORTLER AG Nota Cr. NW-17.11111",
+        "isPreBooked": false
+      },
+      {
+        "amount": -16.96,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-06",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100049463821 6 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -10,
+        "iban": "",
+        "bic": "NTSBDEB1XXX",
+        "bookingDate": "2020-08-04",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung",
+        "isPreBooked": false
+      },
+      {
+        "amount": 518.84,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-02",
+        "purpose": "SEPA-GUTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345 LEISTUNGEN A RAG-KV KUNDENREFERENZ 12345 18",
+        "isPreBooked": false
+      },
+      {
+        "amount": 108,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-01",
+        "purpose": "SEPA-GUTSCHRIFT Feuerwerk Danke KUNDENREFERENZ E2EC28624802 33170120135422000001",
+        "isPreBooked": false
+      },
+      {
+        "amount": -300,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-01",
+        "purpose": "EC-GAA/POS Postbank Muenchen 20.01.2017 08:16 Uhr GANR 56000166 Verfalldatum 12/19 KF 3",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-08-01",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -39.5,
+        "iban": "",
+        "bic": "BYLADEMMXXX",
+        "bookingDate": "2020-07-31",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER LMU MUENCHEN ZAHLSTELLE IBAN DE234234234234 BIC BYLADEMMXXX Order-Nr. 24234234 VERWENDUNGSZWECK 23424234 20 171 LMU Rueckmeldung SoSe 2018",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-31",
+        "purpose": "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -10.82,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-31",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . DELIVEROODE, Ihr Einkauf bei DELIVEROODE KUNDENREFERENZ YYIJ222229LE 9ANJ PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2.66,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-30",
+        "purpose": "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -7.47,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-30",
+        "purpose": "EC-GAA/POS 00300 MCDONALDS MUENCHEN",
+        "isPreBooked": false
+      },
+      {
+        "amount": -81.93,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-29",
+        "purpose": "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": 2500,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-28",
+        "purpose": "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 11/16 KUNDENREFERENZ 7232700557-0 001008LG0000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -73.84,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-28",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . I-CLIP, Ihr Einkauf bei I-CLIP KUNDENREFERENZ 100026891760 6 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -128.69,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-27",
+        "purpose": "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566",
+        "isPreBooked": false
+      },
+      {
+        "amount": -962,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-27",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-27",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -48.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-24",
+        "purpose": "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111",
+        "isPreBooked": false
+      },
+      {
+        "amount": -16.12,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-24",
+        "purpose": "SEPA BASISLASTSCHRIFT REWE GM Muenchen/S 280116350691553191256007519 REWE SAGT DANKE. 46400953 KUNDENREFERENZ 280116350691 553191256007519 MANDATSREFERENZ 56007519876 31701281635 GLAEUBIGER-ID DE58ZZZ00000257236",
+        "isPreBooked": false
+      },
+      {
+        "amount": -20.76,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-24",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100055786044 7 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -245.46,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-24",
+        "purpose": "EC-GAA/POS PENNY SAGT DANKE Muenchen S chwabi 26.11.2016 19:38 Uhr C KF03 EC-TERMINAL 56012785 E2E-ID 56012785119191261116 193843",
+        "isPreBooked": false
+      },
+      {
+        "amount": -128.69,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-23",
+        "purpose": "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566",
+        "isPreBooked": false
+      },
+      {
+        "amount": -962,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-23",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-23",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -39,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-22",
+        "purpose": "SEPA-ONLINE UEBERWEISUNG HUK COBURG UNTERNHEMENSGRUP BIC BYLA234234234/IBAN DE123423423423 000659968518 J KFZ-HAFTPFLI CHT GEBUEHR INTERNET 27.03.2016/23:12 TAN 431382 REFERENZNR VPE1603291504000 000270146",
+        "isPreBooked": false
+      },
+      {
+        "amount": -44.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-22",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . DBVERTRIEBG, Ihr Einkauf bei DBVERTRIEBG KUNDENREFERENZ 100056598300 8 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": 3236.76,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-22",
+        "purpose": "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 01/17 KUNDENREFERENZ 7202314348-0 001008LG0000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -349.41,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-21",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . KELLERSPORT, Ihr Einkauf bei KELLERSPORT KUNDENREFERENZ 100057210870 0 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -93.81,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-21",
+        "purpose": "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -39.5,
+        "iban": "",
+        "bic": "BYLADEMMXXX",
+        "bookingDate": "2020-07-21",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER LMU MUENCHEN ZAHLSTELLE IBAN DE234234234234 BIC BYLADEMMXXX Order-Nr. 24234234 VERWENDUNGSZWECK 23424234 20 171 LMU Rueckmeldung SoSe 2019",
+        "isPreBooked": false
+      },
+      {
+        "amount": -7.65,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-21",
+        "purpose": "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-21",
+        "purpose": "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": 50,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-19",
+        "purpose": "SEPA-GUTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345 LEISTUNGEN A RAG-KV KUNDENREFERENZ 12345 36",
+        "isPreBooked": false
+      },
+      {
+        "amount": -47.37,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-18",
+        "purpose": "SEPA BASISLASTSCHRIFT Zurich Insurance plc Nieder lassung fuer Deutschland MULTIPLUS 234234234 BEIT RAG 201116 47,37 KUNDENREFERENZ ABBUCHUNGSNR .1031526 24243 MANDATSREFERENZ 02146672548 GLAEUBIGER-ID DE38ZZZ00000023244",
+        "isPreBooked": false
+      },
+      {
+        "amount": -16.95,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-18",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . mvh-racing, Ihr Einkauf bei mvh-racing, Artikel-351341044036 KUNDENREFERENZ 100057827109 6 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-18",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -271.4,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-17",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . DEICHMANNSE, Ihr Einkauf bei DEICHMANNSE KUNDENREFERENZ 100058236878 3 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -50,
+        "iban": "",
+        "bic": "NTSBDEB1XXX",
+        "bookingDate": "2020-07-15",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung",
+        "isPreBooked": false
+      },
+      {
+        "amount": 131.88,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-13",
+        "purpose": "SEPA-GUTSCHRIFT SPORTLER AG Nota Cr. NW-17-22222",
+        "isPreBooked": false
+      },
+      {
+        "amount": -9.15,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-12",
+        "purpose": "EC-GAA/POS DM FIL.1111 H:65154 14.11.2016 18:43 Uhr C EC-TERMINAL65154336 E2E-ID 65154336931256141116184320",
+        "isPreBooked": false
+      },
+      {
+        "amount": -438.63,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-11",
+        "purpose": "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -200,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-11",
+        "purpose": "GELDAUTOMAT HYPOVEREINSBANK Muenchen 10.02.2017 18:35 UHR GANR 00008764 VERFALLDATUM 12/19 KF 3",
+        "isPreBooked": false
+      },
+      {
+        "amount": -69.98,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-10",
+        "purpose": "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 11/16",
+        "isPreBooked": false
+      },
+      {
+        "amount": -92.73,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-10",
+        "purpose": "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 02/17",
+        "isPreBooked": false
+      },
+      {
+        "amount": -79.8,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-10",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . DEICHMANNSE, Ihr Einkauf bei DEICHMANNSE KUNDENREFERENZ 100061453503 4 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -496.96,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-09",
+        "purpose": "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -48.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-09",
+        "purpose": "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111",
+        "isPreBooked": false
+      },
+      {
+        "amount": -12,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-08",
+        "purpose": "SEPA BASISLASTSCHRIFT nextbike GmbH GEBUEHREN MVG RAD KDNR. 498 234234324 KUNDENREFERENZ 24324324234 077 MANDATSREFERENZ 49892361203 7077 GLAEUBIGER-ID DE02ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -200,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-07",
+        "purpose": "GELDAUTOMAT HYPOVEREINSBANK Muenchen 10.11.2016 19:26 UHR GANR 00008764 VERFALLDATUM 12/19 KF 3",
+        "isPreBooked": false
+      },
+      {
+        "amount": -10,
+        "iban": "",
+        "bic": "NTSBDEB1XXX",
+        "bookingDate": "2020-07-05",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung",
+        "isPreBooked": false
+      },
+      {
+        "amount": -7,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-04",
+        "purpose": "SEPA BASISLASTSCHRIFT LOGPAY FINANCIAL SERVICES G MBH LogPay OnlineTicket i.A.v. Berliner Verkehrsb. BVG Aoe R. Ihre Kundennr. 123456 KUNDENREFERENZ ZAA002291571 5 MANDATSREFERENZ 1010480340 GLAEUBIGER-ID DE90LPY00000046849",
+        "isPreBooked": false
+      },
+      {
+        "amount": -148.31,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-04",
+        "purpose": "SEPA BASISLASTSCHRIFT IKEA 343 BRUNNTHAL ELV54247659 05.11 13.36 ME3 KUNDENREFERENZ T01611055424 7659155694 MANDATSREFERENZ 54247659110 51611051336 GLAEUBIGER-ID DE67ZZZ00000169386",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2.8,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-02",
+        "purpose": "SEPA BASISLASTSCHRIFT LOGPAY FINANCIAL SERVICES G MBH LogPay OnlineTicket i.A.v. Berliner Verkehrsb. BVG Aoe R. Ihre Kundennr. 123456 KUNDENREFERENZ ZAA002291571 5 MANDATSREFERENZ 1010480340 GLAEUBIGER-ID DE90LPY00000046849",
+        "isPreBooked": false
+      },
+      {
+        "amount": -12.96,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-07-01",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100066683878 0 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 12312313-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35E1313123213 KUNDENREFERENZ S301118197-8 50721713012016030410001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -42,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652",
+        "isPreBooked": false
+      },
+      {
+        "amount": -79.34,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-30",
+        "purpose": "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": 2500,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-29",
+        "purpose": "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 10/16 KUNDENREFERENZ 7229412325-0 001008LG0000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-29",
+        "purpose": "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -34.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-28",
+        "purpose": "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -7.65,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-27",
+        "purpose": "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -962,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-27",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN",
+        "isPreBooked": false
+      },
+      {
+        "amount": -128.69,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-27",
+        "purpose": "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566",
+        "isPreBooked": false
+      },
+      {
+        "amount": -5.89,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-26",
+        "purpose": "SEPA CASHMANAGEMENT-BASISLA DETAILS SIEHE KONTO-AUSZUG!",
+        "isPreBooked": false
+      },
+      {
+        "amount": -23.3,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-26",
+        "purpose": "EC-GAA/POS VAPIANO 28.10.2016 13:17 Uhr C EC-TERMINAL55573762 E2E-ID 55573762033608281016131730",
+        "isPreBooked": false
+      },
+      {
+        "amount": -27,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-22",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . ADIDAS, Ihr Einkauf bei ADIDAS KUNDENREFERENZ 100010414670 8 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -63.14,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-22",
+        "purpose": "SEPA BASISLASTSCHRIFT IHRE TCHIBO FILIALE DANKT ELV65053382 25.10 15.04 ME 3 KUNDENREFERENZ 251015043176 234234234324234 MANDATSREFERENZ 65053382913 61610251504 GLAEUBIGER-ID DE10ZZZ000024234234324",
+        "isPreBooked": false
+      },
+      {
+        "amount": -4.5,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-21",
+        "purpose": "EC-GAA/POS DEUTSCHE POST 25.10.2016 14:50 Uhr C EC-TERMINAL58217828 E2E-ID 58217828031718251016145025",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2.66,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-21",
+        "purpose": "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -84.06,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-20",
+        "purpose": "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -19.71,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-20",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100009874841 6 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -223.69,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-19",
+        "purpose": "EC-GAA/POS REWE SAGT DANKE. 46400553 21.10.2016 16:38 Uhr C EC-TERMINAL56007007 E2E-ID 56007007119325211016163827",
+        "isPreBooked": false
+      },
+      {
+        "amount": -70,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-16",
+        "purpose": "EC-GAA/POS PLUTO UG - KATOPAZZO 19.10.2016 22:19 Uhr C EC-TERMINAL68200162 E2E-ID 68200162970187191016221917",
+        "isPreBooked": false
+      },
+      {
+        "amount": -45.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-14",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . IBOOD, Ihr Ein kauf bei IBOOD KUNDENREFERENZ 100008044816 2 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -11.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-13",
+        "purpose": "EC-GAA/POS VAPIANO 17.10.2016 13:14 Uhr C EC-TERMINAL55574711 E2E-ID 55574711032940171016131425",
+        "isPreBooked": false
+      },
+      {
+        "amount": -48.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-12",
+        "purpose": "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111",
+        "isPreBooked": false
+      },
+      {
+        "amount": -438.63,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-12",
+        "purpose": "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -19.27,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-09",
+        "purpose": "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 10/16",
+        "isPreBooked": false
+      },
+      {
+        "amount": -300,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-09",
+        "purpose": "EC-GAA/POS COMMERZBANK-AG M-PRINZREGEN 12.10.2016 19:44 Uhr GANR 00000592 Verfalldatum 12/19 KF 3",
+        "isPreBooked": false
+      },
+      {
+        "amount": -27.5,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-08",
+        "purpose": "EC-GAA/POS DM FIL.2222 H:65333 12.10.2016 14:20 Uhr C EC-TERMINAL65333591 E2E-ID 65333591846135121016142027",
+        "isPreBooked": false
+      },
+      {
+        "amount": -31.09,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-06",
+        "purpose": "SEPA BASISLASTSCHRIFT REWE Muenchen/Schw 081012591184223191256007007 REWE SAGT DANKE. 46400553 KUNDENREFERENZ 081012591184 223191256007007 MANDATSREFERENZ 56007007925 11610081259 GLAEUBIGER-ID DE58ZZZ00000257236",
+        "isPreBooked": false
+      },
+      {
+        "amount": -86.46,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-06",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . BADAPOTHEKE, Ihr Einkauf bei BADAPOTHEKE KUNDENREFERENZ YYIJ222228MU ENJW PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -189,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-05",
+        "purpose": "EC-GAA/POS DB AUTOMAT 07.10.2016 18:51 Uhr C EC-TERMINAL59080764 E2E-ID 59080764137513071016185130",
+        "isPreBooked": false
+      },
+      {
+        "amount": -81.05,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-06-05",
+        "purpose": "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . AG, Ihr Einkau f bei AG KUNDENREFERENZ YYIJ222228MA 9C2L PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058",
+        "isPreBooked": false
+      },
+      {
+        "amount": -10,
+        "iban": "",
+        "bic": "NTSBDEB1XXX",
+        "bookingDate": "2020-06-02",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung",
+        "isPreBooked": false
+      },
+      {
+        "amount": 2500,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-05-31",
+        "purpose": "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 09/16 KUNDENREFERENZ 7226505940-0 001008LG0000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -128.69,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-05-30",
+        "purpose": "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566",
+        "isPreBooked": false
+      },
+      {
+        "amount": -4.88,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-05-30",
+        "purpose": "ABSCHLUSS KEINE BELEG INFORMATIONEN, SIEHE GGF. KONTOAUSZUG !",
+        "isPreBooked": false
+      },
+      {
+        "amount": -2,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-05-29",
+        "purpose": "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000",
+        "isPreBooked": false
+      },
+      {
+        "amount": -303.9,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-05-29",
+        "purpose": "EC-GAA/POS Fil. M Barerstr. Muenchen 01.10.2016 01:49 Uhr GANR 00000192 Verfalldatum 12/19 KF 3 Entgelt 3,90 Euro",
+        "isPreBooked": false
+      }
+    ]
+  },
+  "contactData": {
+    "city": "Berlin",
+    "streetName": "Hardenbergstraße",
+    "houseNumber": "32",
+    "postCode": "10623",
+    "email": "sponene@gmail.com",
+    "mobile": "491234567890",
+    "livingSince": {
+      "month": 7,
+      "year": 2018
+    }
+  },
+  "accountSnapshot": {
+    "account": {
+      "holder": "MUSTERMANN, HARTMUT",
+      "description": "Girokonto",
+      "iban": "DE62888888880012345678",
+      "bic": "TESTDE88XXX",
+      "bank_name": "Testbank",
+      "country_id": "DE",
+      "joint_account": false
+    },
+    "balance": {
+      "balance": 2123,
+      "limit": 1000,
+      "available": 3123,
+      "currency": "EUR",
+      "date": "2020-08-25"
+    },
+    "turnovers": [
+      {
+        "booking_date": "2020-08-25",
+        "amount": -9.55,
+        "currency": "EUR",
+        "purpose": [
+          "ABSCHLUSS KEINE BELEG INFORMATIONEN, SIEHE GGF. KONTOAUSZUG !"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "banking-fees"
+        ],
+        "category_id": "K.8.2.1"
+      },
+      {
+        "booking_date": "2020-08-25",
+        "amount": -962,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HAUSVERWALTUNG Musterhaus",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "rent-habitation",
+          "rent"
+        ],
+        "category_id": "K.2.1"
+      },
+      {
+        "booking_date": "2020-08-23",
+        "amount": -2.66,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "maxdome GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "media",
+          "direct-debit"
+        ],
+        "category_id": "K.5.1.2.2"
+      },
+      {
+        "booking_date": "2020-08-22",
+        "amount": -128.69,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "COMMERZ FINANZ GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit",
+          "direct-debit"
+        ],
+        "category_id": "A.5.1"
+      },
+      {
+        "booking_date": "2020-08-22",
+        "amount": 100,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GUTSCHRIFT FELIX nebenkosten rueckerstattung 2015"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Felix Mustermann",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "revenue",
+          "rental-revenue-habitation",
+          "rent",
+          "refund"
+        ],
+        "category_id": "E.3.4"
+      },
+      {
+        "booking_date": "2020-08-22",
+        "amount": -87.3,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Telekom Deutschland GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.2"
+      },
+      {
+        "booking_date": "2020-08-22",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-08-22",
+        "amount": -40.36,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IM AUFTR.V. HUK24 AG HUK24, HAUSRAT-VERSICHERUNG 1234567 KUNDENREFERENZ 123456 29. 12.16 760/593847-V-14F MANDATSREFERENZ MB027129219 GLAEUBIGER-ID DE17ZZZ0000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HUK24 AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "expenditure",
+          "insurance-indemnity-accident",
+          "direct-debit"
+        ],
+        "category_id": "K.8.1.1.2"
+      },
+      {
+        "booking_date": "2020-08-21",
+        "amount": 3009,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 12/16 KUNDENREFERENZ 7235703105-0 001008LG0000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FinTecSystems GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "income",
+          "revenue",
+          "salary"
+        ],
+        "category_id": "E.1.1"
+      },
+      {
+        "booking_date": "2020-08-21",
+        "amount": -15.55,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100042965042 7 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-08-21",
+        "amount": -2,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HOLDER",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "direct-debit"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-08-20",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Energy2day GmbH",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-08-19",
+        "amount": -39.5,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER LMU MUENCHEN ZAHLSTELLE IBAN DE234234234234 BIC BYLADEMMXXX Order-Nr. 24234234 VERWENDUNGSZWECK 23424234 20 171 LMU Rueckmeldung SoSe 2017"
+        ],
+        "counter_iban": "",
+        "counter_bic": "BYLADEMMXXX",
+        "counter_holder": "LMU MUENCHEN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-08-18",
+        "amount": -19.96,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Penny Hohenzollern 040118540826013191256012784 PENNY SAGT DANKE. 66300183 KUNDENREFERENZ 040118540826 013191256012784 MANDATSREFERENZ 56012784030 01701041854 GLAEUBIGER-ID DE53ZZZ00000257229"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Penny ",
+        "prebooked": false,
+        "creditor_id": "DE53ZZZ00000257229",
+        "tags": [
+          "expenditure",
+          "groceries",
+          "direct-debit"
+        ],
+        "category_id": "K.1.1.2"
+      },
+      {
+        "booking_date": "2020-08-18",
+        "amount": -195,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-ONLINE UEBERWEISUNG JOHANNES Mustermann BIC OBKLDEMXXXX/IBAN DE24234234234234 Silvester Pauschale INTERNET 23.12.2016/16:38 TAN 122093 REFERENZNR VPE1612231602000 000065539"
+        ],
+        "counter_iban": "",
+        "counter_bic": "OBKLDEMXXXX",
+        "counter_holder": "Johannes Mustermann",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-08-15",
+        "amount": -50,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung"
+        ],
+        "counter_iban": "",
+        "counter_bic": "NTSBDEB1XXX",
+        "counter_holder": "HARTMUT MUSTERMANN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "transfer"
+        ],
+        "category_id": "A.9.1"
+      },
+      {
+        "booking_date": "2020-08-11",
+        "amount": -89.86,
+        "currency": "EUR",
+        "purpose": [
+          "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 01/17"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HVB MasterCard",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit-card"
+        ],
+        "category_id": "K.99.2"
+      },
+      {
+        "booking_date": "2020-08-11",
+        "amount": -3,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IM AUFTR.V. Call a Bike 72272641701041 Ihre Rechnung vom 04.01.17 KUNDENREFERENZ 234234234234 41 MANDATSREFERENZ 234234234 GLAEUBIGER-ID DE89DBR234234234324"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": " Call a Bike",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "recreation",
+          "direct-debit"
+        ],
+        "category_id": "K.5.3.3"
+      },
+      {
+        "booking_date": "2020-08-10",
+        "amount": -48.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FITNESS FIRST GERMANY GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "recreation",
+          "direct-debit"
+        ],
+        "category_id": "A.3.3"
+      },
+      {
+        "booking_date": "2020-08-10",
+        "amount": -2.7,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT LOGPAY FINANCIAL SERVICES G MBH LogPay OnlineTicket i.A.v. Berliner Verkehrsb. BVG Aoe R. Ihre Kundennr. 123456 KUNDENREFERENZ ZAA002291571 5 MANDATSREFERENZ 1010480340 GLAEUBIGER-ID DE90LPY00000046849"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "LOGPAY FINANCIAL SERVICES GMBH",
+        "prebooked": false,
+        "creditor_id": "DE90LPY00000046849",
+        "tags": [
+          "expenditure",
+          "transport",
+          "direct-debit"
+        ],
+        "category_id": "K.4.3"
+      },
+      {
+        "booking_date": "2020-08-10",
+        "amount": -1013.43,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ARAG KRANKENVERSICHERUNG-AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "expenditure",
+          "insurance-health",
+          "insurance-health-private",
+          "direct-debit"
+        ],
+        "category_id": "K.8.1.4.1"
+      },
+      {
+        "booking_date": "2020-08-09",
+        "amount": -224.15,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS PENNY SAGT DANKE Muenchen S chwabi 13.12.2016 17:36 Uhr C KF03 EC-TERMINAL 56012784 E2E-ID 56012784081427131216 173608"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PENNY SAGT DANKE",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "groceries"
+        ],
+        "category_id": "K.1.1.2"
+      },
+      {
+        "booking_date": "2020-08-09",
+        "amount": -28.8,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS KREISVERWALTUNGS Muenchen 13.12.2016 16:08 Uhr C KF03 EC-TERMINAL 55623752 E2E-ID 55623752017858131216 160859"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "KREISVERWALTUNGS",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "living-cost"
+        ],
+        "category_id": "K.99.2"
+      },
+      {
+        "booking_date": "2020-08-09",
+        "amount": -905.38,
+        "currency": "EUR",
+        "purpose": [
+          "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 12/16"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit-card"
+        ],
+        "category_id": "K.99.2"
+      },
+      {
+        "booking_date": "2020-08-08",
+        "amount": -496.96,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ARAG KRANKENVERSICHERUNG-AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "expenditure",
+          "insurance-health",
+          "insurance-health-private",
+          "direct-debit"
+        ],
+        "category_id": "K.8.1.4.1"
+      },
+      {
+        "booking_date": "2020-08-08",
+        "amount": -48.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FITNESS FIRST GERMANY GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "recreation",
+          "direct-debit"
+        ],
+        "category_id": "A.3.3"
+      },
+      {
+        "booking_date": "2020-08-08",
+        "amount": -137.88,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . LIDL SHOP, Ihr Einkauf bei LIDL SHOP KUNDENREFERENZ 100048079554 5 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.1.1.3"
+      },
+      {
+        "booking_date": "2020-08-07",
+        "amount": -500,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-ONLINE UEBERWEISUNG HARTMUT MUSTERMANN BIC NTSBDEB1XXX/IBAN DE23100110012626167797 N26 Kartenaufladung INTERNET 16.01.2017/18:57 TAN 646622 REFERENZNR VPE1701171601000 000064990"
+        ],
+        "counter_iban": "DE23100110012626167797",
+        "counter_bic": "NTSBDEB1XXX",
+        "counter_holder": "HARTMUT MUSTERMANN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "transfer"
+        ],
+        "category_id": "A.9.1"
+      },
+      {
+        "booking_date": "2020-08-07",
+        "amount": -162,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS MOLINARI KO BERLIN 09.12.2016 22:29 Uhr C KF03 EC-TERMINAL 68023880 E2E-ID 68023880059269091216 222914"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "living-cost"
+        ],
+        "category_id": "K.99.2"
+      },
+      {
+        "booking_date": "2020-08-07",
+        "amount": 100,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GUTSCHRIFT Geschenk KUNDENREFERENZ 1111201679337 00965547786"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Maria Musterfrau",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "revenue"
+        ],
+        "category_id": "E.99"
+      },
+      {
+        "booking_date": "2020-08-07",
+        "amount": 79.95,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GUTSCHRIFT SPORTLER AG Nota Cr. NW-17.11111"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": " SPORTLER AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "revenue"
+        ],
+        "category_id": "E.99"
+      },
+      {
+        "booking_date": "2020-08-06",
+        "amount": -16.96,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100049463821 6 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-08-04",
+        "amount": -10,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung"
+        ],
+        "counter_iban": "",
+        "counter_bic": "NTSBDEB1XXX",
+        "counter_holder": "HARTMUT MUSTERMANN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "transfer"
+        ],
+        "category_id": "A.9.1"
+      },
+      {
+        "booking_date": "2020-08-02",
+        "amount": 518.84,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GUTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345 LEISTUNGEN A RAG-KV KUNDENREFERENZ 12345 18"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ARAG KRANKENVERSICHERUNG-AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "revenue",
+          "insurance-health",
+          "insurance-health-private",
+          "refund"
+        ],
+        "category_id": "E.3.4.5"
+      },
+      {
+        "booking_date": "2020-08-01",
+        "amount": 108,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GUTSCHRIFT Feuerwerk Danke KUNDENREFERENZ E2EC28624802 33170120135422000001"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Johannes Mustermann",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "revenue"
+        ],
+        "category_id": "E.99"
+      },
+      {
+        "booking_date": "2020-08-01",
+        "amount": -300,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS Postbank Muenchen 20.01.2017 08:16 Uhr GANR 56000166 Verfalldatum 12/19 KF 3"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Postbank Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "cash"
+        ],
+        "category_id": "K.99.1"
+      },
+      {
+        "booking_date": "2020-08-01",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Energy2day GmbH",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-07-31",
+        "amount": -39.5,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER LMU MUENCHEN ZAHLSTELLE IBAN DE234234234234 BIC BYLADEMMXXX Order-Nr. 24234234 VERWENDUNGSZWECK 23424234 20 171 LMU Rueckmeldung SoSe 2018"
+        ],
+        "counter_iban": "",
+        "counter_bic": "BYLADEMMXXX",
+        "counter_holder": "LMU MUENCHEN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-07-31",
+        "amount": -2,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "direct-debit"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-07-31",
+        "amount": -10.82,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . DELIVEROODE, Ihr Einkauf bei DELIVEROODE KUNDENREFERENZ YYIJ222229LE 9ANJ PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "food",
+          "direct-debit"
+        ],
+        "category_id": "K.7.1.2"
+      },
+      {
+        "booking_date": "2020-07-30",
+        "amount": -2.66,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "maxdome GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "media",
+          "direct-debit"
+        ],
+        "category_id": "K.5.1.2.2"
+      },
+      {
+        "booking_date": "2020-07-30",
+        "amount": -7.47,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS 00300 MCDONALDS MUENCHEN"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "MCDONALDS MUENCHEN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "food"
+        ],
+        "category_id": "K.7.1.1"
+      },
+      {
+        "booking_date": "2020-07-29",
+        "amount": -81.93,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Telekom Deutschland GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.2"
+      },
+      {
+        "booking_date": "2020-07-28",
+        "amount": 2500,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 11/16 KUNDENREFERENZ 7232700557-0 001008LG0000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FinTecSystems GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "income",
+          "revenue",
+          "salary"
+        ],
+        "category_id": "E.1.1"
+      },
+      {
+        "booking_date": "2020-07-28",
+        "amount": -73.84,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . I-CLIP, Ihr Einkauf bei I-CLIP KUNDENREFERENZ 100026891760 6 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-07-27",
+        "amount": -128.69,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "COMMERZ FINANZ GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit",
+          "direct-debit"
+        ],
+        "category_id": "A.5.1"
+      },
+      {
+        "booking_date": "2020-07-27",
+        "amount": -962,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HAUSVERWALTUNG Musterhaus",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "rent-habitation",
+          "rent"
+        ],
+        "category_id": "K.2.1"
+      },
+      {
+        "booking_date": "2020-07-27",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-07-24",
+        "amount": -48.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FITNESS FIRST GERMANY GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "recreation",
+          "direct-debit"
+        ],
+        "category_id": "A.3.3"
+      },
+      {
+        "booking_date": "2020-07-24",
+        "amount": -16.12,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT REWE GM Muenchen/S 280116350691553191256007519 REWE SAGT DANKE. 46400953 KUNDENREFERENZ 280116350691 553191256007519 MANDATSREFERENZ 56007519876 31701281635 GLAEUBIGER-ID DE58ZZZ00000257236"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "REWE",
+        "prebooked": false,
+        "creditor_id": "DE58ZZZ00000257236",
+        "tags": [
+          "expenditure",
+          "groceries",
+          "direct-debit"
+        ],
+        "category_id": "K.1.1.1"
+      },
+      {
+        "booking_date": "2020-07-24",
+        "amount": -20.76,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100055786044 7 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-07-24",
+        "amount": -245.46,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS PENNY SAGT DANKE Muenchen S chwabi 26.11.2016 19:38 Uhr C KF03 EC-TERMINAL 56012785 E2E-ID 56012785119191261116 193843"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PENNY SAGT DANKE",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "groceries"
+        ],
+        "category_id": "K.1.1.2"
+      },
+      {
+        "booking_date": "2020-07-23",
+        "amount": -128.69,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "COMMERZ FINANZ GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit",
+          "direct-debit"
+        ],
+        "category_id": "A.5.1"
+      },
+      {
+        "booking_date": "2020-07-23",
+        "amount": -962,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HAUSVERWALTUNG Musterhaus",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "rent-habitation",
+          "rent"
+        ],
+        "category_id": "K.2.1"
+      },
+      {
+        "booking_date": "2020-07-23",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-07-22",
+        "amount": -39,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-ONLINE UEBERWEISUNG HUK COBURG UNTERNHEMENSGRUP BIC BYLA234234234/IBAN DE123423423423 000659968518 J KFZ-HAFTPFLI CHT GEBUEHR INTERNET 27.03.2016/23:12 TAN 431382 REFERENZNR VPE1603291504000 000270146"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HUK COBURG UNTERNHEMENSGRUP",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "expenditure"
+        ],
+        "category_id": "K.8.1"
+      },
+      {
+        "booking_date": "2020-07-22",
+        "amount": -44.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . DBVERTRIEBG, Ihr Einkauf bei DBVERTRIEBG KUNDENREFERENZ 100056598300 8 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "transport",
+          "direct-debit"
+        ],
+        "category_id": "K.4.3"
+      },
+      {
+        "booking_date": "2020-07-22",
+        "amount": 3236.76,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 01/17 KUNDENREFERENZ 7202314348-0 001008LG0000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FinTecSystems GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "income",
+          "revenue",
+          "salary"
+        ],
+        "category_id": "E.1.1"
+      },
+      {
+        "booking_date": "2020-07-21",
+        "amount": -349.41,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . KELLERSPORT, Ihr Einkauf bei KELLERSPORT KUNDENREFERENZ 100057210870 0 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "recreation",
+          "direct-debit"
+        ],
+        "category_id": "K.5.3.1"
+      },
+      {
+        "booking_date": "2020-07-21",
+        "amount": -93.81,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Telekom Deutschland GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.2"
+      },
+      {
+        "booking_date": "2020-07-21",
+        "amount": -39.5,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER LMU MUENCHEN ZAHLSTELLE IBAN DE234234234234 BIC BYLADEMMXXX Order-Nr. 24234234 VERWENDUNGSZWECK 23424234 20 171 LMU Rueckmeldung SoSe 2019"
+        ],
+        "counter_iban": "",
+        "counter_bic": "BYLADEMMXXX",
+        "counter_holder": "LMU MUENCHEN ZAHLSTELLE",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-07-21",
+        "amount": -7.65,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "maxdome GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "media",
+          "direct-debit"
+        ],
+        "category_id": "K.5.1.2.2"
+      },
+      {
+        "booking_date": "2020-07-21",
+        "amount": -2,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HOLDER",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "direct-debit"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-07-19",
+        "amount": 50,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GUTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345 LEISTUNGEN A RAG-KV KUNDENREFERENZ 12345 36"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ARAG KRANKENVERSICHERUNG-AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "revenue",
+          "insurance-health",
+          "insurance-health-private",
+          "refund"
+        ],
+        "category_id": "E.3.4.5"
+      },
+      {
+        "booking_date": "2020-07-18",
+        "amount": -47.37,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Zurich Insurance plc Nieder lassung fuer Deutschland MULTIPLUS 234234234 BEIT RAG 201116 47,37 KUNDENREFERENZ ABBUCHUNGSNR .1031526 24243 MANDATSREFERENZ 02146672548 GLAEUBIGER-ID DE38ZZZ00000023244"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Zurich Insurance plc Niederlassung fuer Deutschland",
+        "prebooked": false,
+        "creditor_id": "DE38ZZZ00000023244",
+        "tags": [
+          "insurance",
+          "expenditure",
+          "direct-debit"
+        ],
+        "category_id": "K.8.1"
+      },
+      {
+        "booking_date": "2020-07-18",
+        "amount": -16.95,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . mvh-racing, Ihr Einkauf bei mvh-racing, Artikel-351341044036 KUNDENREFERENZ 100057827109 6 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-07-18",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Energy2day GmbH",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-07-17",
+        "amount": -271.4,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . DEICHMANNSE, Ihr Einkauf bei DEICHMANNSE KUNDENREFERENZ 100058236878 3 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.1.1.5"
+      },
+      {
+        "booking_date": "2020-07-15",
+        "amount": -50,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung"
+        ],
+        "counter_iban": "",
+        "counter_bic": "NTSBDEB1XXX",
+        "counter_holder": "HARTMUT MUSTERMANN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "transfer"
+        ],
+        "category_id": "A.9.1"
+      },
+      {
+        "booking_date": "2020-07-13",
+        "amount": 131.88,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GUTSCHRIFT SPORTLER AG Nota Cr. NW-17-22222"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "SPORTLER AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "revenue"
+        ],
+        "category_id": "E.99"
+      },
+      {
+        "booking_date": "2020-07-12",
+        "amount": -9.15,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS DM FIL.1111 H:65154 14.11.2016 18:43 Uhr C EC-TERMINAL65154336 E2E-ID 65154336931256141116184320"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "DM FIL.1234",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "living-cost"
+        ],
+        "category_id": "K.1.1.6"
+      },
+      {
+        "booking_date": "2020-07-11",
+        "amount": -438.63,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ARAG KRANKENVERSICHERUNG-AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "expenditure",
+          "insurance-health",
+          "insurance-health-private",
+          "direct-debit"
+        ],
+        "category_id": "K.8.1.4.1"
+      },
+      {
+        "booking_date": "2020-07-11",
+        "amount": -200,
+        "currency": "EUR",
+        "purpose": [
+          "GELDAUTOMAT HYPOVEREINSBANK Muenchen 10.02.2017 18:35 UHR GANR 00008764 VERFALLDATUM 12/19 KF 3"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "cash"
+        ],
+        "category_id": "K.99.1"
+      },
+      {
+        "booking_date": "2020-07-10",
+        "amount": -69.98,
+        "currency": "EUR",
+        "purpose": [
+          "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 11/16"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit-card"
+        ],
+        "category_id": "K.99.2"
+      },
+      {
+        "booking_date": "2020-07-10",
+        "amount": -92.73,
+        "currency": "EUR",
+        "purpose": [
+          "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 02/17"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit-card"
+        ],
+        "category_id": "K.99.2"
+      },
+      {
+        "booking_date": "2020-07-10",
+        "amount": -79.8,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . DEICHMANNSE, Ihr Einkauf bei DEICHMANNSE KUNDENREFERENZ 100061453503 4 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.1.1.5"
+      },
+      {
+        "booking_date": "2020-07-09",
+        "amount": -496.96,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ARAG KRANKENVERSICHERUNG-AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "expenditure",
+          "insurance-health",
+          "insurance-health-private",
+          "direct-debit"
+        ],
+        "category_id": "K.8.1.4.1"
+      },
+      {
+        "booking_date": "2020-07-09",
+        "amount": -48.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FITNESS FIRST GERMANY GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "recreation",
+          "direct-debit"
+        ],
+        "category_id": "A.3.3"
+      },
+      {
+        "booking_date": "2020-07-08",
+        "amount": -12,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT nextbike GmbH GEBUEHREN MVG RAD KDNR. 498 234234324 KUNDENREFERENZ 24324324234 077 MANDATSREFERENZ 49892361203 7077 GLAEUBIGER-ID DE02ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "nextbike GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "transport",
+          "vehicle",
+          "direct-debit"
+        ],
+        "category_id": "K.4.2.2"
+      },
+      {
+        "booking_date": "2020-07-07",
+        "amount": -200,
+        "currency": "EUR",
+        "purpose": [
+          "GELDAUTOMAT HYPOVEREINSBANK Muenchen 10.11.2016 19:26 UHR GANR 00008764 VERFALLDATUM 12/19 KF 3"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "cash"
+        ],
+        "category_id": "K.99.1"
+      },
+      {
+        "booking_date": "2020-07-05",
+        "amount": -10,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung"
+        ],
+        "counter_iban": "",
+        "counter_bic": "NTSBDEB1XXX",
+        "counter_holder": "HARTMUT MUSTERMANN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "transfer"
+        ],
+        "category_id": "A.9.1"
+      },
+      {
+        "booking_date": "2020-07-04",
+        "amount": -7,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT LOGPAY FINANCIAL SERVICES G MBH LogPay OnlineTicket i.A.v. Berliner Verkehrsb. BVG Aoe R. Ihre Kundennr. 123456 KUNDENREFERENZ ZAA002291571 5 MANDATSREFERENZ 1010480340 GLAEUBIGER-ID DE90LPY00000046849"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "LOGPAY FINANCIAL SERVICES GMBH",
+        "prebooked": false,
+        "creditor_id": "DE90LPY00000046849",
+        "tags": [
+          "expenditure",
+          "transport",
+          "direct-debit"
+        ],
+        "category_id": "K.4.3"
+      },
+      {
+        "booking_date": "2020-07-04",
+        "amount": -148.31,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IKEA 343 BRUNNTHAL ELV54247659 05.11 13.36 ME3 KUNDENREFERENZ T01611055424 7659155694 MANDATSREFERENZ 54247659110 51611051336 GLAEUBIGER-ID DE67ZZZ00000169386"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "IKEA",
+        "prebooked": false,
+        "creditor_id": "DE67ZZZ00000169386",
+        "tags": [
+          "expenditure",
+          "living-cost"
+        ],
+        "category_id": "K.2.2"
+      },
+      {
+        "booking_date": "2020-07-02",
+        "amount": -2.8,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT LOGPAY FINANCIAL SERVICES G MBH LogPay OnlineTicket i.A.v. Berliner Verkehrsb. BVG Aoe R. Ihre Kundennr. 123456 KUNDENREFERENZ ZAA002291571 5 MANDATSREFERENZ 1010480340 GLAEUBIGER-ID DE90LPY00000046849"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "LOGPAY FINANCIAL SERVICES GMBH",
+        "prebooked": false,
+        "creditor_id": "DE90LPY00000046849",
+        "tags": [
+          "expenditure",
+          "transport",
+          "direct-debit"
+        ],
+        "category_id": "K.4.3"
+      },
+      {
+        "booking_date": "2020-07-01",
+        "amount": -12.96,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100066683878 0 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 12312313-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35E1313123213 KUNDENREFERENZ S301118197-8 50721713012016030410001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -42,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ENERGY2DAY",
+        "prebooked": false,
+        "creditor_id": "DE35EDS00000438652",
+        "tags": [
+          "expenditure",
+          "household",
+          "direct-debit"
+        ],
+        "category_id": "K.2.3.2"
+      },
+      {
+        "booking_date": "2020-06-30",
+        "amount": -79.34,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Telekom Deutschland GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.2"
+      },
+      {
+        "booking_date": "2020-06-29",
+        "amount": 2500,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 10/16 KUNDENREFERENZ 7229412325-0 001008LG0000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FinTecSystems GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "income",
+          "revenue",
+          "salary"
+        ],
+        "category_id": "E.1.1"
+      },
+      {
+        "booking_date": "2020-06-29",
+        "amount": -2,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "direct-debit"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-28",
+        "amount": -34.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Kabelfernsehen Muenchen KD.NR.: 123456 LT. CABLESUR F/ FON VERTRAG: 01/2017 Hartmut Mustermann KUNDENREFERENZ 0000A2017012 6151101260117300301168 MANDATSREFERENZ 301168 GLAEUBIGER-ID DE28ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Kabelfernsehen Muenchen",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.1"
+      },
+      {
+        "booking_date": "2020-06-27",
+        "amount": -7.65,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "maxdome GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "media",
+          "direct-debit"
+        ],
+        "category_id": "K.5.1.2.2"
+      },
+      {
+        "booking_date": "2020-06-27",
+        "amount": -962,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "HAUSVERWALTUNG Musterhaus",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "rent-habitation",
+          "rent"
+        ],
+        "category_id": "K.2.1"
+      },
+      {
+        "booking_date": "2020-06-27",
+        "amount": -128.69,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "COMMERZ FINANZ GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit",
+          "direct-debit"
+        ],
+        "category_id": "A.5.1"
+      },
+      {
+        "booking_date": "2020-06-26",
+        "amount": -5.89,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA CASHMANAGEMENT-BASISLA DETAILS SIEHE KONTO-AUSZUG!"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-06-26",
+        "amount": -23.3,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS VAPIANO 28.10.2016 13:17 Uhr C EC-TERMINAL55573762 E2E-ID 55573762033608281016131730"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "food"
+        ],
+        "category_id": "K.7.1.1"
+      },
+      {
+        "booking_date": "2020-06-22",
+        "amount": -27,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . ADIDAS, Ihr Einkauf bei ADIDAS KUNDENREFERENZ 100010414670 8 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.1.1.5"
+      },
+      {
+        "booking_date": "2020-06-22",
+        "amount": -63.14,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IHRE TCHIBO FILIALE DANKT ELV65053382 25.10 15.04 ME 3 KUNDENREFERENZ 251015043176 234234234324234 MANDATSREFERENZ 65053382913 61610251504 GLAEUBIGER-ID DE10ZZZ000024234234324"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "IHRE TCHIBO FILIALE",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "living-cost"
+        ],
+        "category_id": "K.1.1"
+      },
+      {
+        "booking_date": "2020-06-21",
+        "amount": -4.5,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS DEUTSCHE POST 25.10.2016 14:50 Uhr C EC-TERMINAL58217828 E2E-ID 58217828031718251016145025"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "DEUTSCHE POST",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "service"
+        ],
+        "category_id": "K.4.5"
+      },
+      {
+        "booking_date": "2020-06-21",
+        "amount": -2.66,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT maxdome GmbH . TXID 123456 29 . KUNDENREFERENZ 123456 29 . MANDATSREFERENZ PO-23423423. GLAEUBIGER-ID DE12ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "maxdome GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "media",
+          "direct-debit"
+        ],
+        "category_id": "K.5.1.2.2"
+      },
+      {
+        "booking_date": "2020-06-20",
+        "amount": -84.06,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Telekom Deutschland GmbH MOBILFUNK KUNDENKONTO 230492039403294032940/12 .08.16 KUNDENREFERENZ ZAHLUNGSBELE G 24234234234 MANDATSREFERENZ DE00000000 600000000000000007955628 GLAEUBIGER-ID DE93ZZZ0000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "Telekom Deutschland GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "telecommunication",
+          "direct-debit"
+        ],
+        "category_id": "K.4.6.2"
+      },
+      {
+        "booking_date": "2020-06-20",
+        "amount": -19.71,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . SHIZOOSERVI, Ihr Einkauf bei SHIZOOSERVI KUNDENREFERENZ 100009874841 6 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-06-19",
+        "amount": -223.69,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS REWE SAGT DANKE. 46400553 21.10.2016 16:38 Uhr C EC-TERMINAL56007007 E2E-ID 56007007119325211016163827"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "REWE",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "groceries"
+        ],
+        "category_id": "K.1.1.1"
+      },
+      {
+        "booking_date": "2020-06-16",
+        "amount": -70,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS PLUTO UG - KATOPAZZO 19.10.2016 22:19 Uhr C EC-TERMINAL68200162 E2E-ID 68200162970187191016221917"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "living-cost"
+        ],
+        "category_id": "K.99.2"
+      },
+      {
+        "booking_date": "2020-06-14",
+        "amount": -45.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . IBOOD, Ihr Ein kauf bei IBOOD KUNDENREFERENZ 100008044816 2 PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-06-13",
+        "amount": -11.9,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS VAPIANO 17.10.2016 13:14 Uhr C EC-TERMINAL55574711 E2E-ID 55574711032940171016131425"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "food"
+        ],
+        "category_id": "K.7.1.1"
+      },
+      {
+        "booking_date": "2020-06-12",
+        "amount": -48.9,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT FITNESS FIRST GERMANY GMBH 10427995 HOLDER Monatsbeitrag KUNDENREFERENZ 20160315-1111111 MANDATSREFERENZ 111111 GLAEUBIGER-ID DE42ZZZ0000011111"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FITNESS FIRST GERMANY GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "recreation",
+          "direct-debit"
+        ],
+        "category_id": "A.3.3"
+      },
+      {
+        "booking_date": "2020-06-12",
+        "amount": -438.63,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT ARAG KRANKENVERSICHERUNG-AG 12345678927017 KV0010058414 3 03/16 KUNDENREFERENZ 123456789270 17 MANDATSREFERENZ DEE00000402 658 GLAEUBIGER-ID DE70ZZZ00000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "ARAG KRANKENVERSICHERUNG-AG",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "insurance",
+          "expenditure",
+          "insurance-health",
+          "insurance-health-private",
+          "direct-debit"
+        ],
+        "category_id": "K.8.1.4.1"
+      },
+      {
+        "booking_date": "2020-06-09",
+        "amount": -19.27,
+        "currency": "EUR",
+        "purpose": [
+          "KREDITKARTENABRECHNUNG HVB MasterCard Gold Kontakt 5483 47XX XXXX 4653 BC Abrechnung 10/16"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit-card"
+        ],
+        "category_id": "K.99.2"
+      },
+      {
+        "booking_date": "2020-06-09",
+        "amount": -300,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS COMMERZBANK-AG M-PRINZREGEN 12.10.2016 19:44 Uhr GANR 00000592 Verfalldatum 12/19 KF 3"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "cash"
+        ],
+        "category_id": "K.99.1"
+      },
+      {
+        "booking_date": "2020-06-08",
+        "amount": -27.5,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS DM FIL.2222 H:65333 12.10.2016 14:20 Uhr C EC-TERMINAL65333591 E2E-ID 65333591846135121016142027"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "DM FIL.5678",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "living-cost"
+        ],
+        "category_id": "K.1.1.6"
+      },
+      {
+        "booking_date": "2020-06-06",
+        "amount": -31.09,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT REWE Muenchen/Schw 081012591184223191256007007 REWE SAGT DANKE. 46400553 KUNDENREFERENZ 081012591184 223191256007007 MANDATSREFERENZ 56007007925 11610081259 GLAEUBIGER-ID DE58ZZZ00000257236"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "REWE Muenchen/Schw",
+        "prebooked": false,
+        "creditor_id": "DE58ZZZ00000257236",
+        "tags": [
+          "expenditure",
+          "groceries",
+          "direct-debit"
+        ],
+        "category_id": "K.1.1.1"
+      },
+      {
+        "booking_date": "2020-06-06",
+        "amount": -86.46,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . BADAPOTHEKE, Ihr Einkauf bei BADAPOTHEKE KUNDENREFERENZ YYIJ222228MU ENJW PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "health",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.3.2"
+      },
+      {
+        "booking_date": "2020-06-05",
+        "amount": -189,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS DB AUTOMAT 07.10.2016 18:51 Uhr C EC-TERMINAL59080764 E2E-ID 59080764137513071016185130"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "ec-card",
+          "transport"
+        ],
+        "category_id": "K.4.3"
+      },
+      {
+        "booking_date": "2020-06-05",
+        "amount": -81.05,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT PayPal Europe S.a.r.l. et C ie S.C.A PP.4161.PP . AG, Ihr Einkau f bei AG KUNDENREFERENZ YYIJ222228MA 9C2L PP.4161.PP PAYPAL MANDATSREFERENZ 57NJ224MRKE 5J GLAEUBIGER-ID LU96ZZZ0000000000000000058"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "PayPal Europe",
+        "prebooked": false,
+        "creditor_id": "LU96ZZZ0000000000000000058",
+        "tags": [
+          "expenditure",
+          "e-commerce",
+          "direct-debit"
+        ],
+        "category_id": "K.99.9"
+      },
+      {
+        "booking_date": "2020-06-02",
+        "amount": -10,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-DAUERAUFTRAG EMPFAENGER HARTMUT MUSTERMANN IBAN DE1111111111111 BIC NTSBDEB1XXX Order-Nr. 234234234234 VERWENDUNGSZWECK N26 Karten aufladung"
+        ],
+        "counter_iban": "",
+        "counter_bic": "NTSBDEB1XXX",
+        "counter_holder": "HARTMUT MUSTERMANN",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "transfer"
+        ],
+        "category_id": "A.9.1"
+      },
+      {
+        "booking_date": "2020-05-31",
+        "amount": 2500,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 09/16 KUNDENREFERENZ 7226505940-0 001008LG0000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "FinTecSystems GmbH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "income",
+          "revenue",
+          "salary"
+        ],
+        "category_id": "E.1.1"
+      },
+      {
+        "booking_date": "2020-05-30",
+        "amount": -128.69,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT COMMERZ FINANZ GMBH 44238936379001160401 1 KUNDENREFERENZ 2222222222 01160401 1 MANDATSREFERENZ 333333333 92R GLAEUBIGER-ID DE01234566"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "COMMERZ FINANZ GMBH",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "credit",
+          "direct-debit"
+        ],
+        "category_id": "A.5.1"
+      },
+      {
+        "booking_date": "2020-05-30",
+        "amount": -4.88,
+        "currency": "EUR",
+        "purpose": [
+          "ABSCHLUSS KEINE BELEG INFORMATIONEN, SIEHE GGF. KONTOAUSZUG !"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "banking-fees"
+        ],
+        "category_id": "K.8.2.1"
+      },
+      {
+        "booking_date": "2020-05-29",
+        "amount": -2,
+        "currency": "EUR",
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT IM AUFTR.V. HOLDER EXTRA-KONTO 123123123 MANDATSREFERENZ 12312312 DAASEPAP.01.001.113573 GLAEUBIGER-ID DE65ING000000000000"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "direct-debit"
+        ],
+        "category_id": "K.99"
+      },
+      {
+        "booking_date": "2020-05-29",
+        "amount": -303.9,
+        "currency": "EUR",
+        "purpose": [
+          "EC-GAA/POS Fil. M Barerstr. Muenchen 01.10.2016 01:49 Uhr GANR 00000192 Verfalldatum 12/19 KF 3 Entgelt 3,90 Euro"
+        ],
+        "counter_iban": "",
+        "counter_bic": "",
+        "counter_holder": "",
+        "prebooked": false,
+        "creditor_id": "",
+        "tags": [
+          "expenditure",
+          "cash"
+        ],
+        "category_id": "K.99.1"
+      }
+    ],
+    "days": 90,
+    "date": "2020-08-25",
+    "filters": []
+  },
+  "ftsTransactionId": "e82e0312cec9efc73395b78d93c16c9d:5db4a8d715bbab4a4a483a99367cd142c017c0f9226aa575896f3c5bf1bbe86f",
+  "termsAccepted": true
+}
+
+###
+

@@ -1,0 +1,25 @@
+POST {{consumer-loans}}/loan/identification/?internal-use=true
+Content-Type: application/json
+
+{
+  "applicationId": "5f8ea61d1f2269138c2b9ce9",
+  "loanOfferId": "5f8ea6a71f2269138c2b9cf9",
+  "duration": 48,
+  "firstName": "X-MANUALTEST-HAPPYPATH",
+  "lastName": "Name",
+  "gender": "MALE",
+  "birthday": "1988-05-23",
+  "birthplace": "London",
+  "street": "Baker Street",
+  "houseNumber": "4",
+  "city": "London",
+  "zipCode": "W1U",
+  "country": "DE",
+  "nationality": "GB",
+  "mobilePhone": "491723456789",
+  "email": "testemail@joonko.io",
+  "language": "EN",
+  "loanProvider": "Creditplus Bank"
+}
+
+###

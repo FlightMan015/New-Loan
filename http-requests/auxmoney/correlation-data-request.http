@@ -1,0 +1,11 @@
+POST {{host}}/partner/esign/joonko/webhook/init
+Accept: application/json
+
+ {
+    "transactionNo": "joonaux-b0f954df-dae8-414a-9242-fcd53132db79",
+     "auxCreditNo": "1125461520",
+     "auxUserNo": "1382045131",
+     "idNowTransactionId": "TST-LCQNF"
+  }
+
+###

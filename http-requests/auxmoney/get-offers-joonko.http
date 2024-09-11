@@ -1,0 +1,106 @@
+POST {{host}}distributionline/api/rest/partnerendpoints/offers
+Content-Type: application/x-www-form-urlencoded
+urlkey: {{urlkey}}
+Accept: application/json
+
+{
+   "income":{
+      "total":1085679,
+      "other":85679,
+      "child_benefits":0,
+      "net_income":1000000
+   },
+   "external_id":"beada239-0405-4c68-bfb0-871090aafe10",
+   "contact_data":{
+      "telephone":"0049123456789",
+      "living_since":"2010-01-01",
+      "city":"Berlin",
+      "street_number":"32",
+      "mobile_telephone":"0049123456789",
+      "street_name":"Hardenbergstraße",
+      "zip_code":"10623",
+      "email":"b1-nonqs@auxmoney.com"
+   },
+   "employer_data":{
+      "zip":"10587",
+      "city":"Berlin",
+      "street":"Hardenberstr.",
+      "company":"Joonko AG",
+      "since":"2012-05-01"
+   },
+   "digital_account_statements":[
+      {
+         "owner":"MUSTERMANN, HARTMUT",
+         "iban":"DE62888888880012345678",
+         "name":"Personal Loan Account",
+         "currency":"EUR",
+         "category":"private",
+         "type":"Loan account",
+         "transactions":[
+            {
+               "name":"John Doe",
+               "amount":-9.55,
+               "iban":"",
+               "bic":"",
+               "currency":"EUR",
+               "purpose":"CASH CashMgmtTransakt Kredit",
+               "type":"transfer",
+               "booked":0,
+               "visited":1,
+               "booking_date":"2020-03-13",
+               "booking_text":"Booking text"
+            },
+            {
+               "name":"John Doe",
+               "amount":-962.0,
+               "iban":"",
+               "bic":"",
+               "currency":"EUR",
+               "purpose":"CASH CashMgmtTransakt Kredit",
+               "type":"transfer",
+               "booked":0,
+               "visited":1,
+               "booking_date":"2020-03-13",
+               "booking_text":"Booking text"
+            }
+         ],
+         "bic":"TESTDE88XXX",
+         "balance_date":"2020-03-13",
+         "balance":2123.0,
+         "dac_source":"FINTECH_SYSTEMS"
+      }
+   ],
+   "duration":48,
+   "personal_data": {
+    "address": 1,
+    "forename": "HARTMUT",
+    "surname": "MUSTERMANN",
+    "family_status": 1,
+    "birth_date": "1991-10-11",
+    "nationality": "DE",
+    "has_credit_card": 1,
+    "has_ec_card": 1,
+    "has_real_estate": 1,
+    "main_earner": 1,
+    "housing_type": 1,
+    "car_owner": 1
+  },
+   "collection_day":1,
+   "loan_asked":5000,
+   "is_accepted_solvency_retrieval":true,
+   "category":0,
+   "is_accepted_terms_of_service":true,
+   "expenses":{
+      "other":151038,
+      "support_expenses":0,
+      "living_expenses":0,
+      "debt_expenses":25738,
+      "insurance_and_savings":8637,
+      "rent_and_mortgage":192400,
+      "total_expenses":377813,
+      "memberships":0
+   }
+}
+
+###
+###

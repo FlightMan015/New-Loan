@@ -1,0 +1,123 @@
+### Get Products
+
+GET {{ratanet}}/partner/{{clientid}}/products?version={{api_version}}
+Authorization: {{token}}
+
+> {%
+    var product = response.body.products["1998_810"];
+    client.assert(product, 'product should be present');
+    client.assert(product._links, 'product links should be present');
+    var financialcalculations = product._links.filter(function(it) {
+        return it.rel === '_financialcalculations'
+    });
+    var validationrules = product._links.filter(function(it) {
+        return it.rel === '_validationrules'
+    });
+    client.assert(financialcalculations && financialcalculations.length === 1, 'financialcalculations should be present');
+    client.assert(validationrules && validationrules.length === 1, 'validationrules should be present');
+    client.global.set("financialcalculations", financialcalculations[0].href);
+    client.global.set("validationrules", validationrules[0].href);
+%}
+
+### Get Validation Rules
+
+GET {{ratanet}}{{validationrules}}
+Authorization: {{token}}
+
+> {%
+    var validatesubscription = response.body._links.filter(function(it) {
+        return it.rel === '_validatesubscription'
+    });
+    client.assert(validatesubscription && validatesubscription.length === 1, 'validatesubscription should be present');
+    client.global.set("validatesubscription", validatesubscription[0].href);
+%}
+
+### Validate Subscription
+
+POST {{ratanet}}{{validatesubscription}}
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "subscribers": [
+    {
+      "rolePlaying": "MAIN",
+      "gender": "FEMALE",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "dateOfBirth": "1970-02-19",
+      "placeOfBirth": "München",
+      "countryOfBirth": "276",
+      "nationality": "276",
+      "familySituation": "FREE",
+      "housingSituation": "RENTER",
+      "numberOfChildren": 0,
+      "contactAddress": {
+        "email": "qa.user@joonko.io",
+        "street": "Hardenbergstraße",
+        "zipcode": "10623",
+        "city": "Berlin",
+        "validFrom": "2016-01",
+        "telephoneMobile": "049123456789"
+      },
+      "income": {
+        "netIncome": 15000,
+        "rentIncome": 2000,
+        "otherIncome": 100
+      },
+      "expense": {
+        "creditsAnother": 10,
+        "warmRent": 1011,
+        "otherHouseholdObligations": 1314,
+        "privateHealthInsurance": true,
+        "hasResidentialProperty": false
+      },
+      "employmentDetails": {
+        "profession": "REGULAR_EMPLOYED",
+        "professionBeginDate": "2019-01",
+        "professionEndDate": "2029-01",
+        "employerAddress": {
+          "employerName": "name",
+          "employerStreet": "street",
+          "employerZipcode": "10623",
+          "employerCity": "city"
+        }
+      },
+      "consents": {
+        "schufaCallAllowed": true
+      }
+    }
+  ],
+  "bankAccount": {
+    "iban": "DE89370400440532013000",
+    "accountSince": "2014-02",
+    "owner": "MAIN"
+  },
+  "kycPurposeOfLoan": "FSH",
+  "subscriptionIdentifierExternal": "939dd4b8-45c7-4e73-9"
+}
+
+> {%
+    var personalizedCalculation = response.body._links.filter(function(it) {
+        return it.rel === '_personalizedcalculations'
+    });
+    client.assert(personalizedCalculation && personalizedCalculation.length === 1, 'personalizedCalculation should be present');
+    client.global.set("personalizedCalculation", personalizedCalculation[0].href);
+%}
+
+
+### Personalized calculations
+
+PUT {{ratanet}}{{personalizedCalculation}}
+Authorization: {{token}}
+
+> {%
+    var finalizeSubscription = response.body.financialCalculations._links.filter(function(it) {
+        return it.rel === '_finalizesubscription'
+    });
+    client.assert(finalizeSubscription && finalizeSubscription.length === 1, 'finalizeSubscription should be present');
+    client.global.set("finalizeSubscription", finalizeSubscription[0].href);
+%}
+
+###
+###

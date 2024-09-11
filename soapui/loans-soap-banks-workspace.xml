@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="loans-soap-banks" soapui-version="6.0.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:project name="CreditPlus" lastOpened="2020-05-15T11:47:41.384+02:00">/Users/adrian/devel/betterchange/loans/soapui/CreditPlus-readyapi-project.xml</con:project>
+  <con:recentItemCollection>
+    <con:moduleId>SoapUiNGModule</con:moduleId>
+    <con:itemId>8835e174-49ff-439a-8c26-b4f3a694cc58</con:itemId>
+    <con:itemId>fcecb855-43f1-44d1-bdf4-e2a371aee0c0</con:itemId>
+  </con:recentItemCollection>
+  <con:expandedTreeNodes>
+    <con:project path="/Users/adrian/devel/betterchange/loans/soapui/CreditPlus-readyapi-project.xml">
+      <nodeId>edc6bd87-821c-4fb4-9eab-3fec6c0002ca</nodeId>
+      <nodeId>b7b4e691-7f69-4ea2-906c-137babf49661</nodeId>
+      <nodeId>b7b4e691-7f69-4ea2-906c-137babf49661apis</nodeId>
+      <nodeId>8835e174-49ff-439a-8c26-b4f3a694cc58</nodeId>
+      <nodeId>b7b4e691-7f69-4ea2-906c-137babf49661soapui</nodeId>
+    </con:project>
+  </con:expandedTreeNodes>
+  <con:collectInfoForSupport>false</con:collectInfoForSupport>
+</con:soapui-workspace>

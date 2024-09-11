@@ -1,0 +1,58 @@
+### 3. offer to beat
+
+PUT {{host}}/{{brandId}}/credits-channel-app/api/1/processes/{{processId}}
+X-Customer-Id: {{customerId}}
+X-Token: {{token}}
+Content-Type: application/json
+
+[
+  {
+    "name": "OFFERS_TO_BEAT",
+    "value":
+    {
+      "requestedLoanAmount": 2003.00,
+      "requestedLoanCurrency": "EUR",
+      "offers": [
+        {
+          "category": "apr",
+          "orderId": 1,
+          "offerDetails": {
+            "id": "{{$uuid}}",
+            "amount": 2000.00,
+            "currency": "EUR",
+            "maturity": 12,
+            "annualPercentageRate": 0.082,
+            "monthlyInstalmentAmount": 122.00,
+            "totalRepaymentAmount": 2252.00
+          }
+        },
+        {
+          "category": "monthly_instalment_amount",
+          "orderId": 2,
+          "offerDetails": {
+            "id": "{{$uuid}}",
+            "amount": 2000.00,
+            "currency": "EUR",
+            "maturity": 12,
+            "annualPercentageRate": 0.082,
+            "monthlyInstalmentAmount": 122.00,
+            "totalRepaymentAmount": 2252.00
+          }
+        },
+        {
+          "category": "total_repayment_amount",
+          "orderId": 3,
+          "offerDetails": {
+            "id": "{{$uuid}}",
+            "amount": 2000.00,
+            "currency": "EUR",
+            "maturity": 12,
+            "annualPercentageRate": 0.082,
+            "monthlyInstalmentAmount": 122.00,
+            "totalRepaymentAmount": 2252.00
+          }
+        }
+      ]
+    }
+  }
+]

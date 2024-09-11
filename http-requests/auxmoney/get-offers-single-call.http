@@ -1,0 +1,242 @@
+POST {{host}}distributionline/api/rest/partnerendpoints
+Content-Type: application/x-www-form-urlencoded
+urlkey: {{urlkey}}
+Accept: application/json
+
+{
+  "external_id": "ext_1",
+  "loan_asked": 5000,
+  "duration": 24,
+  "category": 1,
+  "rsv": 0,
+  "collection_day": 15,
+  "is_accepted_terms_of_service": true,
+  "is_accepted_solvency_retrieval": true,
+  "personal_data": {
+    "address": 1,
+    "forename": "Max",
+    "surname": "Mustermann",
+    "family_status": 2,
+    "birth_date": "1969-01-01",
+    "birthplace": "Düsseldorf",
+    "nationality": "DE",
+    "occupation": 2,
+    "has_credit_card": 1,
+    "has_ec_card": 1,
+    "has_real_estate": 1,
+    "main_earner": 1,
+    "housing_type": 1,
+    "car_owner": 1,
+    "tax_identification_number": 59614208938
+  },
+  "contact_data": {
+    "living_since": "2005-01-01",
+    "street_name": "Königsallee",
+    "street_number": "60 F",
+    "zip_code": "40212",
+    "city": "Düsseldorf",
+    "telephone": "01234567890",
+    "mobile_telephone": "0987654321",
+    "email": "b1-nonqs@auxmoney.com"
+  },
+  "income": {
+    "net_income": 100000,
+    "child_benefits": 50030,
+    "other": 20000,
+    "total": 170030
+  },
+  "expenses": {
+    "rent_and_mortgage": 10050,
+    "support_expenses": 5000,
+    "insurance_and_savings": 14860,
+    "memberships": 50000,
+    "debt_expenses": 30000,
+    "living_expenses": 5090,
+    "other": 20000,
+    "total_expenses": 135000
+  },
+  "employer_data": {
+    "company": "auxmoney GmbH",
+    "industry_type": "71.2",
+    "street": "Königsallee 60 F",
+    "phone": "01234567890",
+    "zip": "40212",
+    "city": "Düsseldorf",
+    "since": "2012-06-17",
+    "employment_status": 1
+  },
+  "bank_data": {
+    "iban": "DE12500105170648489890",
+    "bic": "BYLADEM1001"
+  },
+  "household": {
+    "people_living_in_household": 3,
+    "adults_living_in_household": 2
+  },
+  "digital_account_statements": [
+    {
+      "name": "Personal Loan Account",
+      "owner": "Nicolai Nussbeck",
+      "dac_source": "Arvato",
+      "category": "private",
+      "iban": "DE12347588880012345678",
+      "bic": "MALADE23III",
+      "type": "Loan account",
+      "balance": 200.03,
+      "dispo_limit": -1000,
+      "balance_date": "2018-06-03",
+      "currency": "EUR",
+      "transactions": [
+        {
+          "name": "Alexandra Harter",
+          "amount": -74.86,
+          "iban": "DE62888888880012345678",
+          "bic": "TESTDE88XXX",
+          "bank_name": "Testbank",
+          "currency": "EUR",
+          "booking_date": "2018-06-03",
+          "purpose": "CASH CashMgmtTransakt Kredit",
+          "type": "",
+          "booked": 1,
+          "visited": 1,
+          "classification_bank": "classification by bank",
+          "classification_own": "classification by ourself",
+          "classification_provider": "classification by provider",
+          "booking_text": "this is the booking text",
+          "saldo": 500
+        },
+        {
+          "name": "Giuliano Gross",
+          "amount": -74.86,
+          "iban": "DE62888888880012345678",
+          "bic": "TESTDE88XXX",
+          "bank_name": "Testbank",
+          "currency": "EUR",
+          "booking_date": "2018-06-03",
+          "purpose": "CASH CashMgmtTransakt Kredit",
+          "type": "",
+          "booked": 1,
+          "visited": 1,
+          "classification_bank": "classification by bank",
+          "classification_own": "classification by ourself",
+          "classification_provider": "classification by provider",
+          "booking_text": "this is the booking text",
+          "saldo": 500
+        }
+      ]
+    },
+    {
+      "name": "Business-Konto",
+      "owner": "Maxim Kramer",
+      "category": "business",
+      "iban": "DE12347588880012345678",
+      "bic": "MALADE23III",
+      "type": "Loan account",
+      "balance": 200.03,
+      "dispo_limit": -1000,
+      "balance_date": "2018-06-03",
+      "currency": "EUR",
+      "transactions": [
+        {
+          "name": "Marla Mrugalla",
+          "amount": -74.86,
+          "iban": "DE62888888880012345678",
+          "bic": "TESTDE88XXX",
+          "bank_name": "Testbank",
+          "currency": "EUR",
+          "booking_date": "2018-06-03",
+          "purpose": "CASH CashMgmtTransakt Kredit",
+          "type": "",
+          "booked": 1,
+          "visited": 1,
+          "classification_bank": "classification by bank",
+          "classification_own": "classification by ourself",
+          "classification_provider": "classification by provider",
+          "booking_text": "this is the booking text",
+          "saldo": 500
+        },
+        {
+          "name": "Hr. Jacqueline Eifert",
+          "amount": -74.86,
+          "iban": "DE62888888880012345678",
+          "bic": "TESTDE88XXX",
+          "bank_name": "Testbank",
+          "currency": "EUR",
+          "booking_date": "2018-06-03",
+          "purpose": "CASH CashMgmtTransakt Kredit",
+          "type": "",
+          "booked": 1,
+          "visited": 1,
+          "classification_bank": "classification by bank",
+          "classification_own": "classification by ourself",
+          "classification_provider": "classification by provider",
+          "booking_text": "this is the booking text",
+          "saldo": 500
+        }
+      ]
+    }
+  ],
+  "second_borrower": {
+    "contact_data": {
+      "street_name": "Königsallee",
+      "street_number": "60 F",
+      "zip_code": "40212",
+      "city": "Düsseldorf"
+    },
+    "income": {
+      "total": 331800,
+      "net": 164000,
+      "benefit": 99000,
+      "other": 68800
+    },
+    "expenses": {
+      "total": 350800,
+      "rent_and_mortgage": 14500,
+      "support": 38600,
+      "insurance_and_savings": 70000,
+      "memberships": 9600,
+      "debt": 64500,
+      "living": 76500,
+      "other": 77100
+    },
+    "relationship_to_first_borrower": "spouse",
+    "same_household": false
+  },
+  "partner_broker": {
+    "broker_id": "71ffb4a5-b22d-4918-b85d-11cd2de8b6b4",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "+49 221 123456789",
+    "company_name": "Super Company",
+    "street_name": "random street",
+    "street_number": "1b",
+    "zip_code": "04234",
+    "city": "Awesome City"
+  }
+}
+> {%
+    var status = response.body.is_success;
+    client.assert(status === true, 'status should be true');
+    var offers = response.body.offers;
+    client.assert(offers && offers.length >= 1, 'Offers should present');
+    var prices = response.body.offers[0].prices;
+    client.assert(prices && prices.length >= 1, 'prices should present');
+    client.global.set("credit_id", response.body.credit_id);
+    client.global.set("user_id", response.body.user_id);
+    client.global.set("price_id", response.body.offers[0].prices[0].price_id);
+%}
+
+### Get contractResponse
+###
+POST {{host}}distributionline/api/rest/partnerendpoints/contracts
+Content-Type: application/x-www-form-urlencoded
+urlkey: {{urlkey}}
+Accept: application/json
+
+{
+  "user_id": 1602131363,
+  "credit_id": 1955411122
+}
+
+###

@@ -1,0 +1,108 @@
+POST {{consumer-loans}}/loan/demand/?internal-use=true
+Content-Type: application/json
+
+{
+  "dacId": "12345",
+  "ftsTransactionId": "728b26ee3110efc747d4f4f66da38184:dcef8932170829f62a55ee80e540d199c58dccec707e125ebaae4899556485f8",
+  "loanAsked": 6000,
+  "termsAccepted": true,
+  "personalDetails": {
+    "gender": "MALE",
+    "familyStatus": "SINGLE",
+    "firstName": "Johar",
+    "lastName": "Mohar",
+    "nationality": "DE",
+    "birthDate": "1990-10-11",
+    "numberOfChildren": "0",
+    "housingType": "OWNER",
+    "placeOfBirth": "Berlin",
+    "numberOfCreditCard": 0,
+    "carInformation": false
+  },
+  "expenses": {
+    "alimony": 0,
+    "insuranceAndSavings": 86.37,
+    "loanInstalments": 257.38,
+    "mortgages": 0,
+    "privateHealthInsurance": 1510.3899999999999,
+    "rent": 1924,
+    "vehicleInsurance": 0,
+    "loanInstallmentsSwk": 0,
+    "acknowledgedMortgages": 0,
+    "acknowledgedRent": 1924
+  },
+  "income": {
+    "alimonyPayments": 0,
+    "childBenefits": 0,
+    "netIncome": 10000,
+    "otherRevenue": 856.79,
+    "pensionBenefits": 0,
+    "rentalIncome": 0,
+    "acknowledgedNetIncome": 10000
+  },
+  "contactData": {
+    "city": "Berlin",
+    "streetName": "Hardenbergstraße",
+    "houseNumber": "32",
+    "postCode": "10623",
+    "mobile": "4917624088579",
+    "email": "qa.user@joonko.io",
+    "livingSince": {
+      "month": 1,
+      "year": 2020
+    },
+    "previousAddress": {
+      "streetName": "Mllerstr. 77",
+      "postCode": "10623",
+      "city": "Berlin",
+      "country": "DE"
+    }
+  },
+  "employmentDetails": {
+    "employmentType": "REGULAR_EMPLOYED",
+    "employerName": "Joonko AG",
+    "employmentSince": {
+      "month": 5,
+      "year": 2012
+    },
+    "streetName": "Hardenberstr.",
+    "postCode": "10587",
+    "city": "Berlin"
+  },
+  "accountDetails": {
+    "balance": 2123,
+    "balanceDate": "2020-03-13",
+    "bic": "BYLADEM1001",
+    "currency": "EUR",
+    "iban": "DE92370601930002130041",
+    "limit": 1000,
+    "nameOnAccount": "MUSTERMANN, HARTMUT",
+    "createdAt": "2020-08-31T15:53:10.547Z",
+    "days": 90,
+    "transactions": [
+      {
+        "amount": -9.55,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-03-13",
+        "purpose": "ABSCHLUSS KEINE BELEG INFORMATIONEN, SIEHE GGF. KONTOAUSZUG !",
+        "isPreBooked": false
+      },
+      {
+        "amount": -962,
+        "iban": "",
+        "bic": "",
+        "bookingDate": "2020-03-13",
+        "purpose": "SEPA-DAUERAUFTRAG EMPFAENGER HAUSVERWALTUNG Musterhaus IBAN DE234234324234 BIC GENODEF1AAAA Order-Nr. 00022688654 VERWENDUNGSZWECK MIETE MUSTERMANN",
+        "isPreBooked": false
+      }
+    ]
+  },
+  "customDACData": {
+    "has3IncomeTags": true,
+    "netIncomeHasGovSupport": false,
+    "carInformation": false
+  }
+}
+###
+

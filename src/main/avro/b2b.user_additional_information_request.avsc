@@ -1,0 +1,19 @@
+{
+    "type": "record",
+    "name": "UserAdditionalInformationRequest",
+    "namespace": "de.joonko.loan.avro.dto.user_additional_information",
+    "fields": [
+        {
+            "name": "uuid",
+            "type": "string"
+        },
+        {
+            "name": "bonifyUserId",
+            "type": [
+                "null",
+                "long"
+            ],
+            "default": null
+        }
+    ]
+}

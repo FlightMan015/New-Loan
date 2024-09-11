@@ -1,0 +1,43 @@
+@startuml
+
+cloud "www"
+
+Client <..> www
+
+frame "Loan" {
+
+package "API" {
+    (LoanApi) - [LoanDemandController]
+}
+
+www <..> LoanApi
+
+package "Domain" #DDDDDD {
+    (LoanDemandInterface) as api
+    [Offer]
+    [LoanDemand]
+}
+
+LoanDemandController -> api : calls
+LoanDemandController ..> LoanDemand : maps
+LoanDemandController ..> Offer
+
+note right of [api]
+    Flux<Offer> : getOffers (LoanDemand)
+end note
+
+package "LoanProviders" {
+    [Auxmoney] as auxmoney
+    [Consors] as consors
+}
+
+api <- auxmoney
+api <- consors : implements
+
+' Layout LoanProviders under Domain under API
+Domain -[hidden]-> LoanProviders
+API -[hidden]-> Domain
+
+}
+
+@enduml

@@ -1,0 +1,210 @@
+{
+    "type": "record",
+    "name": "FinleapToFtsTransactionalData",
+    "namespace": "de.joonko.loan.avro.dto.salary_account",
+    "fields": [
+        {
+            "name": "userUUID",
+            "type": "string"
+        },
+        {
+            "name": "internalUse",
+            "type": "boolean"
+        },
+        {
+            "name": "account",
+            "type": [
+                "null",
+                {
+                    "type": "record",
+                    "name": "Account",
+                    "fields": [
+                        {
+                            "name": "bankName",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "bic",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "countryId",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "description",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "holder",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "iban",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "isJointlyManaged",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        }
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "balance",
+            "type": [
+                "null",
+                {
+                    "type": "record",
+                    "name": "Balance",
+                    "fields": [
+                        {
+                            "name": "available",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "balance",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "currency",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "date",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "limit",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        }
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "transactions",
+            "type": [
+                "null",
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "record",
+                        "name": "Transactions",
+                        "fields": [
+                            {
+                                "name": "amount",
+                                "type": [
+                                    "null",
+                                    "double"
+                                ],
+                                "default": null
+                            },
+                            {
+                                "name": "bookingDate",
+                                "type": [
+                                    "null",
+                                    "long"
+                                ],
+                                "default": null
+                            },
+                            {
+                                "name": "bookingPurpose",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ],
+                                "default": null
+                            },
+                            {
+                                "name": "currency",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ],
+                                "default": null
+                            },
+                            {
+                                "name": "currencyId",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ],
+                                "default": null
+                            },
+                            {
+                                "name": "partnerAccountIBAN",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ],
+                                "default": null
+                            },
+                            {
+                                "name": "partnerName",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ],
+                                "default": null
+                            }
+                        ]
+                    },
+                    "java-class": "java.util.List"
+                }
+            ],
+            "default": null
+        }
+    ]
+}

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5fa21e13-fd99-4e8c-87fd-9526c9bed132" activeEnvironment="Default" name="SantanderCreditApplicationWS" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3922cbbb-aae7-4087-8ed2-67a73b54de04" wsaVersion="NONE" name="SantanderCreditApplicationWsBinding" type="wsdl" bindingName="{http://ws.creditapplication.santander.de}SantanderCreditApplicationWsBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/joonko_user/Downloads/SantanderCreditApplicationWS.WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/joonko_user/Downloads/SantanderCreditApplicationWS.WSDL"><con:part><con:url>file:/Users/joonko_user/Downloads/SantanderCreditApplicationWS.WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ws.creditapplication.santander.de" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.creditapplication.santander.de" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ws.creditapplication.santander.de">
+      <xsd:complexType name="UpdateCreditApplicationParams">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="applicationId" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="authentication" type="tns:Authentication"/>
+          <xsd:element name="loanAccountNumber" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="contractState" type="tns:ContractStateEnum"/>
+          <xsd:element name="loanAmount" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="loanAmountTotal" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="redemptionAmountInternal" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="redemptionAmountExternal" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="redemptionAmountTotal" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="duration" type="xsd:int" minOccurs="0"/>
+          <xsd:element name="monthlyRate" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="lastRate" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="interestRate" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="paymentProtectionAmount" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="paymentProtectionInsuranceDebtor1" type="tns:ppiEnum" minOccurs="0"/>
+          <xsd:element name="paymentProtectionInsuranceDebtor2" type="tns:ppiEnum" minOccurs="0"/>
+          <xsd:element name="effectiveInterest" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="nominalInterest" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="serviceFee" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="dateOfFirstRate" type="xsd:date" minOccurs="0"/>
+          <xsd:element name="dateOfLastRate" type="xsd:date" minOccurs="0"/>
+          <xsd:element name="decision" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="bankConsultant" type="tns:BankConsultant" minOccurs="0"/>
+          <xsd:element name="contract" type="xsd:base64Binary" minOccurs="0"/>
+          <xsd:element name="missingDocuments" type="tns:MissingDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="parameters" type="tns:Parameter" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCreditApplicationResult">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" minOccurs="0"/>
+          <xsd:element name="errorCode" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="errorText" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Authentication">
+        <xsd:sequence>
+          <xsd:element name="username" type="xsd:string"/>
+          <xsd:element name="password" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BankConsultant">
+        <xsd:sequence>
+          <xsd:element name="firstname" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="lastname" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="phone" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="fax" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="email" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MissingDocument">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="applicant" type="xsd:int"/>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="description" type="xsd:string"/>
+          <xsd:element name="document" type="xsd:base64Binary" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Parameter">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="key" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="value" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="ContractStateEnum">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="IN_PROGRESS"/>
+          <xsd:enumeration value="ACCEPTED"/>
+          <xsd:enumeration value="REJECTED"/>
+          <xsd:enumeration value="CLOSED"/>
+          <xsd:enumeration value="DOCUMENTS_MISSING"/>
+          <xsd:enumeration value="DOCUMENTS_RECEIVED"/>
+          <xsd:enumeration value="CANCELATION"/>
+          <xsd:enumeration value="REJECTED_SECONDARY_CONTROL"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ppiEnum">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NONE"/>
+          <xsd:enumeration value="TOD"/>
+          <xsd:enumeration value="TOD_AU"/>
+          <xsd:enumeration value="TOD_AU_AL"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="rsvType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="OHNE_RSV"/>
+          <xsd:enumeration value="TOD"/>
+          <xsd:enumeration value="TOD_AU"/>
+          <xsd:enumeration value="TOD_AU_AL"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="UpdateCreditApplicationRequest" type="tns:UpdateCreditApplicationParams"/>
+      <xsd:element name="UpdateCreditApplicationResponse" type="tns:UpdateCreditApplicationResult"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateCreditApplicationRequest">
+    <wsdl:part element="tns:UpdateCreditApplicationRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCreditApplicationResponse">
+    <wsdl:part element="tns:UpdateCreditApplicationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SantanderCreditApplicationWsPortType">
+    <wsdl:operation name="updateCreditApplication">
+      <wsdl:input message="tns:UpdateCreditApplicationRequest"/>
+      <wsdl:output message="tns:UpdateCreditApplicationResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SantanderCreditApplicationWsBinding" type="tns:SantanderCreditApplicationWsPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateCreditApplication">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SantanderCreditApplicationWS">
+    <wsdl:port binding="tns:SantanderCreditApplicationWsBinding" name="SantanderCreditApplicationWS">
+      <soap:address location="http://temp.uri/santander/services/SantanderCreditApplicationWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://temp.uri/santander/services/SantanderCreditApplicationWS</con:endpoint></con:endpoints><con:operation id="bc3fd376-dae2-4782-b0ef-52fc1c062c1c" isOneWay="false" action="" name="updateCreditApplication" bindingOperationName="updateCreditApplication" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

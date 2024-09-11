@@ -1,0 +1,5 @@
+### get contract
+
+GET {{ratanet}}/subscription/{{subscription-id}}/documents?version={{api_version}}
+Content-Type: application/json
+Authorization: {{token}}

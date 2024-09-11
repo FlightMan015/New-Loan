@@ -1,0 +1,5 @@
+GET {{consumer-loans}}/loan/customer/document?internal-use=true
+Content-Type: application/json
+
+###
+

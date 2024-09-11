@@ -1,0 +1,86 @@
+### 2. send user details
+
+POST {{host}}/{{brandId}}/credits-channel-app/api/1/processes
+X-Customer-Id: {{customerId}}
+Api-Gateway-Key: {{gatewayKey}}
+X-Token: {{token}}
+Content-Type: application/json
+
+{
+    "processName": "DE_CASH_LOAN",
+    "variables": [
+        {
+            "name": "CREDIT_APPLICATION",
+            "value": {
+                "civil_status": "SINGLE",
+                "num_dependants": 2,
+                "cost_of_life_declared": 200,
+                "flat_status": "RENT",
+                "psd2_ext_income": 4040.54,
+                "declared_salary": 2322.52,
+                "psd2_ext_net_income": 4040.54,
+                "psd2_ext_pension_benefits": 4040.54,
+                "psd2_ext_child_benefits": 4040.54,
+                "psd2_ext_other_revenue": 4040.54,
+                "psd2_rental_income": 4040.54,
+                "psd2_alimony_payments": 4040.54,
+                "psd2_acknowledged_net_income": 4040.54,
+                "time_of_employment": "2018-07-08T00:00:00.000Z",
+                "company_nip": "DE123456789",
+                "installments_credit_obligations": 2322.52,
+                "installments_credit_obligations_psd2": 2322.52,
+                "declared_limits": 2322.52,
+                "declared_purpose_of_loan": "new_car",
+                "bonimia_score": "A",
+                "place_of_birth": "Berlin",
+                "birth_date": "1988-07-08T00:00:00.000Z",
+                "nationality": "DE",
+                "residential_address": {
+                    "country": "DE",
+                    "postal_code": "10783",
+                    "city": "Berlin",
+                    "street": "Kielganstr.",
+                    "building_number": "4"
+                },
+                "gender": "MALE",
+                "birth_country": "DE",
+                "occupation": "SELF_EMPLOYMENT",
+                "source_of_funds": "SELF_EMPLOYMENT",
+                "taxability_us": false,
+                "source_of_wealth": "SELF_EMPLOYMENT",
+                "taxability_de_only": "DE",
+                "tin": "12/345/67890",
+                "requested_amount": 7000,
+                "offer_currency": "EUR",
+                "schufa_class": "A",
+                "is_current_delay_in_installments": true,
+                "was_there_any_delay_in_installments_in_last_12M": true,
+                "probability_of_default": 0.04,
+                "ext_psd2_avg_income_3M": 2322.52,
+                "ext_psd2_has_salary_each_month_last3M": true,
+                "ext_psd2_sum_salary_1MAgo": 2322.52,
+                "ext_psd2_sum_salary_2MAgo": 2322.52,
+                "ext_psd2_sum_salary_3MAgo": 2322.52
+            }
+        },
+        {
+            "name": "PERSONAL_DATA",
+            "value": {
+                "first_name": "HARTMUT",
+                "surname": "Joron",
+                "phone_prefix": "49",
+                "mobile_phone_number": "993865842",
+                "email": "test@bonify.de"
+            }
+        },
+        {
+            "name": "PSD2_RAW",
+            "value": {
+
+            }
+        }
+    ]
+}
+> {%
+    client.global.set("processId", response.body.processId);
+%}

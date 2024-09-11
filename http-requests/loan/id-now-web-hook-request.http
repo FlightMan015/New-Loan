@@ -1,0 +1,115 @@
+POST {{consumer-loans}}/loan/id-now/identification-notification?internal-use=true
+Content-Type: application/json
+
+
+{
+  "identificationprocess": {
+    "id": "TST-MKCQE",
+    "result": "REVIEW_PENDING",
+    "reason": "TEST-REASON",
+    "agentname": "TROBOT",
+    "identificationtime": "2020-08-05T10:28:57+02:00",
+    "type": "WEB",
+    "transactionnumber": "5f4f811347408a6886af3679",
+    "companyid": "joonkoswkesign"
+  },
+  "customdata": {
+    "custom3": "5f2a6d041a68f2093211e8cb",
+    "custom4": null,
+    "custom1": null,
+    "custom2": null,
+    "custom5": "5969270023"
+  },
+  "contactdata": {
+    "email": "rashmin.javiya+54@joonko.io",
+    "mobilephone": "+441789012345"
+  },
+  "userdata": {
+    "firstname": {
+      "status": "MATCH",
+      "value": "X-MANUALTEST-CANCELED"
+    },
+    "lastname": {
+      "status": "MATCH",
+      "value": "Javiya"
+    },
+    "birthday": {
+      "status": "CHANGE",
+      "value": "2002-02-02",
+      "original": "1987-05-23"
+    },
+    "birthname": {
+      "status": "NEW",
+      "value": "BIRTHNAME"
+    },
+    "birthplace": {
+      "status": "MATCH",
+      "value": "LONDON"
+    },
+    "title": {
+      "status": "NEW",
+      "value": "TITLE"
+    },
+    "gender": {
+      "status": "MATCH",
+      "value": "FEMALE"
+    },
+    "nationality": {
+      "status": "MATCH",
+      "value": "GB"
+    },
+    "address": {
+      "street": {
+        "status": "MATCH",
+        "value": "BAKER STREET"
+      },
+      "city": {
+        "status": "MATCH",
+        "value": "LONDON"
+      },
+      "country": {
+        "status": "MATCH",
+        "value": "GB"
+      },
+      "streetnumber": {
+        "status": "NEW",
+        "value": 1
+      },
+      "zipcode": {
+        "status": "MATCH",
+        "value": "W1U"
+      }
+    }
+  },
+  "identificationdocument": {
+    "validuntil": {
+      "value": "2020-10-31",
+      "status": "NEW"
+    },
+    "issuedby": {
+      "value": "ISSUER",
+      "status": "NEW"
+    },
+    "dateissued": {
+      "value": "2010-11-01",
+      "status": "NEW"
+    }
+  },
+  "attachments": {
+    "xmlsig": "5f2a6d041a68f2093211e8cb.xml.sig",
+    "pdf": "5f2a6d041a68f2093211e8cb.pdf",
+    "xml": "5f2a6d041a68f2093211e8cb.xml",
+    "contract-contract": "5f2a6d041a68f2093211e8cb_contract_original.pdf",
+    "idbackside": "5f2a6d041a68f2093211e8cb_idbackside.jpg",
+    "idfrontside": "5f2a6d041a68f2093211e8cb_idfrontside.jpg",
+    "security1": "5f2a6d041a68f2093211e8cb_security1.jpg",
+    "userface": "5f2a6d041a68f2093211e8cb_userface.jpg",
+    "security2": "5f2a6d041a68f2093211e8cb_security2.jpg",
+    "security_covered": "5f2a6d041a68f2093211e8cb_security_covered.jpg",
+    "security3": "5f2a6d041a68f2093211e8cb_security3.jpg"
+  }
+}
+
+
+
+###

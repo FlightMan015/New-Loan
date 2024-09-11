@@ -1,0 +1,31 @@
+{{- if .Values.cronJobAbandonedUser.enabled }}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "loan.fullname" . }}-cronjob-abandoned-user
+  namespace: {{ include "loan.fullname" . }}
+spec:
+  schedule: "0 6 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: sync
+              image: curlimages/curl:latest
+              env:
+                - name: SYNC_USERNAME
+                  value: bnfsuperadmin
+                - name: SYNC_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ include "loan.fullname" . }}
+                      key: SECURITY_BASIC_ADMIN_PASSWORD
+              args:
+                - /bin/sh
+                - -ec
+                - |
+                  curl -X POST http://{{ include "loan.serviceURL" . }}/admin/v1/user/abandoned -u "${SYNC_USERNAME}:${SYNC_PASSWORD}" -H 'Content-Type: application/json'
+          restartPolicy: OnFailure
+{{- end }}
+

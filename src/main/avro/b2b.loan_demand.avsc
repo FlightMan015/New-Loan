@@ -1,0 +1,911 @@
+{
+  "fields": [
+    {
+      "name": "timestamp",
+      "type": {
+        "logicalType": "timestamp-millis",
+        "type": "long"
+      }
+    },
+    {
+      "name": "userId",
+      "type": "long"
+    },
+    {
+      "name": "userUUID",
+      "type": {
+        "logicalType": "uuid",
+        "type": "string"
+      }
+    },
+    {
+      "name": "applicationId",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "parentApplicationId",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "loanAsked",
+      "type": "float"
+    },
+    {
+      "default": null,
+      "name": "fundingPurpose",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "askedForBonifyLoans",
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    {
+      "default": null,
+      "name": "requestIp",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "requestCountryCode",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "personalDetails",
+      "type": {
+        "fields": [
+          {
+            "name": "gender",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "firstName",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastName",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "familyStatus",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "birthDate",
+            "type": "long"
+          },
+          {
+            "name": "nationality",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "placeOfBirth",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "numberOfChildren",
+            "type": "int"
+          },
+          {
+            "default": null,
+            "name": "numberOfDependants",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "name": "housingType",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "numberOfCreditCard",
+            "type": "int"
+          },
+          {
+            "default": null,
+            "name": "countryOfBirth",
+            "type": [
+              "null",
+              {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "default": null,
+            "name": "taxId",
+            "type": [
+              "null",
+              {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "name": "personalDetails",
+        "type": "record"
+      }
+    },
+    {
+      "name": "employmentDetails",
+      "type": {
+        "fields": [
+          {
+            "name": "employmentType",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "employerName",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "employmentSince",
+            "type": {
+              "fields": [
+                {
+                  "name": "month",
+                  "type": [
+                    "null",
+                    "int"
+                  ]
+                },
+                {
+                  "name": "year",
+                  "type": [
+                    "null",
+                    "int"
+                  ]
+                }
+              ],
+              "name": "employmentSince",
+              "type": "record"
+            }
+          },
+          {
+            "default": null,
+            "name": "professionEndDate",
+            "type": [
+              "null",
+              {
+                "fields": [
+                  {
+                    "name": "month",
+                    "type": [
+                      "null",
+                      "int"
+                    ]
+                  },
+                  {
+                    "name": "year",
+                    "type": [
+                      "null",
+                      "int"
+                    ]
+                  }
+                ],
+                "name": "professionEndDate",
+                "type": "record"
+              }
+            ]
+          },
+          {
+            "name": "streetName",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "postCode",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "default": null,
+            "name": "houseNumber",
+            "type": [
+              "null",
+              {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "name": "employmentDetails",
+        "type": "record"
+      }
+    },
+    {
+      "name": "income",
+      "type": {
+        "fields": [
+          {
+            "name": "netIncome",
+            "type": "float"
+          },
+          {
+            "name": "pensionBenefits",
+            "type": "float"
+          },
+          {
+            "name": "childBenefits",
+            "type": "float"
+          },
+          {
+            "name": "otherRevenue",
+            "type": "float"
+          },
+          {
+            "name": "rentalIncome",
+            "type": "float"
+          },
+          {
+            "name": "alimonyPayments",
+            "type": "float"
+          },
+          {
+            "name": "acknowledgedNetIncome",
+            "type": "float"
+          },
+          {
+            "default": null,
+            "name": "incomeDeclared",
+            "type": [
+              "null",
+              "float"
+            ]
+          }
+        ],
+        "name": "income",
+        "type": "record"
+      }
+    },
+    {
+      "name": "expenses",
+      "type": {
+        "fields": [
+          {
+            "name": "mortgages",
+            "type": "float"
+          },
+          {
+            "name": "insuranceAndSavings",
+            "type": "float"
+          },
+          {
+            "name": "loanInstalments",
+            "type": "float"
+          },
+          {
+            "name": "rent",
+            "type": "float"
+          },
+          {
+            "name": "alimony",
+            "type": "float"
+          },
+          {
+            "name": "privateHealthInsurance",
+            "type": "float"
+          },
+          {
+            "name": "loanInstallmentsSwk",
+            "type": "float"
+          },
+          {
+            "name": "vehicleInsurance",
+            "type": "float"
+          },
+          {
+            "name": "acknowledgedMortgages",
+            "type": "float"
+          },
+          {
+            "name": "acknowledgedRent",
+            "type": "float"
+          },
+          {
+            "default": null,
+            "name": "monthlyLifeCost",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "default": null,
+            "name": "monthlyLoanInstallmentsDeclared",
+            "type": [
+              "null",
+              "float"
+            ]
+          }
+        ],
+        "name": "expenses",
+        "type": "record"
+      }
+    },
+    {
+      "default": null,
+      "name": "creditDetails",
+      "type": [
+        "null",
+        {
+          "fields": [
+            {
+              "default": null,
+              "name": "bonimaScore",
+              "type": [
+                "null",
+                "int"
+              ]
+            },
+            {
+              "default": null,
+              "name": "estimatedSchufaClass",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "default": null,
+              "name": "probabilityOfDefault",
+              "type": [
+                "null",
+                "float"
+              ]
+            },
+            {
+              "default": null,
+              "name": "creditCardLimitDeclared",
+              "type": [
+                "null",
+                "float"
+              ]
+            },
+            {
+              "default": null,
+              "name": "isCurrentDelayInInstallmentsDeclared",
+              "type": [
+                "null",
+                "boolean"
+              ]
+            }
+          ],
+          "name": "creditDetails",
+          "type": "record"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "disposableIncome",
+      "type": [
+        "null",
+        "float"
+      ]
+    },
+    {
+      "name": "accountDetails",
+      "type": {
+        "fields": [
+          {
+            "name": "nameOnAccount",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "iban",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "bic",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "balance",
+            "type": "float"
+          },
+          {
+            "name": "limit",
+            "type": "float"
+          },
+          {
+            "name": "balanceDate",
+            "type": "long"
+          },
+          {
+            "name": "currency",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactions",
+            "type": {
+              "items": {
+                "fields": [
+                  {
+                    "name": "amount",
+                    "default": null,
+                    "type": [
+                      "null",
+                      "float"
+                    ]
+                  },
+                  {
+                    "name": "iban",
+                    "default": null,
+                    "type": [
+                      "null",
+                      {
+                        "avro.java.string": "String",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "bic",
+                    "default": null,
+                    "type": [
+                      "null",
+                      {
+                        "avro.java.string": "String",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "purpose",
+                    "default": null,
+                    "type": [
+                      "null",
+                      {
+                        "avro.java.string": "String",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "counterHolder",
+                    "default": null,
+                    "type": [
+                      "null",
+                      {
+                        "avro.java.string": "String",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "bookingDate",
+                    "default": null,
+                    "type": [
+                      "null",
+                      "long"
+                    ]
+                  },
+                  {
+                    "name": "isPreBooked",
+                    "default": null,
+                    "type": [
+                      "null",
+                      "boolean"
+                    ]
+                  }
+                ],
+                "name": "transactions_record",
+                "type": "record"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "name": "days",
+            "type": "int"
+          },
+          {
+            "name": "createdAt",
+            "type": "long"
+          },
+          {
+            "name": "isJointlyManaged",
+            "type": "boolean"
+          }
+        ],
+        "name": "accountDetails",
+        "type": "record"
+      }
+    },
+    {
+      "name": "contactData",
+      "type": {
+        "fields": [
+          {
+            "name": "streetName",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "houseNumber",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "postCode",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "livingSince",
+            "type": {
+              "fields": [
+                {
+                  "name": "month",
+                  "type": "int"
+                },
+                {
+                  "name": "year",
+                  "type": "int"
+                }
+              ],
+              "name": "livingSince",
+              "type": "record"
+            }
+          },
+          {
+            "name": "email",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "mobile",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "name": "contactData",
+        "type": "record"
+      }
+    },
+    {
+      "name": "ftsTransactionId",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "dacId",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "customDACData",
+      "type": {
+        "fields": [
+          {
+            "name": "has3IncomeTags",
+            "type": "boolean"
+          },
+          {
+            "name": "netIncomeHasGovSupport",
+            "type": "boolean"
+          },
+          {
+            "name": "carInformation",
+            "type": "boolean"
+          },
+          {
+            "name": "hasSalary",
+            "type": "boolean"
+          },
+          {
+            "name": "hasConsorsPreventionTags",
+            "type": "boolean"
+          },
+          {
+            "default": null,
+            "name": "countEncashmentTag",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "default": null,
+            "name": "countSeizureTag",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "default": null,
+            "name": "countPAccountTag",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "default": null,
+            "name": "countChargebackTag",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "default": null,
+            "name": "sumIncomes1MAgo",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "default": null,
+            "name": "sumIncomes2MAgo",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "default": null,
+            "name": "sumIncomes3MAgo",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "default": null,
+            "name": "hasSalaryEachMonthLast3M",
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          {
+            "default": null,
+            "name": "isCurrentDelayInInstallments",
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          {
+            "default": null,
+            "name": "wasDelayInInstallments40DaysDiff",
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          {
+            "default": null,
+            "name": "wasDelayInInstallments62DaysDiff",
+            "type": [
+              "null",
+              "boolean"
+            ]
+          }
+        ],
+        "name": "customDACData",
+        "type": "record"
+      }
+    },
+    {
+      "default": null,
+      "name": "preChecks",
+      "type": [
+        "null",
+        {
+          "items": {
+            "fields": [
+              {
+                "name": "provider",
+                "type": [
+                  "null",
+                  {
+                    "avro.java.string": "String",
+                    "type": "string"
+                  }
+                ]
+              },
+              {
+                "name": "preCheck",
+                "type": [
+                  "null",
+                  {
+                    "avro.java.string": "String",
+                    "type": "string"
+                  }
+                ]
+              },
+              {
+                "name": "value",
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              }
+            ],
+            "name": "precheck_record",
+            "type": "record"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "consents",
+      "type": [
+        "null",
+        {
+          "items": {
+            "fields": [
+              {
+                "name": "consentType",
+                "type": [
+                  "null",
+                  {
+                    "name": "ConsentType",
+                    "symbols": [
+                      "EMAIL",
+                      "PHONE",
+                      "SMS",
+                      "LETTER"
+                    ],
+                    "type": "enum"
+                  }
+                ]
+              },
+              {
+                "name": "consentState",
+                "type": [
+                  "null",
+                  {
+                    "name": "ConsentState",
+                    "symbols": [
+                      "ACCEPTED",
+                      "DECLINED",
+                      "REVOKED",
+                      "NONE"
+                    ],
+                    "type": "enum"
+                  }
+                ]
+              },
+              {
+                "name": "lastUpdatedTimestamp",
+                "type": {
+                  "logicalType": "timestamp-millis",
+                  "type": "long"
+                }
+              },
+              {
+                "name": "clientIP",
+                "type": {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              }
+            ],
+            "name": "consent_record",
+            "type": "record"
+          },
+          "type": "array"
+        }
+      ]
+    }
+  ],
+  "name": "LoanDemandMessage",
+  "namespace": "de.joonko.loan.avro.dto.loan_demand",
+  "type": "record"
+}

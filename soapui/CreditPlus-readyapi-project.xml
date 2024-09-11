@@ -1,0 +1,2415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b7b4e691-7f69-4ea2-906c-137babf49661" created="3.2.0" activeEnvironment="Default"
+                    name="CreditPlus" resourceRoot="${projectDir}" updated="3.2.5 2020-04-28T15:43:41Z"
+                    encryptionMode="Not encrypted" abortOnError="false" runType="SEQUENTIAL" soapui-version="5.5.0"
+                    authProfile="No Authorization" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="8835e174-49ff-439a-8c26-b4f3a694cc58" wsaVersion="NONE"
+                 name="EfinComparerServiceSoapBinding" type="wsdl"
+                 bindingName="{http://service.efincomparer.creditplus.de/}EfinComparerServiceSoapBinding"
+                 soapVersion="1_1" anonymous="optional"
+                 definition="https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/?WSDL"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/?WSDL">
+      <con:part>
+        <con:url>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/?WSDL</con:url>
+        <con:content><![CDATA[<wsdl:definitions name="EfinComparerService" targetNamespace="http://service.efincomparer.creditplus.de/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.efincomparer.creditplus.de/" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.efincomparer.creditplus.de/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="activateCommunication" type="tns:activateCommunication"/>
+      <xs:element name="activateCommunicationResponse" type="tns:activateCommunicationResponse"/>
+      <xs:element name="cancelCreditOffer" type="tns:cancelCreditOffer"/>
+      <xs:element name="cancelCreditOfferResponse" type="tns:cancelCreditOfferResponse"/>
+      <xs:element name="createCreditOffer" type="tns:createCreditOffer"/>
+      <xs:element name="createCreditOfferDac" type="tns:createCreditOfferDac"/>
+      <xs:element name="createCreditOfferDacResponse" type="tns:createCreditOfferDacResponse"/>
+      <xs:element name="createCreditOfferResponse" type="tns:createCreditOfferResponse"/>
+      <xs:element name="getContracts" type="tns:getContracts"/>
+      <xs:element name="getContractsResponse" type="tns:getContractsResponse"/>
+      <xs:element name="getDocument" type="tns:getDocument"/>
+      <xs:element name="getDocumentResponse" type="tns:getDocumentResponse"/>
+      <xs:element name="getDocumentVideoIdent" type="tns:getDocumentVideoIdent"/>
+      <xs:element name="getDocumentVideoIdentResponse" type="tns:getDocumentVideoIdentResponse"/>
+      <xs:element name="setVideoIdentExternData" type="tns:setVideoIdentExternData"/>
+      <xs:element name="setVideoIdentExternDataResponse" type="tns:setVideoIdentExternDataResponse"/>
+      <xs:element name="startDispatch" type="tns:startDispatch"/>
+      <xs:element name="startDispatchResponse" type="tns:startDispatchResponse"/>
+      <xs:complexType name="getContracts">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="filter" type="tns:Filter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cancelDateFromTo" type="tns:DateFromTo"/>
+          <xs:element minOccurs="0" name="contractState" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="dealerOrderNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="decisionDateFromTo" type="tns:DateFromTo"/>
+          <xs:element minOccurs="0" name="orderDateFromTo" type="tns:DateFromTo"/>
+          <xs:element minOccurs="0" name="paidDateFromTo" type="tns:DateFromTo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DateFromTo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="from" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="to" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getContractsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:Contract"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Contract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="branch" type="xs:string"/>
+          <xs:element minOccurs="0" name="branchAppointment" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="contractState" type="xs:int"/>
+          <xs:element minOccurs="0" name="contractStateText" type="xs:string"/>
+          <xs:element minOccurs="0" name="contractSubState" type="xs:int"/>
+          <xs:element minOccurs="0" name="contractSubStateText" type="xs:string"/>
+          <xs:element minOccurs="0" name="counterArgument" type="xs:string"/>
+          <xs:element minOccurs="0" name="cpReferenceNumber" type="xs:int"/>
+          <xs:element minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="decisionManual" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="duration" type="xs:int"/>
+          <xs:element minOccurs="0" name="finalRateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="firstRateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="fullAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="interest" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="interestAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="isTransfered" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="maxAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="nominalInterest" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="paidDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="pdfDocumentExist" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="rate" type="xs:decimal"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="requirements" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="rsvAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="rsvTypeKn1" type="xs:int"/>
+          <xs:element minOccurs="0" name="rsvTypeKn2" type="xs:int"/>
+          <xs:element minOccurs="0" name="rsvTypeReferenceKn1" type="xs:int"/>
+          <xs:element minOccurs="0" name="rsvTypeReferenceKn2" type="xs:int"/>
+          <xs:element minOccurs="0" name="systemDecision" type="xs:int"/>
+          <xs:element minOccurs="0" name="webIdContractEc" type="tns:WebIdContract"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WebIdContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actionIdKn1" type="xs:string"/>
+          <xs:element minOccurs="0" name="actionIdKn2" type="xs:string"/>
+          <xs:element minOccurs="0" name="actionIdUrlKn1" type="xs:string"/>
+          <xs:element minOccurs="0" name="actionIdUrlKn2" type="xs:string"/>
+          <xs:element minOccurs="0" name="esignatureAllowed" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="videolegitimationAllowed" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startDispatch">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startDispatchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="confirmation" type="tns:Confirmation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Confirmation">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="errorItems" nillable="true" type="tns:ErrorItem"/>
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:int"/>
+          <xs:element name="isSucceed" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ErrorItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:int"/>
+          <xs:element minOccurs="0" name="field" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocument">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createCreditOffer">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="efinComparerCreditOffer" type="tns:CreditOffer"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreditOffer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="additionalData" type="tns:AddionalData"/>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="communicationActive" type="xs:string"/>
+          <xs:element minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="debtor1" type="tns:Debtor"/>
+          <xs:element minOccurs="0" name="debtor2" type="tns:Debtor"/>
+          <xs:element minOccurs="0" name="device" type="tns:Device"/>
+          <xs:element minOccurs="0" name="duration" type="xs:int"/>
+          <xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="productType" type="xs:int"/>
+          <xs:element minOccurs="0" name="subId" type="xs:string"/>
+          <xs:element minOccurs="0" name="subId2" type="xs:string"/>
+          <xs:element minOccurs="0" name="trackingId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="account" type="tns:Account"/>
+          <xs:element minOccurs="0" name="dispatchType" type="xs:int"/>
+          <xs:element minOccurs="0" name="information" type="xs:string"/>
+          <xs:element minOccurs="0" name="transferDay" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Account">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountOwner" type="xs:int"/>
+          <xs:element minOccurs="0" name="iban" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Debtor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dacDebtor" type="tns:DacDebtor"/>
+          <xs:element minOccurs="0" name="financialData" type="tns:FinancialData"/>
+          <xs:element minOccurs="0" name="personalData" type="tns:PersonalData"/>
+          <xs:element minOccurs="0" name="replacementType" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="replacements" nillable="true" type="tns:Replacement"/>
+          <xs:element minOccurs="0" name="rsvType" type="xs:int"/>
+          <xs:element minOccurs="0" name="webIdDebtor" type="tns:WebIdDebtor"/>
+          <xs:element minOccurs="0" name="workdata" type="tns:WorkData"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DacDebtor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="decision" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="decisionRule" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="requestId" type="xs:string"/>
+          <xs:element minOccurs="0" name="score" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FinancialData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="aliment" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="childBenefit" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="houseCosts" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="income" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="motorbike" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="otherCreditRates" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="otherIncome" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="otherIncomeType" type="xs:int"/>
+          <xs:element minOccurs="0" name="pension" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="privateHealthInsurance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="rent" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="rentalIncome" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="residenceType" type="xs:int"/>
+          <xs:element minOccurs="0" name="vehicle" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PersonalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="city" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryOfBirth" type="xs:string"/>
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="foreName" type="xs:string"/>
+          <xs:element minOccurs="0" name="identificationType" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastRemoval" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="maritalState" type="xs:int"/>
+          <xs:element minOccurs="0" name="nameOfBirth" type="xs:string"/>
+          <xs:element minOccurs="0" name="nationality" type="xs:string"/>
+          <xs:element minOccurs="0" name="numberOfChildren" type="xs:int"/>
+          <xs:element minOccurs="0" name="phoneHome" type="tns:PhoneData"/>
+          <xs:element minOccurs="0" name="phoneMobile" type="tns:PhoneData"/>
+          <xs:element minOccurs="0" name="placeOfBirth" type="xs:string"/>
+          <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="preCity" type="xs:string"/>
+          <xs:element minOccurs="0" name="preCountry" type="xs:string"/>
+          <xs:element minOccurs="0" name="prePostalCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="preStreet" type="xs:string"/>
+          <xs:element minOccurs="0" name="residencePermission" type="xs:int"/>
+          <xs:element minOccurs="0" name="residencePermissionDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="salutation" type="xs:int"/>
+          <xs:element minOccurs="0" name="street" type="xs:string"/>
+          <xs:element minOccurs="0" name="titel" type="xs:int"/>
+          <xs:element minOccurs="0" name="workPermission" type="xs:int"/>
+          <xs:element minOccurs="0" name="workPermissionDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="areaCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="availableFrom" type="xs:string"/>
+          <xs:element minOccurs="0" name="availableTo" type="xs:string"/>
+          <xs:element minOccurs="0" name="localNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Replacement">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="duration" type="xs:int"/>
+          <xs:element minOccurs="0" name="initialAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="rate" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="replace" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WebIdDebtor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agbConfirm" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="telephonePromotionAllowed" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WorkData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="category" type="xs:int"/>
+          <xs:element minOccurs="0" name="dateOfEmployeeLimitation" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="durationOfPreEmployment" type="xs:int"/>
+          <xs:element minOccurs="0" name="employedDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="employeeLimitation" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="employerCity" type="xs:string"/>
+          <xs:element minOccurs="0" name="employerName" type="xs:string"/>
+          <xs:element minOccurs="0" name="employerPhone" type="tns:PhoneData"/>
+          <xs:element minOccurs="0" name="employerPostalCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="employerStreet" type="xs:string"/>
+          <xs:element minOccurs="0" name="industry" type="xs:int"/>
+          <xs:element minOccurs="0" name="job" type="xs:string"/>
+          <xs:element minOccurs="0" name="preEmployerCity" type="xs:string"/>
+          <xs:element minOccurs="0" name="preEmployerName" type="xs:string"/>
+          <xs:element minOccurs="0" name="preEmployerPostalCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="preEmployerStreet" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Device">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="brand" type="xs:string"/>
+          <xs:element minOccurs="0" name="browser" type="xs:string"/>
+          <xs:element minOccurs="0" name="category" type="xs:string"/>
+          <xs:element minOccurs="0" name="cookiesEnabled" type="xs:string"/>
+          <xs:element minOccurs="0" name="javaVersion" type="xs:string"/>
+          <xs:element minOccurs="0" name="language" type="xs:string"/>
+          <xs:element minOccurs="0" name="operatingSystem" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createCreditOfferResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="confirmation" type="tns:Confirmation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelCreditOffer">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelCreditOfferResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentVideoIdent">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentVideoIdentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createCreditOfferDac">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="efinComparerCreditOffer" type="tns:CreditOfferDac"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreditOfferDac">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="additionalData" type="tns:AddionalData"/>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="communicationActive" type="xs:string"/>
+          <xs:element minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="debtor1" type="tns:DebtorDac"/>
+          <xs:element minOccurs="0" name="debtor2" type="tns:DebtorDac"/>
+          <xs:element minOccurs="0" name="duration" type="xs:int"/>
+          <xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="productType" type="xs:int"/>
+          <xs:element minOccurs="0" name="subId" type="xs:string"/>
+          <xs:element minOccurs="0" name="subId2" type="xs:string"/>
+          <xs:element minOccurs="0" name="trackingId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DebtorDac">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dacData" type="tns:DacData"/>
+          <xs:element minOccurs="0" name="financialData" type="tns:FinancialData"/>
+          <xs:element minOccurs="0" name="personalData" type="tns:PersonalData"/>
+          <xs:element minOccurs="0" name="replacementType" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="replacements" nillable="true" type="tns:Replacement"/>
+          <xs:element minOccurs="0" name="rsvType" type="xs:int"/>
+          <xs:element minOccurs="0" name="webIdDebtor" type="tns:WebIdDebtor"/>
+          <xs:element minOccurs="0" name="workdata" type="tns:WorkData"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DacData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountOwner" type="xs:string"/>
+          <xs:element minOccurs="0" name="iban" type="xs:string"/>
+          <xs:element minOccurs="0" name="minimalData" type="tns:Minimal"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="revenues" nillable="true" type="tns:Revenue"/>
+          <xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="totalPeriodSummary" nillable="true" type="tns:ReportCategoryValue"/>
+          <xs:element minOccurs="0" name="type" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Minimal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountOwner" type="xs:string"/>
+          <xs:element minOccurs="0" name="childBenefit" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="employerName" type="xs:string"/>
+          <xs:element minOccurs="0" name="iban" type="xs:string"/>
+          <xs:element minOccurs="0" name="income" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="numberOfChildren" type="xs:int"/>
+          <xs:element minOccurs="0" name="pension" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="rent" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="requestId" type="xs:int"/>
+          <xs:element minOccurs="0" name="score" type="xs:int"/>
+          <xs:element minOccurs="0" name="validation" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="vehicleExists" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Revenue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="balance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="bankReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="bic" type="xs:string"/>
+          <xs:element minOccurs="0" name="bicOfContraAccount" type="xs:string"/>
+          <xs:element minOccurs="0" name="bookingDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="category" type="xs:string"/>
+          <xs:element minOccurs="0" name="compensationAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="consecutiveNumberOfTheTransaction" type="xs:int"/>
+          <xs:element minOccurs="0" name="creditorIdentifier" type="xs:string"/>
+          <xs:element minOccurs="0" name="customerReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="debtorIdentifier" type="xs:string"/>
+          <xs:element minOccurs="0" name="deviatingDonor" type="xs:string"/>
+          <xs:element minOccurs="0" name="deviatingRecipient" type="xs:string"/>
+          <xs:element minOccurs="0" name="endToEndReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="iban" type="xs:string"/>
+          <xs:element minOccurs="0" name="ibanOfContraAccount" type="xs:string"/>
+          <xs:element minOccurs="0" name="instructionId" type="xs:string"/>
+          <xs:element minOccurs="0" name="mandateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="mandateReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="nameOfContraAccount" type="xs:string"/>
+          <xs:element minOccurs="0" name="oldCreditorId" type="xs:string"/>
+          <xs:element minOccurs="0" name="oldMandateReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="originalAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="postingKey" type="xs:string"/>
+          <xs:element minOccurs="0" name="postingText" type="xs:string"/>
+          <xs:element minOccurs="0" name="primaNotaNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="purposeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="reasonForTheSepaTransfer" type="xs:string"/>
+          <xs:element minOccurs="0" name="reference" type="xs:string"/>
+          <xs:element minOccurs="0" name="returnReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="textSupplementKey" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactionCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="valueDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReportCategoryValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="category" type="xs:string"/>
+          <xs:element minOccurs="0" name="value" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createCreditOfferDacResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="confirmation" type="tns:Confirmation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setVideoIdentExternData">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="filter" type="tns:VideoIdentExtern"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VideoIdentExtern">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actionIdKn1" type="xs:string"/>
+          <xs:element minOccurs="0" name="actionIdKn2" type="xs:string"/>
+          <xs:element minOccurs="0" name="actionIdUrlKn1" type="xs:string"/>
+          <xs:element minOccurs="0" name="actionIdUrlKn2" type="xs:string"/>
+          <xs:element minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="videoIdentProvider" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setVideoIdentExternDataResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateCommunication">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="dealerOrderNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateCommunicationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EfinComparerFaultException" type="tns:EfinComparerFaultException"/>
+      <xs:complexType name="EfinComparerFaultException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getContracts">
+    <wsdl:part element="tns:getContracts" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="startDispatch">
+    <wsdl:part element="tns:startDispatch" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getContractsResponse">
+    <wsdl:part element="tns:getContractsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDocumentVideoIdentResponse">
+    <wsdl:part element="tns:getDocumentVideoIdentResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelCreditOfferResponse">
+    <wsdl:part element="tns:cancelCreditOfferResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelCreditOffer">
+    <wsdl:part element="tns:cancelCreditOffer" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="EfinComparerFaultException">
+    <wsdl:part element="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCreditOfferDac">
+    <wsdl:part element="tns:createCreditOfferDac" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activateCommunication">
+    <wsdl:part element="tns:activateCommunication" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCreditOfferResponse">
+    <wsdl:part element="tns:createCreditOfferResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setVideoIdentExternDataResponse">
+    <wsdl:part element="tns:setVideoIdentExternDataResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activateCommunicationResponse">
+    <wsdl:part element="tns:activateCommunicationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDocument">
+    <wsdl:part element="tns:getDocument" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCreditOffer">
+    <wsdl:part element="tns:createCreditOffer" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDocumentVideoIdent">
+    <wsdl:part element="tns:getDocumentVideoIdent" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCreditOfferDacResponse">
+    <wsdl:part element="tns:createCreditOfferDacResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setVideoIdentExternData">
+    <wsdl:part element="tns:setVideoIdentExternData" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDocumentResponse">
+    <wsdl:part element="tns:getDocumentResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="startDispatchResponse">
+    <wsdl:part element="tns:startDispatchResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EfinComparer">
+    <wsdl:operation name="getContracts">
+      <wsdl:input message="tns:getContracts" name="getContracts"></wsdl:input>
+      <wsdl:output message="tns:getContractsResponse" name="getContractsResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startDispatch">
+      <wsdl:input message="tns:startDispatch" name="startDispatch"></wsdl:input>
+      <wsdl:output message="tns:startDispatchResponse" name="startDispatchResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDocument">
+      <wsdl:input message="tns:getDocument" name="getDocument"></wsdl:input>
+      <wsdl:output message="tns:getDocumentResponse" name="getDocumentResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createCreditOffer">
+      <wsdl:input message="tns:createCreditOffer" name="createCreditOffer"></wsdl:input>
+      <wsdl:output message="tns:createCreditOfferResponse" name="createCreditOfferResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelCreditOffer">
+      <wsdl:input message="tns:cancelCreditOffer" name="cancelCreditOffer"></wsdl:input>
+      <wsdl:output message="tns:cancelCreditOfferResponse" name="cancelCreditOfferResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentVideoIdent">
+      <wsdl:input message="tns:getDocumentVideoIdent" name="getDocumentVideoIdent"></wsdl:input>
+      <wsdl:output message="tns:getDocumentVideoIdentResponse" name="getDocumentVideoIdentResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createCreditOfferDac">
+      <wsdl:input message="tns:createCreditOfferDac" name="createCreditOfferDac"></wsdl:input>
+      <wsdl:output message="tns:createCreditOfferDacResponse" name="createCreditOfferDacResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setVideoIdentExternData">
+      <wsdl:input message="tns:setVideoIdentExternData" name="setVideoIdentExternData"></wsdl:input>
+      <wsdl:output message="tns:setVideoIdentExternDataResponse" name="setVideoIdentExternDataResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="activateCommunication">
+      <wsdl:input message="tns:activateCommunication" name="activateCommunication"></wsdl:input>
+      <wsdl:output message="tns:activateCommunicationResponse" name="activateCommunicationResponse"></wsdl:output>
+      <wsdl:fault message="tns:EfinComparerFaultException" name="EfinComparerFaultException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EfinComparerServiceSoapBinding" type="tns:EfinComparer">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getContracts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getContracts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getContractsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startDispatch">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="startDispatch">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startDispatchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDocument">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDocument">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDocumentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createCreditOffer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createCreditOffer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createCreditOfferResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelCreditOffer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cancelCreditOffer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelCreditOfferResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentVideoIdent">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDocumentVideoIdent">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDocumentVideoIdentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createCreditOfferDac">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createCreditOfferDac">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createCreditOfferDacResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setVideoIdentExternData">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="setVideoIdentExternData">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setVideoIdentExternDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="activateCommunication">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="activateCommunication">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activateCommunicationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EfinComparerFaultException">
+        <soap:fault name="EfinComparerFaultException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EfinComparerService">
+    <wsdl:port binding="tns:EfinComparerServiceSoapBinding" name="EfinComparerPort">
+      <soap:address location="https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/"/>
+      <wsp:PolicyReference URI="#UsernameToken"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:Policy wsu:Id="UsernameToken">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SupportingTokens>
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:HashPassword/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SupportingTokens>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+    </con:endpoints>
+    <con:operation id="f2b54b4e-5c27-48ab-bc0f-66b048011efc" isOneWay="false" action="" name="activateCommunication" bindingOperationName="activateCommunication" type="Request-Response" outputName="activateCommunicationResponse" inputName="activateCommunication" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="fb426d04-1331-4825-a7b8-e217be2528f2" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:activateCommunication>
+         <!--Optional:-->
+         <ser:dealerOrderNumber>?</ser:dealerOrderNumber>
+      </ser:activateCommunication>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.efincomparer.creditplus.de/EfinComparer/activateCommunication"/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:call>
+    </con:operation>
+    <con:operation id="681c527c-eede-4ecb-8394-d36c155b651c" isOneWay="false" action="" name="cancelCreditOffer" bindingOperationName="cancelCreditOffer" type="Request-Response" outputName="cancelCreditOfferResponse" inputName="cancelCreditOffer" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="2822282b-0c27-4523-9f32-d470e4f82c7f" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:cancelCreditOffer>
+         <!--Optional:-->
+         <ser:dealerOrderNumber>?</ser:dealerOrderNumber>
+      </ser:cancelCreditOffer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.efincomparer.creditplus.de/EfinComparer/cancelCreditOffer"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:call>
+    </con:operation>
+    <con:operation id="edc6bd87-821c-4fb4-9eab-3fec6c0002ca" isOneWay="false" action="" name="createCreditOffer" bindingOperationName="createCreditOffer" type="Request-Response" outputName="createCreditOfferResponse" inputName="createCreditOffer" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="fcecb855-43f1-44d1-bdf4-e2a371aee0c0" name="Adrians Test">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:ser="http://service.efincomparer.creditplus.de/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header>
+       <!--<wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"> -->
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <!-- <wsse:UsernameToken wsu:Id="UsernameToken-7DD29EB91A08AA253C15895360885673"> -->
+         <wsse:UsernameToken>
+            <wsse:Username>joonko</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">4cGyTLbZkZonJLPe7Kg55mdh9NE=</wsse:Password>
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">MTU5NDAzMDI0MjE3OA==</wsse:Nonce>
+            <wsu:Created>2020-07-06T10:10:42.179Z</wsu:Created>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+		<ns1:createCreditOffer xmlns:ns1="http://service.efincomparer.creditplus.de/">
+			<ns1:efinComparerCreditOffer>
+				<additionalData />
+				<amount>10000</amount>
+				<dealerOrderNumber>1213213132131</dealerOrderNumber>
+				<debtor1 />
+				<duration>18</duration>
+				<productType>67</productType>
+			</ns1:efinComparerCreditOffer>
+		</ns1:createCreditOffer>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.efincomparer.creditplus.de/EfinComparer/createCreditOffer"/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>Joonko</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>Joonko</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:call>
+      <con:call id="ff47fa9e-737c-4a65-b202-c0050868a1d3" name="Copy of Adrians Test">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header>
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsse:UsernameToken>
+            <wsse:Username>joonko</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">O52V7/Qng9+vrpKihb4raJ5FM7Q=</wsse:Password>
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">MTU5NDAzMTU3MDc4OA==</wsse:Nonce>
+            <wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2020-07-06T10:32:50.788Z</wsu:Created>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:createCreditOffer xmlns:ns1="http://service.efincomparer.creditplus.de/">
+         <ns1:efinComparerCreditOffer>
+            <additionalData />
+            <amount>10000</amount>
+            <dealerOrderNumber>1213213132131</dealerOrderNumber>
+            <debtor1 />
+            <duration>18</duration>
+            <productType>67</productType>
+         </ns1:efinComparerCreditOffer>
+      </ns1:createCreditOffer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                       action="http://service.efincomparer.creditplus.de/EfinComparer/createCreditOffer"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+    <con:operation id="d789bed1-cbce-4409-9075-7ec9dc395160" isOneWay="false" action="" name="createCreditOfferDac" bindingOperationName="createCreditOfferDac" type="Request-Response" outputName="createCreditOfferDacResponse" inputName="createCreditOfferDac" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="48d27c5c-274f-4d04-be6e-697b18c9be87" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:createCreditOfferDac>
+         <!--Optional:-->
+         <ser:efinComparerCreditOffer>
+            <!--Optional:-->
+            <additionalData>
+               <!--Optional:-->
+               <account>
+                  <!--Optional:-->
+                  
+                  <!--Optional:-->
+                  
+               </account>
+               <!--Optional:-->
+               <dispatchType>?</dispatchType>
+               <!--Optional:-->
+               <information>?</information>
+               <!--Optional:-->
+               <transferDay>?</transferDay>
+            </additionalData>
+            <!--Optional:-->
+            <amount>5000.00</amount>
+            <!--Optional:-->
+            <communicationActive>?</communicationActive>
+            <!--Optional:-->
+            <dealerOrderNumber>?</dealerOrderNumber>
+            <!--Optional:-->
+            <debtor1>
+               <!--Optional:-->
+               <dacData>
+                  <!--Optional:-->
+                  <accountOwner>Adrian Hass</accountOwner>
+                  <!--Optional:-->
+                  <iban>DE25120300001007466806</iban>
+                  <!--Optional:-->
+                  <minimalData>
+                     <!--Optional:-->
+                     <accountOwner>Adrian Hass</accountOwner>
+                     <!--Optional:-->
+                     <childBenefit>408.00</childBenefit>
+                     <!--Optional:-->
+                     <employerName>?</employerName>
+                     <!--Optional:-->
+                     <iban>DE25120300001007466806</iban>
+                     <!--Optional:-->
+                     <income>?</income>
+                     <!--Optional:-->
+                     <numberOfChildren>?</numberOfChildren>
+                     <!--Optional:-->
+                     <pension>?</pension>
+                     <!--Optional:-->
+                     <rent>?</rent>
+                     <!--Optional:-->
+                     <requestId>?</requestId>
+                     <!--Optional:-->
+                     <score>?</score>
+                     <!--Optional:-->
+                     <validation>?</validation>
+                     <!--Optional:-->
+                     <vehicleExists>?</vehicleExists>
+                  </minimalData>
+                  <!--Zero or more repetitions:-->
+                  <revenues>
+                     <!--Optional:-->
+                     <accountNumber>?</accountNumber>
+                     <!--Optional:-->
+                     <amount>?</amount>
+                     <!--Optional:-->
+                     <balance>?</balance>
+                     <!--Optional:-->
+                     <bankCode>?</bankCode>
+                     <!--Optional:-->
+                     <bankReference>?</bankReference>
+                     <!--Optional:-->
+                     <bic>?</bic>
+                     <!--Optional:-->
+                     <bicOfContraAccount>?</bicOfContraAccount>
+                     <!--Optional:-->
+                     <bookingDate>?</bookingDate>
+                     <!--Optional:-->
+                     <category>?</category>
+                     <!--Optional:-->
+                     <compensationAmount>?</compensationAmount>
+                     <!--Optional:-->
+                     <consecutiveNumberOfTheTransaction>?</consecutiveNumberOfTheTransaction>
+                     <!--Optional:-->
+                     <creditorIdentifier>?</creditorIdentifier>
+                     <!--Optional:-->
+                     <customerReference>?</customerReference>
+                     <!--Optional:-->
+                     <debtorIdentifier>?</debtorIdentifier>
+                     <!--Optional:-->
+                     <deviatingDonor>?</deviatingDonor>
+                     <!--Optional:-->
+                     <deviatingRecipient>?</deviatingRecipient>
+                     <!--Optional:-->
+                     <endToEndReference>?</endToEndReference>
+                     <!--Optional:-->
+                     <iban>?</iban>
+                     <!--Optional:-->
+                     <ibanOfContraAccount>?</ibanOfContraAccount>
+                     <!--Optional:-->
+                     <instructionId>?</instructionId>
+                     <!--Optional:-->
+                     <mandateDate>?</mandateDate>
+                     <!--Optional:-->
+                     <mandateReference>?</mandateReference>
+                     <!--Optional:-->
+                     <nameOfContraAccount>?</nameOfContraAccount>
+                     <!--Optional:-->
+                     <oldCreditorId>?</oldCreditorId>
+                     <!--Optional:-->
+                     <oldMandateReference>?</oldMandateReference>
+                     <!--Optional:-->
+                     <originalAmount>?</originalAmount>
+                     <!--Optional:-->
+                     <postingKey>?</postingKey>
+                     <!--Optional:-->
+                     <postingText>?</postingText>
+                     <!--Optional:-->
+                     <primaNotaNumber>?</primaNotaNumber>
+                     <!--Optional:-->
+                     <purposeCode>?</purposeCode>
+                     <!--Optional:-->
+                     <reasonForTheSepaTransfer>?</reasonForTheSepaTransfer>
+                     <!--Optional:-->
+                     <reference>?</reference>
+                     <!--Optional:-->
+                     <returnReference>?</returnReference>
+                     <!--Optional:-->
+                     <textSupplementKey>?</textSupplementKey>
+                     <!--Optional:-->
+                     <transactionCode>?</transactionCode>
+                     <!--Optional:-->
+                     <valueDate>?</valueDate>
+                  </revenues>
+                  <!--Optional:-->
+                  <timestamp>?</timestamp>
+                  <!--Zero or more repetitions:-->
+                  <totalPeriodSummary>
+                     <!--Optional:-->
+                     <category>?</category>
+                     <!--Optional:-->
+                     <value>?</value>
+                  </totalPeriodSummary>
+                  <!--Optional:-->
+                  <type>?</type>
+               </dacData>
+               <!--Optional:-->
+               <financialData>
+                  <!--Optional:-->
+                  <aliment>?</aliment>
+                  <!--Optional:-->
+                  <childBenefit>?</childBenefit>
+                  <!--Optional:-->
+                  <houseCosts>?</houseCosts>
+                  <!--Optional:-->
+                  <income>?</income>
+                  <!--Optional:-->
+                  <motorbike>?</motorbike>
+                  <!--Optional:-->
+                  <otherCreditRates>?</otherCreditRates>
+                  <!--Optional:-->
+                  <otherIncome>?</otherIncome>
+                  <!--Optional:-->
+                  <otherIncomeType>?</otherIncomeType>
+                  <!--Optional:-->
+                  <pension>?</pension>
+                  <!--Optional:-->
+                  <privateHealthInsurance>?</privateHealthInsurance>
+                  <!--Optional:-->
+                  <rent>?</rent>
+                  <!--Optional:-->
+                  <rentalIncome>?</rentalIncome>
+                  <!--Optional:-->
+                  <residenceType>?</residenceType>
+                  <!--Optional:-->
+                  <vehicle>?</vehicle>
+               </financialData>
+               <!--Optional:-->
+               <personalData>
+                  <!--Optional:-->
+                  <city>?</city>
+                  <!--Optional:-->
+                  <countryOfBirth>?</countryOfBirth>
+                  <!--Optional:-->
+                  <dateOfBirth>?</dateOfBirth>
+                  <!--Optional:-->
+                  <email>?</email>
+                  <!--Optional:-->
+                  <foreName>?</foreName>
+                  <!--Optional:-->
+                  <identificationType>?</identificationType>
+                  <!--Optional:-->
+                  <lastName>?</lastName>
+                  <!--Optional:-->
+                  <lastRemoval>?</lastRemoval>
+                  <!--Optional:-->
+                  <maritalState>?</maritalState>
+                  <!--Optional:-->
+                  <nameOfBirth>?</nameOfBirth>
+                  <!--Optional:-->
+                  <nationality>?</nationality>
+                  <!--Optional:-->
+                  <numberOfChildren>?</numberOfChildren>
+                  <!--Optional:-->
+                  <phoneHome>
+                     <!--Optional:-->
+                     <areaCode>?</areaCode>
+                     <!--Optional:-->
+                     <availableFrom>?</availableFrom>
+                     <!--Optional:-->
+                     <availableTo>?</availableTo>
+                     <!--Optional:-->
+                     <localNumber>?</localNumber>
+                  </phoneHome>
+                  <!--Optional:-->
+                  <phoneMobile>
+                     <!--Optional:-->
+                     <areaCode>?</areaCode>
+                     <!--Optional:-->
+                     <availableFrom>?</availableFrom>
+                     <!--Optional:-->
+                     <availableTo>?</availableTo>
+                     <!--Optional:-->
+                     <localNumber>?</localNumber>
+                  </phoneMobile>
+                  <!--Optional:-->
+                  <placeOfBirth>?</placeOfBirth>
+                  <!--Optional:-->
+                  <postalCode>?</postalCode>
+                  <!--Optional:-->
+                  <preCity>?</preCity>
+                  <!--Optional:-->
+                  <preCountry>?</preCountry>
+                  <!--Optional:-->
+                  <prePostalCode>?</prePostalCode>
+                  <!--Optional:-->
+                  <preStreet>?</preStreet>
+                  <!--Optional:-->
+                  <residencePermission>?</residencePermission>
+                  <!--Optional:-->
+                  <residencePermissionDate>?</residencePermissionDate>
+                  <!--Optional:-->
+                  <salutation>?</salutation>
+                  <!--Optional:-->
+                  <street>?</street>
+                  <!--Optional:-->
+                  <titel>?</titel>
+                  <!--Optional:-->
+                  <workPermission>?</workPermission>
+                  <!--Optional:-->
+                  <workPermissionDate>?</workPermissionDate>
+               </personalData>
+               <!--Optional:-->
+               <replacementType>?</replacementType>
+               <!--Zero or more repetitions:-->
+               <replacements>
+                  <!--Optional:-->
+                  <duration>?</duration>
+                  <!--Optional:-->
+                  <initialAmount>?</initialAmount>
+                  <!--Optional:-->
+                  <rate>?</rate>
+                  <!--Optional:-->
+                  <replace>?</replace>
+               </replacements>
+               <!--Optional:-->
+               <rsvType>?</rsvType>
+               <!--Optional:-->
+               <webIdDebtor>
+                  <!--Optional:-->
+                  <agbConfirm>?</agbConfirm>
+                  <!--Optional:-->
+                  <telephonePromotionAllowed>?</telephonePromotionAllowed>
+               </webIdDebtor>
+               <!--Optional:-->
+               <workdata>
+                  <!--Optional:-->
+                  <category>?</category>
+                  <!--Optional:-->
+                  <dateOfEmployeeLimitation>?</dateOfEmployeeLimitation>
+                  <!--Optional:-->
+                  <durationOfPreEmployment>?</durationOfPreEmployment>
+                  <!--Optional:-->
+                  <employedDate>?</employedDate>
+                  <!--Optional:-->
+                  <employeeLimitation>?</employeeLimitation>
+                  <!--Optional:-->
+                  <employerCity>?</employerCity>
+                  <!--Optional:-->
+                  <employerName>?</employerName>
+                  <!--Optional:-->
+                  <employerPhone>
+                     <!--Optional:-->
+                     <areaCode>?</areaCode>
+                     <!--Optional:-->
+                     <availableFrom>?</availableFrom>
+                     <!--Optional:-->
+                     <availableTo>?</availableTo>
+                     <!--Optional:-->
+                     <localNumber>?</localNumber>
+                  </employerPhone>
+                  <!--Optional:-->
+                  <employerPostalCode>?</employerPostalCode>
+                  <!--Optional:-->
+                  <employerStreet>?</employerStreet>
+                  <!--Optional:-->
+                  <industry>?</industry>
+                  <!--Optional:-->
+                  <job>?</job>
+                  <!--Optional:-->
+                  <preEmployerCity>?</preEmployerCity>
+                  <!--Optional:-->
+                  <preEmployerName>?</preEmployerName>
+                  <!--Optional:-->
+                  <preEmployerPostalCode>?</preEmployerPostalCode>
+                  <!--Optional:-->
+                  <preEmployerStreet>?</preEmployerStreet>
+               </workdata>
+            </debtor1>
+            <!--Optional:-->
+            <debtor2>
+               <!--Optional:-->
+               <dacData>
+                  <!--Optional:-->
+                  <accountOwner>?</accountOwner>
+                  <!--Optional:-->
+                  <iban>?</iban>
+                  <!--Optional:-->
+                  <minimalData>
+                     <!--Optional:-->
+                     <accountOwner>?</accountOwner>
+                     <!--Optional:-->
+                     <childBenefit>?</childBenefit>
+                     <!--Optional:-->
+                     <employerName>?</employerName>
+                     <!--Optional:-->
+                     <iban>?</iban>
+                     <!--Optional:-->
+                     <income>?</income>
+                     <!--Optional:-->
+                     <numberOfChildren>?</numberOfChildren>
+                     <!--Optional:-->
+                     <pension>?</pension>
+                     <!--Optional:-->
+                     <rent>?</rent>
+                     <!--Optional:-->
+                     <requestId>?</requestId>
+                     <!--Optional:-->
+                     <score>?</score>
+                     <!--Optional:-->
+                     <validation>?</validation>
+                     <!--Optional:-->
+                     <vehicleExists>?</vehicleExists>
+                  </minimalData>
+                  <!--Zero or more repetitions:-->
+                  <revenues>
+                     <!--Optional:-->
+                     <accountNumber>?</accountNumber>
+                     <!--Optional:-->
+                     <amount>?</amount>
+                     <!--Optional:-->
+                     <balance>?</balance>
+                     <!--Optional:-->
+                     <bankCode>?</bankCode>
+                     <!--Optional:-->
+                     <bankReference>?</bankReference>
+                     <!--Optional:-->
+                     <bic>?</bic>
+                     <!--Optional:-->
+                     <bicOfContraAccount>?</bicOfContraAccount>
+                     <!--Optional:-->
+                     <bookingDate>?</bookingDate>
+                     <!--Optional:-->
+                     <category>?</category>
+                     <!--Optional:-->
+                     <compensationAmount>?</compensationAmount>
+                     <!--Optional:-->
+                     <consecutiveNumberOfTheTransaction>?</consecutiveNumberOfTheTransaction>
+                     <!--Optional:-->
+                     <creditorIdentifier>?</creditorIdentifier>
+                     <!--Optional:-->
+                     <customerReference>?</customerReference>
+                     <!--Optional:-->
+                     <debtorIdentifier>?</debtorIdentifier>
+                     <!--Optional:-->
+                     <deviatingDonor>?</deviatingDonor>
+                     <!--Optional:-->
+                     <deviatingRecipient>?</deviatingRecipient>
+                     <!--Optional:-->
+                     <endToEndReference>?</endToEndReference>
+                     <!--Optional:-->
+                     <iban>?</iban>
+                     <!--Optional:-->
+                     <ibanOfContraAccount>?</ibanOfContraAccount>
+                     <!--Optional:-->
+                     <instructionId>?</instructionId>
+                     <!--Optional:-->
+                     <mandateDate>?</mandateDate>
+                     <!--Optional:-->
+                     <mandateReference>?</mandateReference>
+                     <!--Optional:-->
+                     <nameOfContraAccount>?</nameOfContraAccount>
+                     <!--Optional:-->
+                     <oldCreditorId>?</oldCreditorId>
+                     <!--Optional:-->
+                     <oldMandateReference>?</oldMandateReference>
+                     <!--Optional:-->
+                     <originalAmount>?</originalAmount>
+                     <!--Optional:-->
+                     <postingKey>?</postingKey>
+                     <!--Optional:-->
+                     <postingText>?</postingText>
+                     <!--Optional:-->
+                     <primaNotaNumber>?</primaNotaNumber>
+                     <!--Optional:-->
+                     <purposeCode>?</purposeCode>
+                     <!--Optional:-->
+                     <reasonForTheSepaTransfer>?</reasonForTheSepaTransfer>
+                     <!--Optional:-->
+                     <reference>?</reference>
+                     <!--Optional:-->
+                     <returnReference>?</returnReference>
+                     <!--Optional:-->
+                     <textSupplementKey>?</textSupplementKey>
+                     <!--Optional:-->
+                     <transactionCode>?</transactionCode>
+                     <!--Optional:-->
+                     <valueDate>?</valueDate>
+                  </revenues>
+                  <!--Optional:-->
+                  <timestamp>?</timestamp>
+                  <!--Zero or more repetitions:-->
+                  <totalPeriodSummary>
+                     <!--Optional:-->
+                     <category>?</category>
+                     <!--Optional:-->
+                     <value>?</value>
+                  </totalPeriodSummary>
+                  <!--Optional:-->
+                  <type>?</type>
+               </dacData>
+               <!--Optional:-->
+               <financialData>
+                  <!--Optional:-->
+                  <aliment>?</aliment>
+                  <!--Optional:-->
+                  <childBenefit>?</childBenefit>
+                  <!--Optional:-->
+                  <houseCosts>?</houseCosts>
+                  <!--Optional:-->
+                  <income>?</income>
+                  <!--Optional:-->
+                  <motorbike>?</motorbike>
+                  <!--Optional:-->
+                  <otherCreditRates>?</otherCreditRates>
+                  <!--Optional:-->
+                  <otherIncome>?</otherIncome>
+                  <!--Optional:-->
+                  <otherIncomeType>?</otherIncomeType>
+                  <!--Optional:-->
+                  <pension>?</pension>
+                  <!--Optional:-->
+                  <privateHealthInsurance>?</privateHealthInsurance>
+                  <!--Optional:-->
+                  <rent>?</rent>
+                  <!--Optional:-->
+                  <rentalIncome>?</rentalIncome>
+                  <!--Optional:-->
+                  <residenceType>?</residenceType>
+                  <!--Optional:-->
+                  <vehicle>?</vehicle>
+               </financialData>
+               <!--Optional:-->
+               <personalData>
+                  <!--Optional:-->
+                  <city>?</city>
+                  <!--Optional:-->
+                  <countryOfBirth>?</countryOfBirth>
+                  <!--Optional:-->
+                  <dateOfBirth>?</dateOfBirth>
+                  <!--Optional:-->
+                  <email>?</email>
+                  <!--Optional:-->
+                  <foreName>?</foreName>
+                  <!--Optional:-->
+                  <identificationType>?</identificationType>
+                  <!--Optional:-->
+                  <lastName>?</lastName>
+                  <!--Optional:-->
+                  <lastRemoval>?</lastRemoval>
+                  <!--Optional:-->
+                  <maritalState>?</maritalState>
+                  <!--Optional:-->
+                  <nameOfBirth>?</nameOfBirth>
+                  <!--Optional:-->
+                  <nationality>?</nationality>
+                  <!--Optional:-->
+                  <numberOfChildren>?</numberOfChildren>
+                  <!--Optional:-->
+                  <phoneHome>
+                     <!--Optional:-->
+                     <areaCode>?</areaCode>
+                     <!--Optional:-->
+                     <availableFrom>?</availableFrom>
+                     <!--Optional:-->
+                     <availableTo>?</availableTo>
+                     <!--Optional:-->
+                     <localNumber>?</localNumber>
+                  </phoneHome>
+                  <!--Optional:-->
+                  <phoneMobile>
+                     <!--Optional:-->
+                     <areaCode>?</areaCode>
+                     <!--Optional:-->
+                     <availableFrom>?</availableFrom>
+                     <!--Optional:-->
+                     <availableTo>?</availableTo>
+                     <!--Optional:-->
+                     <localNumber>?</localNumber>
+                  </phoneMobile>
+                  <!--Optional:-->
+                  <placeOfBirth>?</placeOfBirth>
+                  <!--Optional:-->
+                  <postalCode>?</postalCode>
+                  <!--Optional:-->
+                  <preCity>?</preCity>
+                  <!--Optional:-->
+                  <preCountry>?</preCountry>
+                  <!--Optional:-->
+                  <prePostalCode>?</prePostalCode>
+                  <!--Optional:-->
+                  <preStreet>?</preStreet>
+                  <!--Optional:-->
+                  <residencePermission>?</residencePermission>
+                  <!--Optional:-->
+                  <residencePermissionDate>?</residencePermissionDate>
+                  <!--Optional:-->
+                  <salutation>?</salutation>
+                  <!--Optional:-->
+                  <street>?</street>
+                  <!--Optional:-->
+                  <titel>?</titel>
+                  <!--Optional:-->
+                  <workPermission>?</workPermission>
+                  <!--Optional:-->
+                  <workPermissionDate>?</workPermissionDate>
+               </personalData>
+               <!--Optional:-->
+               <replacementType>?</replacementType>
+               <!--Zero or more repetitions:-->
+               <replacements>
+                  <!--Optional:-->
+                  <duration>?</duration>
+                  <!--Optional:-->
+                  <initialAmount>?</initialAmount>
+                  <!--Optional:-->
+                  <rate>?</rate>
+                  <!--Optional:-->
+                  <replace>?</replace>
+               </replacements>
+               <!--Optional:-->
+               <rsvType>?</rsvType>
+               <!--Optional:-->
+               <webIdDebtor>
+                  <!--Optional:-->
+                  <agbConfirm>?</agbConfirm>
+                  <!--Optional:-->
+                  <telephonePromotionAllowed>?</telephonePromotionAllowed>
+               </webIdDebtor>
+               <!--Optional:-->
+               <workdata>
+                  <!--Optional:-->
+                  <category>?</category>
+                  <!--Optional:-->
+                  <dateOfEmployeeLimitation>?</dateOfEmployeeLimitation>
+                  <!--Optional:-->
+                  <durationOfPreEmployment>?</durationOfPreEmployment>
+                  <!--Optional:-->
+                  <employedDate>?</employedDate>
+                  <!--Optional:-->
+                  <employeeLimitation>?</employeeLimitation>
+                  <!--Optional:-->
+                  <employerCity>?</employerCity>
+                  <!--Optional:-->
+                  <employerName>?</employerName>
+                  <!--Optional:-->
+                  <employerPhone>
+                     <!--Optional:-->
+                     <areaCode>?</areaCode>
+                     <!--Optional:-->
+                     <availableFrom>?</availableFrom>
+                     <!--Optional:-->
+                     <availableTo>?</availableTo>
+                     <!--Optional:-->
+                     <localNumber>?</localNumber>
+                  </employerPhone>
+                  <!--Optional:-->
+                  <employerPostalCode>?</employerPostalCode>
+                  <!--Optional:-->
+                  <employerStreet>?</employerStreet>
+                  <!--Optional:-->
+                  <industry>?</industry>
+                  <!--Optional:-->
+                  <job>?</job>
+                  <!--Optional:-->
+                  <preEmployerCity>?</preEmployerCity>
+                  <!--Optional:-->
+                  <preEmployerName>?</preEmployerName>
+                  <!--Optional:-->
+                  <preEmployerPostalCode>?</preEmployerPostalCode>
+                  <!--Optional:-->
+                  <preEmployerStreet>?</preEmployerStreet>
+               </workdata>
+            </debtor2>
+            <!--Optional:-->
+            <duration>?</duration>
+            <!--Optional:-->
+            <ipAddress>?</ipAddress>
+            <!--Optional:-->
+            <productType>?</productType>
+            <!--Optional:-->
+            <subId>?</subId>
+            <!--Optional:-->
+            <subId2>?</subId2>
+            <!--Optional:-->
+            <trackingId>?</trackingId>
+         </ser:efinComparerCreditOffer>
+      </ser:createCreditOfferDac>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                       action="http://service.efincomparer.creditplus.de/EfinComparer/createCreditOfferDac"/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:call>
+    </con:operation>
+    <con:operation id="fd3527b9-ec46-4225-88dc-ac4708b3d3ff" isOneWay="false" action="" name="getContracts" bindingOperationName="getContracts" type="Request-Response" outputName="getContractsResponse" inputName="getContracts" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="5bb9edaa-d7d1-4309-9689-3a7fc8a50628" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getContracts>
+         <!--Optional:-->
+         <ser:filter>
+            <!--Optional:-->
+            <cancelDateFromTo>
+               <!--Optional:-->
+               <from>?</from>
+               <!--Optional:-->
+               <to>?</to>
+            </cancelDateFromTo>
+            <!--Optional:-->
+            <contractState>?</contractState>
+            <!--Zero or more repetitions:-->
+            <dealerOrderNumber>?</dealerOrderNumber>
+            <!--Optional:-->
+            <decisionDateFromTo>
+               <!--Optional:-->
+               <from>?</from>
+               <!--Optional:-->
+               <to>?</to>
+            </decisionDateFromTo>
+            <!--Optional:-->
+            <orderDateFromTo>
+               <!--Optional:-->
+               <from>?</from>
+               <!--Optional:-->
+               <to>?</to>
+            </orderDateFromTo>
+            <!--Optional:-->
+            <paidDateFromTo>
+               <!--Optional:-->
+               <from>?</from>
+               <!--Optional:-->
+               <to>?</to>
+            </paidDateFromTo>
+         </ser:filter>
+      </ser:getContracts>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                       action="http://service.efincomparer.creditplus.de/EfinComparer/getContracts"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="e2487216-fd34-417b-b561-a7ea9c339fe0" name="Copy of Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getContracts>
+         <!--Optional:-->
+         <ser:filter>
+            <!--Optional:-->
+            <cancelDateFromTo>
+               <!--Optional:-->
+               <from>?</from>
+               <!--Optional:-->
+               <to>?</to>
+            </cancelDateFromTo>
+            <!--Optional:-->
+            <contractState>?</contractState>
+            <!--Zero or more repetitions:-->
+            <dealerOrderNumber>?</dealerOrderNumber>
+            <!--Optional:-->
+            <decisionDateFromTo>
+               <!--Optional:-->
+               <from>?</from>
+               <!--Optional:-->
+               <to>?</to>
+            </decisionDateFromTo>
+            <!--Optional:-->
+            <orderDateFromTo>
+               <!--Optional:-->
+               <from>?</from>
+               <!--Optional:-->
+               <to>?</to>
+            </orderDateFromTo>
+            <!--Optional:-->
+            <paidDateFromTo>
+               <!--Optional:-->
+               <from>?</from>
+               <!--Optional:-->
+               <to>?</to>
+            </paidDateFromTo>
+         </ser:filter>
+      </ser:getContracts>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                       action="http://service.efincomparer.creditplus.de/EfinComparer/getContracts"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+    <con:operation id="dede4de0-5dd2-499a-8130-9512b4bf4ead" isOneWay="false" action="" name="getDocument" bindingOperationName="getDocument" type="Request-Response" outputName="getDocumentResponse" inputName="getDocument" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="f3bf421a-241d-47f7-8502-8d165b5811f9" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDocument>
+         <!--Optional:-->
+         <ser:dealerOrderNumber>?</ser:dealerOrderNumber>
+      </ser:getDocument>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.efincomparer.creditplus.de/EfinComparer/getDocument"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:call>
+    </con:operation>
+    <con:operation id="a57b2163-d2aa-4845-b5ce-1c624efa4d10" isOneWay="false" action="" name="getDocumentVideoIdent" bindingOperationName="getDocumentVideoIdent" type="Request-Response" outputName="getDocumentVideoIdentResponse" inputName="getDocumentVideoIdent" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="9e79d621-a5df-4fb2-a993-491341e48fc0" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDocumentVideoIdent>
+         <!--Optional:-->
+         <ser:dealerOrderNumber>9999991</ser:dealerOrderNumber>
+      </ser:getDocumentVideoIdent>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.efincomparer.creditplus.de/EfinComparer/getDocumentVideoIdent"/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:call>
+    </con:operation>
+    <con:operation id="d0018a16-350e-4aab-b389-ad783d5cf567" isOneWay="false" action="" name="setVideoIdentExternData" bindingOperationName="setVideoIdentExternData" type="Request-Response" outputName="setVideoIdentExternDataResponse" inputName="setVideoIdentExternData" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="5fb2d48c-3bf2-438d-add7-308992aa042e" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:setVideoIdentExternData>
+         <!--Optional:-->
+         <ser:filter>
+            <!--Optional:-->
+            <actionIdKn1>?</actionIdKn1>
+            <!--Optional:-->
+            <actionIdKn2>?</actionIdKn2>
+            <!--Optional:-->
+            <actionIdUrlKn1>?</actionIdUrlKn1>
+            <!--Optional:-->
+            <actionIdUrlKn2>?</actionIdUrlKn2>
+            <!--Optional:-->
+            <dealerOrderNumber>?</dealerOrderNumber>
+            <!--Optional:-->
+            <videoIdentProvider>?</videoIdentProvider>
+         </ser:filter>
+      </ser:setVideoIdentExternData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.efincomparer.creditplus.de/EfinComparer/setVideoIdentExternData"/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:call>
+    </con:operation>
+    <con:operation id="e7d335af-685e-49d0-b1de-26dcad4df4cd" isOneWay="false" action="" name="startDispatch" bindingOperationName="startDispatch" type="Request-Response" outputName="startDispatchResponse" inputName="startDispatch" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="f058a40e-f87a-4d7d-9333-eaa5d5c3a05e" name="Request 1">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.efincomparer.creditplus.de/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:startDispatch>
+         <!--Optional:-->
+         <ser:dealerOrderNumber>?</ser:dealerOrderNumber>
+      </ser:startDispatch>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.efincomparer.creditplus.de/EfinComparer/startDispatch"/>
+        <con:environmentSpec>
+          <con:entry environmentId="6fb930f9-76f2-4d82-9c86-22a5a13a2497">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8a1c89c0-d645-4f14-984b-b11389749e6a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:properties>
+    <con:property>
+      <con:name>credit-plus.productType</con:name>
+    </con:property>
+    <con:property>
+      <con:name>joonko.loanAsked</con:name>
+      <con:value>5000.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.gender</con:name>
+      <con:value>MALE</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.familyStatus</con:name>
+      <con:value>MARRIED</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.firstName</con:name>
+      <con:value>Adrian</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.lastName</con:name>
+      <con:value>Hass</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.nationality</con:name>
+      <con:value>DE</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.birthDate</con:name>
+      <con:value>1980-01-29</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.numberOfChildren</con:name>
+      <con:value>1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.housingType</con:name>
+      <con:value>OWNER</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.numberOfCreditCard</con:name>
+      <con:value>1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employerName</con:name>
+      <con:value>Joonko AG</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentType</con:name>
+      <con:value>REGULAR_EMPLOYED</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.streetName</con:name>
+      <con:value>Hardenbergstr. 32</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.postCode</con:name>
+      <con:value>10623</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.city</con:name>
+      <con:value>Berlin</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentSince.month</con:name>
+      <con:value>05</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentSince.year</con:name>
+      <con:value>2017</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.alimony</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.insuranceAndSavings</con:name>
+      <con:value>450.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.loanInstalments</con:name>
+      <con:value>0</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.mortgages</con:name>
+      <con:value>450.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.privateHealthInsurance</con:name>
+      <con:value>450.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.rent</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.alimonyPayments</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.childBenefits</con:name>
+      <con:value>204.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.netIncome</con:name>
+      <con:value>3000.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.otherRevenue</con:name>
+      <con:value>200.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.pensionBenefits</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.rentalIncome</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.iban</con:name>
+      <con:value>DE25120300001007466806</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.bic</con:name>
+      <con:value>BYLADEM1001</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.nameOnAccount</con:name>
+      <con:value>Adrian Hass</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.currency</con:name>
+      <con:value>EUR</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.limit</con:name>
+      <con:value>1500.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.balance</con:name>
+      <con:value>2500.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.balanceDate</con:name>
+      <con:value>2020-05-11</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.city</con:name>
+      <con:value>Berlin</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.streetName</con:name>
+      <con:value>Schützallee</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.houseNumber</con:name>
+      <con:value>7</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.postCode</con:name>
+      <con:value>14169</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.email</con:name>
+      <con:value>adrian@joonko.io</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.mobile</con:name>
+      <con:value>491792079425</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.livingSince.month</con:name>
+      <con:value>07</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.livingSince.year</con:name>
+      <con:value>2011</con:value>
+    </con:property>
+  </con:properties>
+  <con:wssContainer>
+    <con:outgoing mustUnderstand="true">
+      <con:name>CreditPlus-Auth</con:name>
+      <con:username>joonko</con:username>
+      <con:password>FOCB9OhnCTne</con:password>
+      <con:entry type="Username">
+        <con:configuration>
+          <addCreated>true</addCreated>
+          <addNonce>true</addNonce>
+          <passwordType>PasswordDigest</passwordType>
+        </con:configuration>
+      </con:entry>
+      <con:usePredefinedOrder>false</con:usePredefinedOrder>
+    </con:outgoing>
+  </con:wssContainer>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:sensitiveInformation/>
+  <con:environment id="6fb930f9-76f2-4d82-9c86-22a5a13a2497" name="Test" index="0">
+    <con:service type="SOAP" name="EfinComparerServiceSoapBinding">
+      <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>credit-plus.productType</con:name>
+      <con:value>67</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.loanAsked</con:name>
+      <con:value>5000.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.gender</con:name>
+      <con:value>MALE</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.familyStatus</con:name>
+      <con:value>MARRIED</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.firstName</con:name>
+      <con:value>Adrian</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.lastName</con:name>
+      <con:value>Hass</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.nationality</con:name>
+      <con:value>DE</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.birthDate</con:name>
+      <con:value>1980-01-29</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.numberOfChildren</con:name>
+      <con:value>1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.housingType</con:name>
+      <con:value>OWNER</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.numberOfCreditCard</con:name>
+      <con:value>1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employerName</con:name>
+      <con:value>Joonko AG</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentType</con:name>
+      <con:value>REGULAR_EMPLOYED</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.streetName</con:name>
+      <con:value>Hardenbergstr. 32</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.postCode</con:name>
+      <con:value>10623</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.city</con:name>
+      <con:value>Berlin</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentSince.month</con:name>
+      <con:value>05</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentSince.year</con:name>
+      <con:value>2017</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.alimony</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.insuranceAndSavings</con:name>
+      <con:value>450.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.loanInstalments</con:name>
+      <con:value>0v</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.mortgages</con:name>
+      <con:value>450.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.privateHealthInsurance</con:name>
+      <con:value>450.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.rent</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.alimonyPayments</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.childBenefits</con:name>
+      <con:value>204.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.netIncome</con:name>
+      <con:value>3000.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.otherRevenue</con:name>
+      <con:value>200.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.pensionBenefits</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.rentalIncome</con:name>
+      <con:value>0.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.iban</con:name>
+      <con:value>DE25120300001007466806</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.bic</con:name>
+      <con:value>BYLADEM1001</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.nameOnAccount</con:name>
+      <con:value>Adrian Hass</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.currency</con:name>
+      <con:value>EUR</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.limit</con:name>
+      <con:value>1500.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.balance</con:name>
+      <con:value>2500.00</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.balanceDate</con:name>
+      <con:value>2020-05-11</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.city</con:name>
+      <con:value>Berlin</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.streetName</con:name>
+      <con:value>Schützallee</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.houseNumber</con:name>
+      <con:value>7</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.postCode</con:name>
+      <con:value>14169</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.email</con:name>
+      <con:value>adrian@joonko.io</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.mobile</con:name>
+      <con:value>491792079425</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.livingSince.month</con:name>
+      <con:value>07</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.livingSince.year</con:name>
+      <con:value>2011</con:value>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="8a1c89c0-d645-4f14-984b-b11389749e6a" name="Prod" index="1">
+    <con:service type="SOAP" name="EfinComparerServiceSoapBinding">
+      <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://appshort-test.creditplus.de/efinComparer/cxf/EfinComparer/</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>credit-plus.productType</con:name>
+      <con:value>28</con:value>
+    </con:property>
+    <con:property>
+      <con:name>joonko.loanAsked</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.gender</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.familyStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.firstName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.lastName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.nationality</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.birthDate</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.numberOfChildren</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.housingType</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.personalDetails.numberOfCreditCard</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employerName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentType</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.streetName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.postCode</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.city</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentSince.month</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.employmentDetails.employmentSince.year</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.alimony</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.insuranceAndSavings</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.loanInstalments</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.mortgages</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.privateHealthInsurance</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.expenses.rent</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.alimonyPayments</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.childBenefits</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.netIncome</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.otherRevenue</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.pensionBenefits</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.income.rentalIncome</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.iban</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.bic</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.nameOnAccount</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.currency</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.limit</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.balance</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.accountDetails.balanceDate</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.city</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.streetName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.houseNumber</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.postCode</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.email</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.mobile</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.livingSince.month</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>joonko.contactData.livingSince.year</con:name>
+      <con:value/>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>

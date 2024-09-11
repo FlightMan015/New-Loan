@@ -1,0 +1,13 @@
+package de.joonko.loan.identification.model;
+
+public enum KycAuditStatus {
+
+    KYC_INITIATED,
+    IDENT_CREATED,
+    IDENT_CREATION_ERROR,
+    CONTRACT_UPLOADED,
+    KYC_LINK_CREATED,
+    CONTRACT_UPLOAD_ERROR,
+    PARTNER_NOTIFICATION_SENT,
+    PARTNER_NOTIFICATION_SENT_ERROR
+}

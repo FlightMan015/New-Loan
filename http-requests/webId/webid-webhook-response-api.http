@@ -1,0 +1,76 @@
+POST {{consumer-loans}}//loan/webid/webhook-notification?internal-use=true
+Content-Type: application/json
+
+
+{
+  "responseType": "ident",
+  "identMode": "video_ident",
+  "actionType": "sig",
+  "actionId": "307520009",
+  "transactionId": "13241584",
+  "success": true,
+  "finishedOn": "2020-09-21T19:42:18.655Z",
+  "identifiedOn": "2020-09-21T19:42:18.655Z",
+  "rejectionReason": "NIL",
+  "agentId": 0,
+  "user": {
+    "title": "Mr",
+    "sex": "male",
+    "firstname": "Nagendra",
+    "lastname": "Gandla",
+    "dateOfBirth": "22-08-1987",
+    "address": {
+      "street": "A",
+      "streetNo": "1",
+      "addressLine1": "B",
+      "addressLine2": "C",
+      "region": "Huttenstrasse",
+      "zip": "10553",
+      "city": "Berlin",
+      "country": "Germany"
+    },
+    "contact": {
+      "email": "prasad424jntu@gmail.com",
+      "cell": "8297040473",
+      "phone": "1234567890"
+    }
+  },
+  "mismatch": true,
+  "idDocument": {
+    "documentType": "passport",
+    "authority": "Germany",
+    "dateOfIssue": "01-01-2019",
+    "dateOfExpiry": "01-01-2029",
+    "nationality": "German",
+    "idNumber": "12345",
+    "mrz": "123",
+    "nameAtBirth": "Nagendra",
+    "placeOfBirth": "Berlin"
+  },
+  "customParameters": {
+    "additionalProp1": "13241584",
+    "additionalProp2": "joonko/santander"
+  },
+  "productInfos": {
+    "additionalProp1": "info1",
+    "additionalProp2": "info2",
+    "additionalProp3": "info3"
+  },
+  "jointUserActionStatus": {
+    "failedUserActions": [
+      "nil"
+    ],
+    "pendingUserActions": [
+      "qes"
+    ],
+    "successfulUserActions": [
+      "kyc"
+    ]
+  },
+  "qesContinue": {
+    "url": "qesUrl",
+    "validUntil": "2020-09-21T19:42:18.655Z"
+  }
+}
+
+###

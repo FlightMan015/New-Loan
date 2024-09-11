@@ -1,0 +1,55 @@
+{
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "items": {
+          "fields": [
+            {
+              "name": "partner_id",
+              "type": "string"
+            },
+            {
+              "name": "reference_id",
+              "type": "string"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            },
+            {
+              "default": null,
+              "name": "rejection_reason",
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            {
+              "name": "amount",
+              "type": "double"
+            },
+            {
+              "name": "eff_interest_rate",
+              "type": "double"
+            },
+            {
+              "name": "duration",
+              "type": "int"
+            },
+            {
+              "name": "timestamp",
+              "type": "long"
+            }
+          ],
+          "name": "Offer",
+          "type": "record"
+        },
+        "type": "array"
+      }
+    }
+  ],
+  "name": "DigitalLoansReportsDataTopic",
+  "namespace": "de.joonko.loan.avro.dto.dls_reports_data",
+  "type": "record"
+}

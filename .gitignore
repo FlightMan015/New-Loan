@@ -1,0 +1,42 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Environment variables to execute http-requests against loan providers
+http-client.private.env.json
+
+# Properties to run application locally against loan providers
+/src/main/resources/application-local.properties
+/src/main/resources/application-dev.properties
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+.run
+*.iws
+*.iml
+*.ipr
+
+# CodeMr - static code analysis IDEA plugin
+/codemr/
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/MockServerCertificate.pem
+/MockServerPrivateKey.pem
+/MockServerPublicKey.pem
+
+### Mac OS
+*.DS_Store

@@ -1,0 +1,83 @@
+### get user data
+
+GET {{api-digital-url}}/api/v1/userdata
+Authorization: Bearer {{jwt-token}}
+Content-Type: application/json
+
+### update user data
+
+PUT {{api-digital-url}}/api/v1/userdata
+Authorization: Bearer {{jwt-token}}
+Content-Type: application/json
+
+{
+  "userPersonal": {
+    "gender": "MALE",
+    "firstName": "John",
+    "lastName": "Smith",
+    "familyStatus": "SINGLE",
+    "birthDate": "2000-01-01",
+    "nationality": "DE",
+    "placeOfBirth": "Berlin",
+    "countryOfBirth": "DE"
+  },
+  "userContact": {
+    "streetName": "Hardenbergstraße",
+    "houseNumber": "32",
+    "postCode": "10623",
+    "city": "Berlin",
+    "livingSince": {
+      "month": 1,
+      "year": 2020
+    },
+    "previousAddress": {
+      "streetName": "Mllerstr. 77",
+      "postCode": "10623",
+      "city": "Berlin",
+      "country": "DE",
+      "houseNumber": "32",
+      "livingSince": {
+        "month": 1,
+        "year": 2015
+      }
+    },
+    "email": "qa.user@joonko.io",
+    "mobile": "4917624088579"
+  },
+  "userEmployment": {
+    "employmentType": "REGULAR_EMPLOYED",
+    "employerName": "Joonko AG",
+    "employmentSince": {
+      "month": 5,
+      "year": 2012
+    },
+    "streetName": "Hardenberstr.",
+    "postCode": "10587",
+    "city": "Berlin",
+    "professionEndDate": {
+      "month": 5,
+      "year": 2020
+    },
+    "houseNumber": "15",
+    "taxId": null
+  },
+  "userHousing": {
+    "housingType": "RENT",
+    "acknowledgedRent": 450.0,
+    "acknowledgedMortgages": 450.0,
+    "numberOfDependants": 3,
+    "numberOfChildren": 2
+  },
+  "userCredit": {
+    "userExpenses": {
+      "monthlyLoanInstallmentsDeclared": 0.0,
+      "isCurrentDelayInInstallmentsDeclared": true,
+      "monthlyLifeCost": 0.0,
+      "creditCardLimitDeclared": 0.0
+    },
+    "userIncomes": {
+      "acknowledgedNetIncome": 0.0,
+      "incomeDeclared": 0.0
+    }
+  }
+}

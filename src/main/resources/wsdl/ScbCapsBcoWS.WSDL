@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://ws.bco.caps.scb.de" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.bco.caps.scb.de" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<wsdl:types>
+	<xsd:schema targetNamespace="http://ws.bco.caps.scb.de">
+	
+   		<xsd:complexType name="GetKreditkonditionenParams">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="1" name="authentisierung" type="tns:AuthentisierungXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="kreditkonditionenParams" type="tns:FinanzierungXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetKreditkonditionenResult">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="0" name="kreditkonditionenResult" type="tns:FinanzierungXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="GetKreditvergleichsangebotParams">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="1" name="authentisierung" type="tns:AuthentisierungXO"/>
+				<xsd:element maxOccurs="1" minOccurs="1" name="kreditantrag" type="tns:KreditantragXO"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="tns:ParameterXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetKreditvergleichsangebotResult">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="0" name="antragsstatus" type="tns:KreditantragsstatusXO"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="tns:ParameterXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="GetKreditvertragsangebotParams">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="1" name="authentisierung" type="tns:AuthentisierungXO"/>
+				<xsd:element maxOccurs="1" minOccurs="1" name="kreditantrag" type="tns:KreditantragXO"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="tns:ParameterXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetKreditvertragsangebotResult">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="0" name="antragsstatus" type="tns:KreditantragsstatusXO"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="tns:ParameterXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="GetKreditantragsstatusParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="scbAntragId" type="xsd:string"/> 
+				<xsd:element maxOccurs="1" minOccurs="1" name="authentisierung" type="tns:AuthentisierungXO"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="tns:ParameterXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetKreditantragsstatusResult">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="0" name="antragsstatus" type="tns:KreditantragsstatusXO"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="tns:ParameterXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="KreditantragXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="antragId" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="scbAntragId" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="vermittlerId" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="scbVermittlerId" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="bemerkung" type="xsd:string"/> 
+				<xsd:element maxOccurs="1" minOccurs="0" name="finanzierung" type="tns:FinanzierungXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="darlehnsnehmer" type="tns:DarlehnsnehmerXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="mitverpflichteter" type="tns:DarlehnsnehmerXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="vermittler" type="tns:SachbearbeiterXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="FinanzierungXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="auszahlungsbetrag" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="abloesebetrag" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="abloesebetragIntern" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="abloesebetragExtern" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="kreditbetragNetto" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="laufzeitInMonaten" type="xsd:integer"/>
+				<xsd:element minOccurs="0" name="ersteRateDatum" type="xsd:date"/>
+				<xsd:element minOccurs="0" name="auszahlungDatum" type="xsd:date"/>
+				<xsd:element minOccurs="0" name="wunschrate" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="ratenbetragMonatl" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="rateneinzugZum" type="tns:rateneinzugType"/>
+				<xsd:element minOccurs="0" name="rsv" type="tns:rsvType"/>
+				<xsd:element minOccurs="0" name="rsv2Dn" type="xsd:boolean"/>
+				<xsd:element minOccurs="0" name="rsvBetrag" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="verwendungszweck" type="tns:vwzType"/>
+				<xsd:element minOccurs="0" name="verwendungszweckFrei" type="xsd:string"/> 
+   				<xsd:element minOccurs="0" name="effektivzinsPaProz" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="nominalzinsPaProz" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="zinsenGesamt" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="zinsenGesamtProz" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="bearbeitGeb" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="bearbeitGebProz" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="kreditbetragGesamt" type="xsd:decimal"/>
+   				<!-- Kreditkarte -->
+   				<xsd:element minOccurs="0" name="limit" type="xsd:decimal"/>
+   				<xsd:element minOccurs="0" name="zahlungsart" type="tns:zahlungsartType"/>
+   				<xsd:element minOccurs="0" name="kartenprodukt" type="tns:kartenproduktType"/>
+   				<xsd:element minOccurs="0" name="accounttype" type="xsd:string"/>
+   				<xsd:element minOccurs="0" name="bonuscode" type="xsd:string"/>
+   				<xsd:element minOccurs="0" name="kampagnencode" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="eigeneRechnung" type="xsd:boolean"/>
+   				<xsd:element minOccurs="0" name="praegename" type="tns:praegenameType"/>
+				
+   				<!-- /Kreditkarte -->
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="DarlehnsnehmerXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="scbKundeId" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="anrede" type="tns:anredeType"/>
+				<xsd:element minOccurs="0" name="titel" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="name" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="vorname" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="geburtsdatum" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="geburtsname" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="geburtsort" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="staatsangehoerigkeit" type="tns:landType"/> 
+				<xsd:element minOccurs="0" name="inDeLebendSeit" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="telefon" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="mobil" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="erreichbar" type="xsd:string"> 
+					<xsd:annotation>
+						<xsd:documentation>z.B. "Mo. bis Do. 16-18 Uhr"</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element> 
+				<xsd:element minOccurs="0" name="email" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="werbezustimmung" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="werbewegEmail" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="werbewegBrief" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="werbewegTelefon" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="werbewegSmsMms" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="familienstand" type="tns:familienstandType"/> 
+				<xsd:element minOccurs="0" name="trennungsdatum" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="erwachseneImHaushalt" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="kinderImHaushalt" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="anzKindergeldber" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="verhaeltnisZuDn1" type="tns:verhaeltnisType"/>
+				<xsd:element minOccurs="0" name="gemeinsHaushaltMitDn1" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="gemeinsAdresseMitDn1" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="gemeinsKontaktdatenMitDn1" type="xsd:boolean"/> 
+				
+				<xsd:element minOccurs="0" name="aufenthaltsgenehmigung" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="aufenthaltsgenehmigungBis" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="arbeitserlaubnisBis" type="xsd:date"/> 
+				
+				<xsd:element maxOccurs="1" minOccurs="0" name="aktuelleAdresse" type="tns:AdresseXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="vorherigeAdresse" type="tns:AdresseXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="aktuellesBV" type="tns:BeschaeftigungsverhaeltnisXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="vorherigesBV" type="tns:BeschaeftigungsverhaeltnisXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="einnahmenAusgaben" type="tns:EinnahmenAusgabenXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="bankverbindung" type="tns:BankverbindungXO"/>
+				<xsd:element maxOccurs="10" minOccurs="0" name="konten" type="tns:KontoXO"/>
+				<xsd:element maxOccurs="10" minOccurs="0" name="karten" type="tns:KarteXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="AdresseXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="strasse" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="hausnr" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="plz" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="ort" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="land" type="tns:landType"/> 
+				<xsd:element minOccurs="0" name="wohnhaftSeit" type="xsd:date"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="BeschaeftigungsverhaeltnisXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="berufsbezeichnung" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="berufsgruppe" type="tns:berufType"/> 
+				<xsd:element minOccurs="0" name="branche" type="tns:brancheType"/> 
+				<xsd:element minOccurs="0" name="arbeitgeberName" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="arbeitgeberStrasse" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="arbeitgeberHausnr" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="arbeitgeberPlz" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="arbeitgeberOrt" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="arbeitgeberLand" type="tns:landType"/> 
+				<xsd:element minOccurs="0" name="beschaeftigtSeit" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="beschaeftigtBis" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="befristetBis" type="xsd:date"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="EinnahmenAusgabenXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="nettoEinkommen" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="sonstigeEinnahmen" type="xsd:decimal"> 
+					<xsd:annotation>
+						<xsd:documentation>Summe aller monatl. Einnahmen, die sich nicht den nachfolgenden Einnahmen zuordnen lassen.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element> 
+				<xsd:element minOccurs="0" name="nebeneinkAngestellt" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="nebeneinkSelbstaendig" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="mietEinnahmen" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="zinsertraege" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="unterhaltEingang" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="kindergeld" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="rentenbezuege" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="rentenart" type="tns:rentenartType"/> 
+				<xsd:element minOccurs="0" name="sonstigeAusgaben" type="xsd:decimal"> 
+					<xsd:annotation>
+						<xsd:documentation>Summe aller monatl. Ausgaben, die sich nicht den nachfolgenden Ausgaben zuordnen lassen.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element> 
+				<xsd:element minOccurs="0" name="warmmiete" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="wohnnebenkosten" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="hypothek" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="bausparen" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="wohnflaeche" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="lebensversicherung" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="pkv" type="xsd:decimal"/>
+				<xsd:element minOccurs="0" name="unterhaltZahlung" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="wohnart" type="tns:wohnartType"/> 
+				<xsd:element minOccurs="0" name="anzHaus" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="anzEtw" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="anzPkw" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="anzMotorrad" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="lohnsteuerklasse" type="tns:lStKlasseType"/> 
+				<xsd:element minOccurs="0" name="kinderfreibetraege" type="xsd:decimal"> 
+					<xsd:annotation>
+						<xsd:documentation>Ab 0,0 in 0,5er Schritten. Ohne Wert, falls nicht bekannt.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element minOccurs="0" name="dacBewertung" type="tns:dacBewertungType"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="BankverbindungXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="vorhandeneKarten" type="tns:vorhandeneKartenType"/> 
+				<xsd:element minOccurs="0" name="kontoinhaber" type="tns:kontoinhaberType"/> 
+				<xsd:element minOccurs="0" name="kontonr" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="blz" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="iban" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="bic" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="bank" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="KontoXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="kreditart" type="tns:kreditartType"/> 
+				<xsd:element minOccurs="0" name="kreditbetrag" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="dispolimit" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="rahmen" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="ratenbetrag" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="datumLetzteRate" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="datumEroeffnung" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="abloesungErwuenscht" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="restsaldoBrutto" type="xsd:decimal"/> 
+				<xsd:element minOccurs="0" name="kontonr" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="blz" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="iban" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="bic" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="bank" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="KarteXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="kartenart" type="tns:kartenartType"/> 
+				<xsd:element minOccurs="0" name="bank" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="kartennr" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="kontonr" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="gueltigbis" type="xsd:date"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="ParameterXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="key" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="value" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="AuthentisierungXO"> 
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="benutzer" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="passwort" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="KreditantragsstatusXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="antragId" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="scbAntragId" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="status" type="tns:antragstatusType"/>
+   				<xsd:element maxOccurs="1" minOccurs="0" name="kreditvertrag" type="tns:DokumentXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="finanzierung" type="tns:FinanzierungXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="sachbearbeiter" type="tns:SachbearbeiterXO"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="fehlendeDokumente" type="tns:DokumentXO"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="hinweise" type="tns:HinweisXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="HinweisXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="typ" type="xsd:integer"/> 
+				<xsd:element minOccurs="0" name="text" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="DokumentXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="name" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="beschreibung" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="dokument" type="xsd:base64Binary"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SachbearbeiterXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="anrede" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="name" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="vorname" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="telefon" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="fax" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="email" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="id" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:simpleType name="familienstandType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="LEDIG"/>
+   				<xsd:enumeration value="VERHEIRATET"/>
+   				<xsd:enumeration value="GESCHIEDEN"/>
+   				<xsd:enumeration value="VERWITWET"/>
+   				<xsd:enumeration value="VERPARTNERT"/>
+   				<xsd:enumeration value="GETRENNT_LEBEND"/>
+   				<xsd:enumeration value="UNBEKANNT"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="verhaeltnisType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="EHEPARTNER"/>
+   				<xsd:enumeration value="LEBENSGEFAEHRTE"/>
+   				<xsd:enumeration value="SONSTIGES"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="rsvType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="OHNE_RSV"/>
+   				<xsd:enumeration value="TOD"/>
+   				<xsd:enumeration value="TOD_AU"/>
+   				<xsd:enumeration value="TOD_AU_AL"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="vwzType">
+   			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="STANDARD"/>
+				<xsd:enumeration value="ABLOESUNG_UMSCHULDUNG"/>
+				<xsd:enumeration value="ANTIQUITAETEN"/>
+				<xsd:enumeration value="ANWALTSKOSTEN"/>
+				<xsd:enumeration value="AUSBAU_DES_HAUSES"/>
+				<xsd:enumeration value="AUTOREPARATUR"/>
+				<xsd:enumeration value="AUTO_PKW_NEU"/>
+				<xsd:enumeration value="AUTO_PKW_GEBRAUCHT_BIS_4J"/>
+				<xsd:enumeration value="AUTO_PKW_GEBRAUCHT_AB_5J"/>
+				<xsd:enumeration value="AUTO_ZUBEHOER"/>
+				<xsd:enumeration value="COMPUTER_LAPTOP_ETC"/>
+				<xsd:enumeration value="EXPRESS_KREDIT"/>
+				<xsd:enumeration value="FESTIVITAETEN"/>
+				<xsd:enumeration value="FAHRRAD"/>
+				<xsd:enumeration value="GESCHENKE"/>
+				<xsd:enumeration value="GIROUMSCHULDUNG_EIGEN_GESAMT"/>
+				<xsd:enumeration value="GIROUMSCHULDUNG_EIGEN_TEIL"/>
+				<xsd:enumeration value="GIROUMSCHULDUNG_FREMD_GESAMT"/>
+				<xsd:enumeration value="GIROUMSCHULDUNG_FREMD_TEIL"/>
+				<xsd:enumeration value="GRUNDSTUECK"/>
+				<xsd:enumeration value="HAUSRAT"/>
+				<xsd:enumeration value="LIMIT_GIROKONTO_EIGEN"/>
+				<xsd:enumeration value="LIMIT_VISA_KARTE_EIGEN"/>
+				<xsd:enumeration value="MIETKAUTION"/>
+				<xsd:enumeration value="MOEBEL"/>
+				<xsd:enumeration value="MOTORRAD_NEU"/>
+				<xsd:enumeration value="MOTORRAD_GEBRAUCHT_BIS_4J"/>
+				<xsd:enumeration value="MOTORRAD_GEBRAUCHT_AB_5J"/>
+				<xsd:enumeration value="PFAENDUNGSSCHUTZKONTO"/>
+				<xsd:enumeration value="PFLEGE_VON_VERWANDTEN"/>
+				<xsd:enumeration value="RENOVIERUNG"/>
+				<xsd:enumeration value="REPARATUREN"/>
+				<xsd:enumeration value="SCHEIDUNGSKOSTEN"/>
+				<xsd:enumeration value="STEUERSCHULDEN"/>
+				<xsd:enumeration value="UMZUG"/>
+				<xsd:enumeration value="UNTERHALTUNGSELEKTRONIK"/>
+				<xsd:enumeration value="URLAUB"/>
+				<xsd:enumeration value="WOHNWAGEN_MOBILE_CARAVAN"/>
+				<xsd:enumeration value="WINTERGARTEN"/>
+				<xsd:enumeration value="ZAHNERSATZ"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="rateneinzugType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="ERSTER_EINES_MONATS"/>
+   				<xsd:enumeration value="FUENFZEHNTER_EINES_MONATS"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="anredeType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="HERR"/>
+   				<xsd:enumeration value="FRAU"/>
+   				<xsd:enumeration value="FIRMA"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="landType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:pattern value="[A-Z][A-Z]"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="wohnartType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="MIETWOHNUNG"/>
+   				<xsd:enumeration value="WOHNHAFT_BEI_ELTERN"/>
+   				<xsd:enumeration value="EIGENTUMSWOHNUNG"/>
+   				<xsd:enumeration value="EIGENES_HAUS"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+   		
+   		<xsd:simpleType name="dacBewertungType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="UNBEKANNT"/>
+   				<xsd:enumeration value="GRUEN"/>
+   				<xsd:enumeration value="GELB"/>
+   				<xsd:enumeration value="ROT"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="antragstatusType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="IN_BEARBEITUNG"/>
+   				<xsd:enumeration value="GENEHMIGT"/>
+   				<xsd:enumeration value="ABGELEHNT"/>
+   				<xsd:enumeration value="ABGESCHLOSSEN"/>
+   				<xsd:enumeration value="ZURUECKGESTELLT_DOKUMENTE_FEHLEND"/>
+   				<xsd:enumeration value="ZURUECKGESTELLT_DOKUMENTE_ERHALTEN"/>
+   				<xsd:enumeration value="ZURUECKGESTELLT_SONSTIGES"/>
+   				<xsd:enumeration value="STORNIERT"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="kreditartType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="KONSUMENTENKREDIT"/>
+   				<xsd:enumeration value="RAHMENKREDIT"/>
+   				<xsd:enumeration value="ABRUFKREDIT"/>
+   				<xsd:enumeration value="DISPO"/>
+   				<xsd:enumeration value="KREDITKARTE"/>
+   				<xsd:enumeration value="AUTOKREDIT"/>
+   				<xsd:enumeration value="LEASING"/>
+   				<xsd:enumeration value="AG_DARLEHEN"/>
+   				<xsd:enumeration value="NULL_PROZ_FINANZIERUNG"/>
+   				<xsd:enumeration value="BALLONFINANZIERUNG"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="berufType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="UNBEKANNT"/>
+   				<xsd:enumeration value="ABM"/>
+   				<xsd:enumeration value="AKADEMIKER"/>
+   				<xsd:enumeration value="ARBEITER"/>
+   				<xsd:enumeration value="ARBEITSLOSER"/>
+   				<xsd:enumeration value="ANGESTELLTER"/>
+   				<xsd:enumeration value="ANGESTELLTER_OEFFENTL_DIENST"/>
+   				<xsd:enumeration value="ANSTELLUNG_AUF_ZEIT"/>
+   				<xsd:enumeration value="BEAMTER"/>
+   				<xsd:enumeration value="BUNDESWEHR_SOLDAT"/>
+   				<xsd:enumeration value="HOHER_ANGESTELLTER"/>
+   				<xsd:enumeration value="KFM_ANGESTELLTER"/>
+   				<xsd:enumeration value="HAUSFRAU_HAUSMANN"/>
+   				<xsd:enumeration value="RENTNER_PENSIONAER"/>
+   				<xsd:enumeration value="SELBSTAENDIGER"/>
+   				<xsd:enumeration value="SONSTIGER_SELBSTAENDIGER"/>
+   				<xsd:enumeration value="SONSTIGER_GEHOBENER_BERUF"/>
+   				<xsd:enumeration value="SONSTIGER_EINFACHER_BERUF"/>
+   				<xsd:enumeration value="SOZIALHILFE_WEHRPFLICHT_ERSATZDIENST"/>
+   				<xsd:enumeration value="STUDENT"/>
+   				<xsd:enumeration value="SCHUELER"/>
+   				<xsd:enumeration value="AZUBI"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="brancheType">
+   			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="DIENSTLEISTER"/>
+				<xsd:enumeration value="HANDEL"/>
+				<xsd:enumeration value="HANDWERK"/>
+				<xsd:enumeration value="KRAFTFAHRZEUGE"/>
+				<xsd:enumeration value="GASTRONOMIE"/>
+				<xsd:enumeration value="BAUTENSCHUTZ"/>
+				<xsd:enumeration value="TRANSPORTGEWERBE"/>
+				<xsd:enumeration value="VERSICHERUNGSGEWERBE"/>
+				<xsd:enumeration value="SONSTIGE"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="rentenartType">
+   			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="ALTERSRENTE_GESETZLICH"/>
+				<xsd:enumeration value="ALTERSRENTE_PRIVAT"/>
+				<xsd:enumeration value="BEHINDERTENRENTE"/>
+				<xsd:enumeration value="BETRIEBSRENTE"/>
+				<xsd:enumeration value="BERUFSUNFAEHIGKEITSRENTE"/>
+				<xsd:enumeration value="ERWERBSUNFAEHIGKEITSRENTE"/>
+				<xsd:enumeration value="UNFALLVERSICHERUNGSRENTE"/>
+				<xsd:enumeration value="WAISENRENTE"/>
+				<xsd:enumeration value="WITWENRENTE"/>
+				<xsd:enumeration value="PENSION"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="lStKlasseType">
+   			<xsd:restriction base="xsd:integer">
+   				<xsd:minInclusive value="1"/>
+   				<xsd:maxInclusive value="6"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="vorhandeneKartenType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="KEINE"/>
+   				<xsd:enumeration value="EC_KARTE"/>
+   				<xsd:enumeration value="KREDITKARTE"/>
+   				<xsd:enumeration value="EC_UND KREDITKARTE"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="kontoinhaberType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="DN1"/>
+   				<xsd:enumeration value="DN2"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="kartenproduktType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="EINSPLUS"/>
+   				<xsd:enumeration value="SANTANDER_FERRARI"/>
+   				<xsd:enumeration value="SUNNY"/>
+   				<xsd:enumeration value="TRAVEL"/>
+   				<xsd:enumeration value="XITE"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+   		
+   		<xsd:simpleType name="zahlungsartType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="VOLLZAHLUNG"/>
+   				<xsd:enumeration value="TEILZAHLUNG"/>
+   				<xsd:enumeration value="TEILZAHLUNG_MIT_RSV"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="kartenartType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="EC_MAESTRO"/>
+   				<xsd:enumeration value="AMEX"/>
+   				<xsd:enumeration value="DINERS"/>
+   				<xsd:enumeration value="MASTERCARD"/>
+   				<xsd:enumeration value="VISA"/>
+   				<xsd:enumeration value="V_PAY"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:simpleType name="praegenameType">
+   			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="21"/>   			
+			</xsd:restriction>
+   		</xsd:simpleType>
+   		
+   		<xsd:complexType name="ExceptionXO"> 
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="text" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="code" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>T001 - Unbekannter Fehler</xsd:documentation>
+						<xsd:documentation>F001 - Ungueltiger Wert in ''</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element> 
+				 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+
+   		<xsd:element name="GetKreditkonditionen" type="tns:GetKreditkonditionenParams"/>
+   		<xsd:element name="GetKreditkonditionenResponse" type="tns:GetKreditkonditionenResult"/>
+   		<xsd:element name="GetKreditvergleichsangebot" type="tns:GetKreditvergleichsangebotParams"/>
+   		<xsd:element name="GetKreditvergleichsangebotResponse" type="tns:GetKreditvergleichsangebotResult"/>
+   		<xsd:element name="GetKreditvertragsangebot" type="tns:GetKreditvertragsangebotParams"/>
+   		<xsd:element name="GetKreditvertragsangebotResponse" type="tns:GetKreditvertragsangebotResult"/>
+   		<xsd:element name="GetKreditantragsstatus" type="tns:GetKreditantragsstatusParams"/>
+   		<xsd:element name="GetKreditantragsstatusResponse" type="tns:GetKreditantragsstatusResult"/>
+   		<xsd:element name="Fault" type="tns:ExceptionXO"/>
+	</xsd:schema>
+</wsdl:types>
+
+<wsdl:message name="GetKreditkonditionenRequest">
+	<wsdl:part element="tns:GetKreditkonditionen" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="GetKreditkonditionenResponse">
+	<wsdl:part element="tns:GetKreditkonditionenResponse" name="parameters"/>
+</wsdl:message>
+
+<wsdl:message name="GetKreditvergleichsangebotRequest">
+	<wsdl:part element="tns:GetKreditvergleichsangebot" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="GetKreditvergleichsangebotResponse">
+	<wsdl:part element="tns:GetKreditvergleichsangebotResponse" name="parameters"/>
+</wsdl:message>
+
+<wsdl:message name="GetKreditvertragsangebotRequest">
+	<wsdl:part element="tns:GetKreditvertragsangebot" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="GetKreditvertragsangebotResponse">
+	<wsdl:part element="tns:GetKreditvertragsangebotResponse" name="parameters"/>
+</wsdl:message>
+
+<wsdl:message name="GetKreditantragsstatusRequest">
+	<wsdl:part element="tns:GetKreditantragsstatus" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="GetKreditantragsstatusResponse">
+	<wsdl:part element="tns:GetKreditantragsstatusResponse" name="parameters"/>
+</wsdl:message>
+
+<wsdl:message name="Fault">
+	<wsdl:part element="tns:Fault" name="fault"/>
+</wsdl:message>
+
+<wsdl:portType name="ScbCapsBcoWsPortType">
+	<wsdl:operation name="getKreditkonditionen">
+		<wsdl:input message="tns:GetKreditkonditionenRequest"/>
+		<wsdl:output message="tns:GetKreditkonditionenResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+
+	<wsdl:operation name="getKreditvergleichsangebot">
+		<wsdl:input message="tns:GetKreditvergleichsangebotRequest"/>
+		<wsdl:output message="tns:GetKreditvergleichsangebotResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+
+	<wsdl:operation name="getKreditvertragsangebot">
+		<wsdl:input message="tns:GetKreditvertragsangebotRequest"/>
+		<wsdl:output message="tns:GetKreditvertragsangebotResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+
+	<wsdl:operation name="getKreditantragsstatus">
+		<wsdl:input message="tns:GetKreditantragsstatusRequest"/>
+		<wsdl:output message="tns:GetKreditantragsstatusResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+</wsdl:portType>
+
+<wsdl:binding name="ScbCapsBcoWsBinding" type="tns:ScbCapsBcoWsPortType">
+	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  
+	<wsdl:operation name="getKreditkonditionen">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+
+	<wsdl:operation name="getKreditvergleichsangebot">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+
+	<wsdl:operation name="getKreditvertragsangebot">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+
+	<wsdl:operation name="getKreditantragsstatus">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+</wsdl:binding>
+
+<wsdl:service name="ScbCapsBcoWS">
+	<wsdl:port binding="tns:ScbCapsBcoWsBinding" name="ScbCapsBcoWS">
+		<soap:address location="http://tempuri.org/bco/services/ScbCapsBcoWS"/>
+	</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

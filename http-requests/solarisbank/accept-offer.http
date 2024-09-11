@@ -1,0 +1,88 @@
+POST {{host}}/v1/persons/{{person_id}}/account_snapshots
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+Accept: application/json
+
+
+{
+  "source": "PARTNER",
+  "snapshot_data" : {
+    "account": {
+      "limit": "1000.0",
+      "joint_account": false,
+      "iban": "DE92370601930002130041",
+      "holder": "MUSTERMANN, HARTMUT",
+      "description": "Girokonto",
+      "country_id": "DE",
+      "bic": "TESTDE88XXX",
+      "bank_name": "TestBank"
+    },
+    "balance": {
+      "limit": "1000.0",
+      "date": "2020-03-10",
+      "currency": "EUR",
+      "balance": "2123.0",
+      "available": "3123.0"
+    },
+    "turnovers": [
+      {
+        "tags": [
+          "household",
+          "expenditure"
+        ],
+        "purpose": [
+          "SEPA BASISLASTSCHRIFT Energy2day GmbH KD-NR. 850721713015-721713 monatlicher Abschlag Discounter-Strom GlaeubigerID DE35EDS00000438652 KUNDENREFERENZ S301008592-8 50721713012016040610001 MANDATSREFERENZ 85072171301 5 GLAEUBIGER-ID DE35EDS00000438652"
+        ],
+        "prebooked": false,
+        "currency": "EUR",
+        "counter_iban": "",
+        "counter_holder": "Energy2day GmbH",
+        "counter_bic": "",
+        "booking_date": "2020-03-07",
+        "amount": "-42.0"
+      },
+      {
+        "tags": [
+          "salary",
+          "income",
+          "revenue"
+        ],
+        "purpose": [
+          "SEPA-GEHALTSGUTSCHRIFT FinTecSystems GmbH LOHN / GEHALT 12/16 KUNDENREFERENZ 7235703105-0 001008LG0000"
+        ],
+        "prebooked": false,
+        "currency": "EUR",
+        "counter_iban": "",
+        "counter_holder": "FinTecSystems GmbH",
+        "counter_bic": "",
+        "booking_date": "2020-03-08",
+        "amount": "3509.0"
+      }
+          ],
+    "date": "2020-03-15",
+    "tagger_version": "",
+    "filters": [],
+    "days": 365
+  }
+}
+
+> {%
+    client.global.set("account_snapshot_id", response.body.id);
+%}
+
+###
+
+PUT {{host}}v1/persons/{{person_id}}/consumer_loan_applications/{{application_id}}/account_snapshot
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+	"account_snapshot_id": "{{account_snapshot_id}}"
+}
+
+###
+
+GET {{host}}v1/persons/{{person_id}}/consumer_loan_applications/{{application_id}}
+Authorization: Bearer {{access_token}}
+
+###

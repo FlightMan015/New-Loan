@@ -1,0 +1,5 @@
+### delete user transactional data and invalidate transactional state
+
+DELETE {{api-digital-url}}/api/v1/user/bank-account
+Authorization: Bearer {{jwt-token}}
+Content-Type: application/json

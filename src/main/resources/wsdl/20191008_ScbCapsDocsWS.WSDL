@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://ws.docs.caps.scb.de" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.docs.caps.scb.de" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<wsdl:types>
+	<xsd:schema targetNamespace="http://ws.docs.caps.scb.de">
+   		<xsd:complexType name="GetContractParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element minOccurs="0" name="advertisingAgreement" type="xsd:boolean"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetContractResult">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="contract" type="tns:DocumentXO"/>
+				<xsd:element minOccurs="0" name="status" type="xsd:int"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="GetContractListParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetContractListResult">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="contractList" type="tns:DocumentXO"/>
+				<xsd:element minOccurs="0" name="status" type="xsd:int"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="GetMissingDocumentsParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetMissingDocumentsResult">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="missingDocuments" type="tns:DocumentXO"/>
+				<xsd:element minOccurs="0" name="status" type="xsd:int"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="GetAvailableDocumentsParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetAvailableDocumentsResult">
+   			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" name="availableDocuments" type="tns:DocumentXO"/>
+				<xsd:element minOccurs="0" name="status" type="xsd:int"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="GetPostidentParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element minOccurs="0" name="applicant" type="xsd:int"/> 
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="GetPostidentResult">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="postident" type="tns:DocumentXO"/>
+				<xsd:element minOccurs="0" name="status" type="xsd:int"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SetWebIdLegitimationParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="webIdDocument" type="tns:DocumentXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="legitimationData" type="tns:LegitimationDataXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SetWebIdLegitimationResult">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="success" type="xsd:boolean"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SetDocumentParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element maxOccurs="1" minOccurs="1" name="document" type="tns:DocumentXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SetDocumentResult">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="success" type="xsd:boolean"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SetAdvertisingAgreementParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element minOccurs="1" name="advertisingAgreement" type="xsd:boolean"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SetAdvertisingAgreementResult">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="success" type="xsd:boolean"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SetQesNotificationParams">
+   			<xsd:sequence>
+				<xsd:element minOccurs="1" name="applicationId" type="xsd:string"/>
+				<xsd:element minOccurs="1" name="department" type="tns:departmentType"/>
+				<xsd:element minOccurs="1" name="eSigningCompleted" type="xsd:boolean"/>
+				<xsd:element minOccurs="0" name="processId" type="xsd:string"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="authentication" type="tns:AuthenticationXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="SetQesNotificationResult">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="success" type="xsd:boolean"/>
+				<xsd:element minOccurs="0" name="pan" type="xsd:string"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="AuthenticationXO"> 
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="user" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="password" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="LegitimationDataXO"> 
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="processId" type="xsd:string"/>				 
+				<xsd:element minOccurs="0" name="legitimationSuccessful" type="xsd:boolean"/> 
+				<xsd:element minOccurs="0" name="name" type="xsd:string"/>				 
+				<xsd:element minOccurs="0" name="surname" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="dateOfBirth" type="xsd:date"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="address" type="tns:AddressXO"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="document" type="tns:LegitimationDocumentXO"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:complexType name="AddressXO"> 
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="street" type="xsd:string"/>				 
+				<xsd:element minOccurs="0" name="houseNr" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="postalCode" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="city" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:complexType name="LegitimationDocumentXO"> 
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="type" type="tns:idDocType"/>				 
+				<xsd:element minOccurs="0" name="identCode" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="issuingDate" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="expirationDate" type="xsd:date"/> 
+				<xsd:element minOccurs="0" name="issuingAuthority" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+   		
+   		<xsd:simpleType name="idDocType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="PASSPORT"/>
+   				<xsd:enumeration value="ID_CARD"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+
+   		<xsd:complexType name="DocumentXO">
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="id" type="xsd:int"/> 
+				<xsd:element minOccurs="0" name="name" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="description" type="xsd:string"/> 
+				<xsd:element minOccurs="0" name="applicant" type="xsd:int"/> 
+				<xsd:element minOccurs="0" name="origin" type="tns:docOriginType"/>
+				<xsd:element minOccurs="0" name="type" type="tns:docType"/>
+				<xsd:element minOccurs="0" name="file" type="xsd:base64Binary"/> 
+				<xsd:element minOccurs="0" name="filename" type="xsd:string"/> 
+   			</xsd:sequence>
+   		</xsd:complexType>
+		  		
+   		<xsd:simpleType name="departmentType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="DURABLES"/>
+   				<xsd:enumeration value="DIRECT"/>
+   				<xsd:enumeration value="CARS"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+   		
+   		<xsd:simpleType name="docOriginType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="MANUAL_UPLOAD"/>
+   				<xsd:enumeration value="ACCOUNT_SCREENING"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+   		
+   		<xsd:simpleType name="docType">
+   			<xsd:restriction base="xsd:string">
+   				<xsd:enumeration value="CONTRACT_QES_WITH_ADVERTISING_AGREEMENT"/>
+   				<xsd:enumeration value="CONTRACT_QES_WITHOUT_ADVERTISING_AGREEMENT"/>
+   				<xsd:enumeration value="CONTRACT_WET"/>
+   			</xsd:restriction>
+   		</xsd:simpleType>
+   		
+   		<xsd:complexType name="ExceptionXO"> 
+   			<xsd:sequence>
+				<xsd:element minOccurs="0" name="code" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="text" type="xsd:string"/>
+   			</xsd:sequence>
+   		</xsd:complexType>
+
+   		<xsd:element name="GetContract" type="tns:GetContractParams"/>
+   		<xsd:element name="GetContractResponse" type="tns:GetContractResult"/>
+   		<xsd:element name="GetContractList" type="tns:GetContractListParams"/>
+   		<xsd:element name="GetContractListResponse" type="tns:GetContractListResult"/>
+   		<xsd:element name="GetMissingDocuments" type="tns:GetMissingDocumentsParams"/>
+   		<xsd:element name="GetMissingDocumentsResponse" type="tns:GetMissingDocumentsResult"/>
+   		<xsd:element name="GetAvailableDocuments" type="tns:GetAvailableDocumentsParams"/>
+   		<xsd:element name="GetAvailableDocumentsResponse" type="tns:GetAvailableDocumentsResult"/>
+   		<xsd:element name="GetPostident" type="tns:GetPostidentParams"/>
+   		<xsd:element name="GetPostidentResponse" type="tns:GetPostidentResult"/>
+   		<xsd:element name="SetDocument" type="tns:SetDocumentParams"/>
+   		<xsd:element name="SetDocumentResponse" type="tns:SetDocumentResult"/>
+   		<xsd:element name="SetAdvertisingAgreement" type="tns:SetAdvertisingAgreementParams"/>
+   		<xsd:element name="SetAdvertisingAgreementResponse" type="tns:SetAdvertisingAgreementResult"/>
+   		<xsd:element name="SetQesNotification" type="tns:SetQesNotificationParams"/>
+   		<xsd:element name="SetQesNotificationResponse" type="tns:SetQesNotificationResult"/>
+   		<xsd:element name="SetWebIdLegitimation" type="tns:SetWebIdLegitimationParams"/>
+   		<xsd:element name="SetWebIdLegitimationResponse" type="tns:SetWebIdLegitimationResult"/>
+   		<xsd:element name="Fault" type="tns:ExceptionXO"/>
+	</xsd:schema>
+</wsdl:types>
+
+<wsdl:message name="GetContractRequest">
+	<wsdl:part element="tns:GetContract" name="params"/>
+</wsdl:message>
+<wsdl:message name="GetContractResponse">
+	<wsdl:part element="tns:GetContractResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="GetContractListRequest">
+	<wsdl:part element="tns:GetContractList" name="params"/>
+</wsdl:message>
+<wsdl:message name="GetContractListResponse">
+	<wsdl:part element="tns:GetContractListResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="GetMissingDocumentsRequest">
+	<wsdl:part element="tns:GetMissingDocuments" name="params"/>
+</wsdl:message>
+<wsdl:message name="GetMissingDocumentsResponse">
+	<wsdl:part element="tns:GetMissingDocumentsResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="GetAvailableDocumentsRequest">
+	<wsdl:part element="tns:GetAvailableDocuments" name="params"/>
+</wsdl:message>
+<wsdl:message name="GetAvailableDocumentsResponse">
+	<wsdl:part element="tns:GetAvailableDocumentsResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="GetPostidentRequest">
+	<wsdl:part element="tns:GetPostident" name="params"/>
+</wsdl:message>
+<wsdl:message name="GetPostidentResponse">
+	<wsdl:part element="tns:GetPostidentResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="SetDocumentRequest">
+	<wsdl:part element="tns:SetDocument" name="params"/>
+</wsdl:message>
+<wsdl:message name="SetDocumentResponse">
+	<wsdl:part element="tns:SetDocumentResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="SetAdvertisingAgreementRequest">
+	<wsdl:part element="tns:SetAdvertisingAgreement" name="params"/>
+</wsdl:message>
+<wsdl:message name="SetAdvertisingAgreementResponse">
+	<wsdl:part element="tns:SetAdvertisingAgreementResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="SetQesNotificationRequest">
+	<wsdl:part element="tns:SetQesNotification" name="params"/>
+</wsdl:message>
+<wsdl:message name="SetQesNotificationResponse">
+	<wsdl:part element="tns:SetQesNotificationResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="SetWebIdLegitimationRequest">
+	<wsdl:part element="tns:SetWebIdLegitimation" name="params"/>
+</wsdl:message>
+<wsdl:message name="SetWebIdLegitimationResponse">
+	<wsdl:part element="tns:SetWebIdLegitimationResponse" name="result"/>
+</wsdl:message>
+
+<wsdl:message name="Fault">
+	<wsdl:part element="tns:Fault" name="fault"/>
+</wsdl:message>
+
+<wsdl:portType name="ScbCapsDocsWsPortType">
+	<wsdl:operation name="getContract">
+		<wsdl:input message="tns:GetContractRequest"/>
+		<wsdl:output message="tns:GetContractResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+	<wsdl:operation name="getContractList">
+		<wsdl:input message="tns:GetContractListRequest"/>
+		<wsdl:output message="tns:GetContractListResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+	<wsdl:operation name="getMissingDocuments">
+		<wsdl:input message="tns:GetMissingDocumentsRequest"/>
+		<wsdl:output message="tns:GetMissingDocumentsResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+	<wsdl:operation name="getAvailableDocuments">
+		<wsdl:input message="tns:GetAvailableDocumentsRequest"/>
+		<wsdl:output message="tns:GetAvailableDocumentsResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+	<wsdl:operation name="getPostident">
+		<wsdl:input message="tns:GetPostidentRequest"/>
+		<wsdl:output message="tns:GetPostidentResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+	<wsdl:operation name="setDocument">
+		<wsdl:input message="tns:SetDocumentRequest"/>
+		<wsdl:output message="tns:SetDocumentResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+	<wsdl:operation name="setAdvertisingAgreement">
+		<wsdl:input message="tns:SetAdvertisingAgreementRequest"/>
+		<wsdl:output message="tns:SetAdvertisingAgreementResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+	<wsdl:operation name="setQesNotification">
+		<wsdl:input message="tns:SetQesNotificationRequest"/>
+		<wsdl:output message="tns:SetQesNotificationResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+	<wsdl:operation name="setWebIdLegitimation">
+		<wsdl:input message="tns:SetWebIdLegitimationRequest"/>
+		<wsdl:output message="tns:SetWebIdLegitimationResponse"/>
+        <wsdl:fault message="tns:Fault" name="fault"/>
+	</wsdl:operation>
+</wsdl:portType>
+
+<wsdl:binding name="ScbCapsDocsWsBinding" type="tns:ScbCapsDocsWsPortType">
+	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+	<wsdl:operation name="getContract">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+	<wsdl:operation name="getContractList">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+	<wsdl:operation name="getMissingDocuments">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+	<wsdl:operation name="getAvailableDocuments">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+	<wsdl:operation name="getPostident">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+	<wsdl:operation name="setDocument">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+	<wsdl:operation name="setAdvertisingAgreement">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+	<wsdl:operation name="setQesNotification">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+	<wsdl:operation name="setWebIdLegitimation">
+    	<soap:operation soapAction=""/>
+    	<wsdl:input>
+      		<soap:body use="literal"/>
+    	</wsdl:input>
+    	<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+</wsdl:binding>
+
+<wsdl:service name="ScbCapsDocsWS">
+	<wsdl:port binding="tns:ScbCapsDocsWsBinding" name="ScbCapsDocsWS">
+		<soap:address location="http://tempuri.org/caps-docs/services/ScbCapsDocsWS"/>
+	</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

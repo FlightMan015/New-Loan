@@ -1,0 +1,13 @@
+package de.joonko.loan.user.states;
+
+public enum Status {
+
+    SUCCESS,
+    QUERY_DATA_SOLUTION,
+    WAITING_TO_SEND_FOR_CLASSIFICATION,
+    SENT_FOR_CLASSIFICATION,
+    OUTDATED_SALARY_ACCOUNT,
+    MISSING_SALARY_ACCOUNT,
+    MISSING_USER_INPUT,
+    ERROR
+}

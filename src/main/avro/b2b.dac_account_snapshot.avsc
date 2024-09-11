@@ -1,0 +1,929 @@
+{
+    "type": "record",
+    "name": "DacAccountSnapshot",
+    "namespace": "de.joonko.loan.avro.dto.dac",
+    "fields": [
+        {
+            "name": "customDACData",
+            "type": [
+                "null",
+                {
+                    "type": "record",
+                    "name": "CustomDACData",
+                    "fields": [
+                        {
+                            "name": "carInformation",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "has3IncomeTags",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "netIncomeHasGovSupport",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "hasSalary",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "hasConsorsPreventionTags",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "hasSwkPreventionTags",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "countEncashmentTag",
+                            "type": [
+                                "null",
+                                "int"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "countSeizureTag",
+                            "type": [
+                                "null",
+                                "int"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "countPAccountTag",
+                            "type": [
+                                "null",
+                                "int"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "countChargebackTag",
+                            "type": [
+                                "null",
+                                "int"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "totalIncomeInLast90Days",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "cashWithdrawalsInLast90Days",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "gamblingAmountInLast90Days",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "wasDelayInInstallments40DaysDiff",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "wasDelayInInstallments62DaysDiff",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "isCurrentDelayInInstallments",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "hasSalaryEachMonthLast3M",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "sumIncomes1MAgo",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "sumIncomes2MAgo",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "sumIncomes3MAgo",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        }
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "dacId",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "avro.java.string": "String"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "digitalAccountStatement",
+            "type": [
+                "null",
+                {
+                    "type": "record",
+                    "name": "DigitalAccountStatement",
+                    "fields": [
+                        {
+                            "name": "balance",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "balanceDate",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "bankAccountName",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "bic",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "currency",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "iban",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "limit",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "isJointlyManaged",
+                            "type": [
+                                "null",
+                                "boolean"
+                            ],
+                            "default": null
+                        },
+                        {
+                          "name": "bankName",
+                          "type": [
+                            "null",
+                            {
+                              "type": "string",
+                              "avro.java.string": "String"
+                            }
+                          ],
+                          "default": null
+                        },
+                        {
+                            "name": "createdAt",
+                            "type": {
+                                "type": "string",
+                                "avro.java.string": "String"
+                            }
+                        },
+                        {
+                            "name": "transactions",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "record",
+                                        "name": "Transaction",
+                                        "fields": [
+                                            {
+                                                "name": "amount",
+                                                "type": [
+                                                    "null",
+                                                    "double"
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "bic",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "bookingDate",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "counterHolder",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "iban",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "isPreBooked",
+                                                "type": [
+                                                    "null",
+                                                    "boolean"
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "purpose",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            }
+                                        ]
+                                    },
+                                    "java-class": "java.util.List"
+                                }
+                            ],
+                            "default": null
+                        }
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "expenses",
+            "type": [
+                "null",
+                {
+                    "type": "record",
+                    "name": "Expenses",
+                    "fields": [
+                        {
+                            "name": "alimony",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "insuranceAndSavings",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "loanInstallmentsSwk",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "loanInstalments",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "mortgages",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "privateHealthInsurance",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "rent",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "vehicleInsurance",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        }
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "fts",
+            "type": [
+                "null",
+                {
+                    "type": "record",
+                    "name": "Fts",
+                    "fields": [
+                        {
+                            "name": "account",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "record",
+                                    "name": "Account",
+                                    "fields": [
+                                        {
+                                            "name": "bank_name",
+                                            "type": [
+                                                "null",
+                                                {
+                                                    "type": "string",
+                                                    "avro.java.string": "String"
+                                                }
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "bic",
+                                            "type": [
+                                                "null",
+                                                {
+                                                    "type": "string",
+                                                    "avro.java.string": "String"
+                                                }
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "country_id",
+                                            "type": [
+                                                "null",
+                                                {
+                                                    "type": "string",
+                                                    "avro.java.string": "String"
+                                                }
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": [
+                                                "null",
+                                                {
+                                                    "type": "string",
+                                                    "avro.java.string": "String"
+                                                }
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "holder",
+                                            "type": [
+                                                "null",
+                                                {
+                                                    "type": "string",
+                                                    "avro.java.string": "String"
+                                                }
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "iban",
+                                            "type": [
+                                                "null",
+                                                {
+                                                    "type": "string",
+                                                    "avro.java.string": "String"
+                                                }
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "joint_account",
+                                            "type": [
+                                                "null",
+                                                "boolean"
+                                            ],
+                                            "default": null
+                                        }
+                                    ]
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "balance",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "record",
+                                    "name": "Balance",
+                                    "fields": [
+                                        {
+                                            "name": "available",
+                                            "type": [
+                                                "null",
+                                                "double"
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "balance",
+                                            "type": [
+                                                "null",
+                                                "double"
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "currency",
+                                            "type": [
+                                                "null",
+                                                {
+                                                    "type": "string",
+                                                    "avro.java.string": "String"
+                                                }
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "date",
+                                            "type": [
+                                                "null",
+                                                {
+                                                    "type": "string",
+                                                    "avro.java.string": "String"
+                                                }
+                                            ],
+                                            "default": null
+                                        },
+                                        {
+                                            "name": "limit",
+                                            "type": [
+                                                "null",
+                                                "double"
+                                            ],
+                                            "default": null
+                                        }
+                                    ]
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "date",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "days",
+                            "type": [
+                                "null",
+                                "long"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "turnovers",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "record",
+                                        "name": "Turnover",
+                                        "fields": [
+                                            {
+                                                "name": "amount",
+                                                "type": [
+                                                    "null",
+                                                    "double"
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "booking_date",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "counter_bic",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "counter_holder",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "counter_iban",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "creditor_id",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "currency",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "string",
+                                                        "avro.java.string": "String"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "prebooked",
+                                                "type": [
+                                                    "null",
+                                                    "boolean"
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "purpose",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string",
+                                                            "avro.java.string": "String"
+                                                        },
+                                                        "java-class": "java.util.List"
+                                                    }
+                                                ],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "tags",
+                                                "type": [
+                                                    "null",
+                                                    {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string",
+                                                            "avro.java.string": "String"
+                                                        },
+                                                        "java-class": "java.util.List"
+                                                    }
+                                                ],
+                                                "default": null
+                                            }
+                                        ]
+                                    },
+                                    "java-class": "java.util.List"
+                                }
+                            ],
+                            "default": null
+                        }
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "ftsTransactionId",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "avro.java.string": "String"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "income",
+            "type": [
+                "null",
+                {
+                    "type": "record",
+                    "name": "Income",
+                    "fields": [
+                        {
+                            "name": "alimonyPayments",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "childBenefits",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "netIncome",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "otherRevenue",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "pensionBenefits",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "rentalIncome",
+                            "type": [
+                                "null",
+                                "double"
+                            ],
+                            "default": null
+                        }
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "internalUse",
+            "type": [
+                "null",
+                "boolean"
+            ],
+            "default": null
+        },
+        {
+            "name": "personalDetails",
+            "type": [
+                "null",
+                {
+                    "type": "record",
+                    "name": "PersonalDetails",
+                    "fields": [
+                        {
+                            "name": "employerName",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "forename",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "numberOfChildren",
+                            "type": [
+                                "null",
+                                "int"
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "numberOfCreditCard",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        },
+                        {
+                            "name": "surname",
+                            "type": [
+                                "null",
+                                {
+                                    "type": "string",
+                                    "avro.java.string": "String"
+                                }
+                            ],
+                            "default": null
+                        }
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "userUUID",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "avro.java.string": "String"
+                }
+            ],
+            "default": null
+        }
+    ]
+}

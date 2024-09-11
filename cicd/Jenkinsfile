@@ -1,0 +1,158 @@
+#!groovy
+
+pipeline {
+    agent any
+    environment {
+        GIT_MESSAGE = sh(script: 'git log $COMMIT --format=format:%s -1', , returnStdout: true).trim()
+        GIT_AUTHOR  = sh(script: 'git log $COMMIT -1 --pretty=format:%an', , returnStdout: true).trim()
+        GIT_REPO_NAME = env.GIT_URL.replaceFirst(/^.*\/([^\/]+?).git$/, '$1')
+        AWS_ECR = "881590245028.dkr.ecr.eu-central-1.amazonaws.com"
+        BRANCH_NAME_FX = "${env.BRANCH_NAME}".replaceAll("/", "_")
+        REPO = "${env.GIT_REPO_NAME}/${BRANCH_NAME_FX}"
+        TAG = "${env.BUILD_ID}"
+        DOCKER_IMAGE = "${REPO}:${TAG}"
+        CONTAINER_ID = ""
+    }
+
+    stages {
+        stage ('Build') {
+            when { anyOf {
+                branch 'master'
+                // branch 'develop'
+                //branch 'hotfix/*'
+                //branch 'release/*'
+            }}
+            steps {
+
+                script {
+                    // It's necessary to define where is the docker that should build the image
+                    def dockerHome = tool 'default'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                    env.BUILDKIT_STEP_LOG_MAX_SIZE=1073741824
+
+                    // Build the docker image environment/application:build
+                    docker.build("${DOCKER_IMAGE}", "--network host .")
+                }
+            }
+        }
+
+        stage('Copy build classes from Docker Container') {
+            steps {
+                script {
+                    // Target folder is being copied because in jenkins file, coverage files are copied after running the image
+                    sh "rm -r -f target"
+                    sh "mkdir -p target"
+                    sh "docker run -it -d \"${DOCKER_IMAGE}\""
+                    CONTAINER_ID = sh(script: "docker ps -q --filter 'ancestor=${DOCKER_IMAGE}'", returnStdout: true).trim()
+                    sh 'sleep 5'
+                    sh "docker cp ${CONTAINER_ID}:/app.jar app.jar"
+                    sh "docker cp ${CONTAINER_ID}:/target/classes target/classes"
+                    sh "docker cp ${CONTAINER_ID}:/target/site target/site"
+                    sh "docker cp ${CONTAINER_ID}:/target/jacoco.exec target/jacoco.exec"
+                    sh "docker cp ${CONTAINER_ID}:/target/jacoco-it.exec target/jacoco-it.exec"
+                    sh "docker kill ${CONTAINER_ID}"
+                }
+            }
+        }
+
+        stage('SonarQube analysis') {
+            environment {
+                SCANNER_HOME = tool 'SonarQubeCLI'
+            }
+            steps {
+                script {
+                    withSonarQubeEnv('sonar-dev') {
+                        sh "$SCANNER_HOME/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
+
+        stage("Quality gate") {
+            steps {
+                script {
+                    def qualitygate = waitForQualityGate()
+                    sleep(10)
+                    if (qualitygate.status != "OK") {
+                        waitForQualityGate abortPipeline: true
+                    }
+                }
+            }
+        }
+
+        stage ('Publish docker image') {
+            when { anyOf {
+                branch 'master'
+                // branch 'develop'
+                branch 'hotfix/*'
+                branch 'release/*'
+            }}
+            steps {
+                // Upload the build to ECR
+                sh '$(aws ecr get-login)'
+                sh 'aws ecr describe-repositories --repository-names $GIT_REPO_NAME/$BRANCH_NAME_FX || aws ecr create-repository --repository-name $GIT_REPO_NAME/$BRANCH_NAME_FX'
+
+                script {
+                    docker.withRegistry('https://881590245028.dkr.ecr.eu-central-1.amazonaws.com/${env.GIT_REPO_NAME}/${env.BRANCH_NAME_FX}') {
+                        docker.image("${DOCKER_IMAGE}").push('latest')
+                        docker.image("${DOCKER_IMAGE}").push(env.BUILD_ID)
+                    }
+                }
+            }
+        }
+
+        // stage ('Deploy Integration') {
+        //     when { anyOf { branch 'develop'}}
+        //     steps {
+        //         // kubectl development clusete
+        //         sh 'kubectl config use-context aws'
+        //         // deploy
+        //         deploy("integration", "$GIT_REPO_NAME", "$AWS_ECR/$DOCKER_IMAGE")
+        //     }
+        // }
+
+        stage ('Deploy Staging') {
+            when { anyOf {
+                branch 'hotfix/*'
+                branch 'feature/*'
+                // branch 'release/*'
+            }}
+            steps {
+                // kubectl development clusete
+                sh 'kubectl config use-context aws'
+                // deploy
+                deploy("staging", "loan", "${AWS_ECR}/${REPO}", "${TAG}")
+            }
+        }
+
+        stage ('Deploy Production') {
+            when { anyOf { branch 'master'}}
+            steps {
+                // kubectl production clusete
+                sh 'kubectl config use-context arn:aws:eks:eu-central-1:881590245028:cluster/prod-bonify'
+
+                // Tag Git with PROD
+                // sh 'git fetch --tags --all'
+                // sh 'git push --delete origin PROD'
+                // sh 'git tag $BUILD_NUMBER'
+                // sh 'git tag -d PROD'
+                // sh 'git tag PROD'
+                // sh 'git push origin --tags'
+                // deploy
+                deploy("prod", "loan", "${AWS_ECR}/${env.GIT_REPO_NAME}/master", "${TAG}")
+            }
+        }
+    }
+}
+
+def deploy(String env, String serviceName, String repo, String tag) {
+    String namespace = "${env}-${serviceName}"
+
+    sh '$(aws ecr get-login --no-include-email)'
+
+    echo "Deploying ${DOCKER_IMAGE} to namespace ["+namespace+"]"
+
+    // Apply the files to K8s
+    sh 'cd loan-helm ; helm template '+namespace+' . -f envs/'+env+'.yaml --set image.repository='+repo+' --set image.tag='+tag+''
+    sh 'cd loan-helm ; helm upgrade --install '+namespace+' . -f envs/'+env+'.yaml --set image.repository='+repo+' --set image.tag='+tag+''
+}

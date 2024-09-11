@@ -1,0 +1,13 @@
+POST {{host}}distributionline/api/rest/partnerendpoints/contracts
+Content-Type: application/x-www-form-urlencoded
+urlkey: {{urlkey}}
+Accept: application/json
+
+{
+"user_id": 1069126926,
+"credit_id": 1384410381
+
+}
+
+###
+###

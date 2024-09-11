@@ -1,0 +1,147 @@
+POST {{host}}/oauth/token
+Content-Type: application/json
+Accept: application/json
+
+{
+  "grant_type":"client_credentials",
+  "client_id":"",
+  "client_secret":""
+}
+
+> {%
+    client.global.set("access_token", response.body.access_token);
+%}
+###
+
+POST {{host}}/v1/persons
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "salutation": "MS",
+  "title": null,
+  "first_name": "X-MANUALTEST-HAPPYPATH",
+  "last_name": "Abele",
+  "address": {
+    "line_1": "UNTERE SCHULSTR. 4",
+    "line_2": "Etage 2",
+    "postal_code": "92283",
+    "city": "Lauterhofen",
+    "country": "DE",
+    "state": "BY"
+  },
+  "contact_address": {
+    "line_1": "UNTERE SCHULSTR. 6",
+    "line_2": "Etage 4",
+    "postal_code": "92283",
+    "city": "Lauterhofen",
+    "country": "DE",
+    "state": "BY"
+  },
+  "email": "person@example.com",
+  "mobile_number": "+49301234567",
+  "birth_name": "Doe",
+  "birth_date": "1989-06-14",
+  "birth_city": "Oldenburg",
+  "birth_country": "DE",
+  "nationality": "DE",
+  "employment_status": "EMPLOYED",
+  "job_title": "Head of everything",
+  "fatca_relevant": true,
+  "fatca_crs_confirmed_at": "2017-01-01T00:00:00Z",
+  "business_purpose": "helping people to find themselves",
+  "terms_conditions_signed_at": "2017-01-01T00:00:00Z"
+}
+
+> {%
+    client.global.set("person_id", response.body.id);
+%}
+
+###
+
+POST {{host}}/v1/persons/{{person_id}}/credit_records
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "source": "solarisBank"
+}
+
+
+> {%
+    client.global.set("credit_record_id", response.body.id);
+%}
+###
+
+POST{{host}}v1/persons/{{person_id}}/consumer_loan_applications
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+Accept: application/json
+
+
+{
+  "credit_record_id": "{{credit_record_id}}",
+  "employment_since": "2018-01-01",
+  "employment_status": "unlimited",
+  "employment_until": null,
+  "existing_credit_repayment_excluding_mortgage": {
+    "currency": "EUR",
+    "unit": "cents",
+    "value": 0
+  },
+  "is_joint_application": false,
+  "living_situation": "LIVING_IN_RENTED_HOUSE",
+  "rent":{
+    "currency": "EUR",
+    "unit": "cents",
+    "value": 10000
+  },
+  "additional_costs":{
+    "currency": "EUR",
+    "unit": "cents",
+    "value": 1000
+  },
+  "living_situation_amount": {
+    "currency": "EUR",
+    "unit": "cents",
+    "value": 1000
+  },
+  "loan_purpose": "Loan Purpose",
+  "maintenance_obligations_amount": {
+    "currency": "EUR",
+    "unit": "cents",
+    "value": 1000
+  },
+  "moved_in_last_two_years": false,
+  "net_income_amount": {
+    "currency": "EUR",
+    "unit": "cents",
+    "value": 400000
+  },
+  "number_of_dependents": 0,
+  "number_of_kids": 0,
+  "partner_reference_number": "Partner Reference",
+  "has_private_insurance": true,
+  "private_insurance_amount": {
+    "currency": "EUR",
+    "unit": "cents",
+    "value": 1000
+  },
+  "recipient_iban": "DE92370601930002130041",
+  "repayment_day_of_month": 1,
+  "requested_loan_amount": {
+    "currency": "EUR",
+    "unit": "cents",
+    "value": 700000
+  },
+  "requested_loan_term": 36,
+  "solarisbank_generate_contract": true
+}
+
+
+> {%
+    client.global.set("application_id", response.body.id);
+%}
+###

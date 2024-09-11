@@ -1,0 +1,10 @@
+{{- $root := . }}
+{{- with .Values.envVars.literal }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "loan.fullname" $root }}
+  namespace: {{ include "loan.fullname" $root }}
+data:
+  {{- toYaml . | nindent 2 }}
+{{- end }}

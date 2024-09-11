@@ -1,0 +1,40 @@
+
+### Finalize Subscription
+
+PUT {{ratanet}}{{finalizeSubscription}}
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "financialCondition" : {
+    "creditAmount" : 30000,
+    "duration" : 84
+  },
+  "paymentDay":"1"
+}
+
+> {%
+    var downloadSubscriptionDocument = response.body._links.filter(function(it) {
+        return it.rel === '_downloadSubscriptionDocument'
+    });
+    var cancelSubscriptionDocument = response.body._links.filter(function(it) {
+        return it.rel === '_cancelSubscriptionDocument'
+    });
+    client.assert(downloadSubscriptionDocument && downloadSubscriptionDocument.length === 1, 'downloadSubscriptionDocument should be present');
+    client.global.set("downloadSubscriptionDocument", downloadSubscriptionDocument[0].href);
+    client.assert(cancelSubscriptionDocument && cancelSubscriptionDocument.length === 1, 'cancelSubscriptionDocument should be present');
+    client.global.set("cancelSubscriptionDocument", cancelSubscriptionDocument[0].href);
+%}
+
+### Download Subscription
+
+GET {{ratanet}}{{downloadSubscriptionDocument}}
+Authorization: {{token}}
+
+
+### Cancel Subscription
+
+DELETE {{ratanet}}{{cancelSubscriptionDocument}}
+Authorization: {{token}}
+
+###

@@ -1,0 +1,166 @@
+{
+  "type": "record",
+  "name": "UserCreateEvent",
+  "namespace": "de.joonko.loan.avro.dto.user_details.create",
+  "fields": [{
+    "default": null,
+    "name": "event",
+    "type": ["null", {
+      "fields": [ {
+        "default": null,
+        "name": "type",
+        "type": ["null", "string"]
+      }, {
+        "default": null,
+        "name": "createInstant",
+        "type": ["null", "long"]
+      }, {
+        "default": null,
+        "name": "id",
+        "type": ["null", {
+          "logicalType": "uuid",
+          "type": "string"
+        }]
+      }, {
+        "default": null,
+        "name": "tenantId",
+        "type": ["null", {
+          "logicalType": "uuid",
+          "type": "string"
+        }]
+      }, {
+        "default": null,
+        "name": "user",
+        "type": ["null", {
+          "fields": [{
+            "default": null,
+            "name": "active",
+            "type": ["null", "boolean"]
+          }, {
+            "default": null,
+            "name": "birthDate",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "connectorId",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "data",
+            "type": ["null", {
+              "fields": [{
+                "default": null,
+                "name": "addressCity",
+                "type": ["null", "string"]
+              }, {
+                "default": null,
+                "name": "addressHouseNumber",
+                "type": ["null", "string"]
+              }, {
+                "default": null,
+                "name": "addressStreet",
+                "type": ["null", "string"]
+              }, {
+                "default": null,
+                "name": "addressZipCode",
+                "type": ["null", "string"]
+              }, {
+                "default": null,
+                "name": "familyStatus",
+                "type": ["null", "string"]
+              }, {
+                "default": null,
+                "name": "gender",
+                "type": ["null", "string"]
+              }, {
+                "default": null,
+                "name": "placeOfBirth",
+                "type": ["null", "string"]
+              }, {
+                "default": null,
+                "name": "nationality",
+                "type": ["null", "string"]
+              }],
+              "name": "Data",
+              "type": "record"
+            }
+            ]
+          }, {
+            "default": null,
+            "name": "email",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "firstName",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "id",
+            "type": ["null", {
+              "logicalType": "uuid",
+              "type": "string"
+            }]
+          }, {
+            "default": null,
+            "name": "insertInstant",
+            "type": ["null", "long"]
+          }, {
+            "default": null,
+            "name": "lastLoginInstant",
+            "type": ["null", "long"]
+          }, {
+            "default": null,
+            "name": "lastName",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "lastUpdateInstant",
+            "type": ["null", "long"]
+          }, {
+            "default": null,
+            "name": "mobilePhone",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "passwordChangeRequired",
+            "type": ["null", "boolean"]
+          }, {
+            "default": null,
+            "name": "passwordLastUpdateInstant",
+            "type": ["null", "long"]
+          }, {
+            "default": null,
+            "name": "tenantId",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "twoFactorDelivery",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "twoFactorEnabled",
+            "type": ["null", "boolean"]
+          }, {
+            "default": null,
+            "name": "usernameStatus",
+            "type": ["null", "string"]
+          }, {
+            "default": null,
+            "name": "verified",
+            "type": ["null", "boolean"]
+          }
+          ],
+          "name": "User",
+          "namespace": "de.joonko.loan.avro.dto.user_details",
+          "type": "record"
+        }
+        ]
+      }
+      ],
+      "name": "Event",
+      "type": "record"
+    }
+    ]
+  }
+  ]
+}
